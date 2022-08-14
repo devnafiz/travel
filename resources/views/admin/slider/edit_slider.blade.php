@@ -48,14 +48,15 @@
                                     </div>
                                     
                                 </div>
+                                <div class="form-group ">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control " placeholder="{{ __('Please enter Button link ') }}" type="text" id="link_by" name="link_by" value="{{$edit_data->link_by}}">
+                                    </div>
+                                    
+                                </div>
                               
                               <div class="form-group row">
-                                     <!-- <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control iconvalue" name="icon" value="{{ __('Choose icon') }}">
-                                    <span class="input-group-append">
-                                  <button type="button" class="btnicon btn btn-outline-secondary" role="iconpicker"></button>
-                                     </span>
-                                    </div>-->
+                                  
                                     <div class="col-sm-6">
                                         <label class="control-label" for="first-name">
                                             {{__('Status')}}: <span class="required">*</span>

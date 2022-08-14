@@ -220,7 +220,7 @@ margin-left: 82px;
 }
 .detail-box a{
     border: 1px solid #b99fc9;
-    color: #b99fc9;
+    color: #7d20b6;
 }
 .detail-in{
     color: #fff;

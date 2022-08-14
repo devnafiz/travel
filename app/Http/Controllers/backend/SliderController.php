@@ -36,44 +36,43 @@ class SliderController extends Controller
 
     public function addSlider(){
 
+           return view('admin.slider.add_slider');
 
-    
-      //cd dd($data['news_cat']);
+        }
+     
 
-      return view('admin.slider.add_slider');
-
-    }
-     public function store(Request $request){
-        //dd($request->all());
+    public function store(Request $request){
+       // dd($request->all());
 
         $request->validate([
 
-            "heading" => "required | max:190'", 
-              "topheading" => "required | max:190'", 
+            "heading" => "required|max:190", 
+            "topheading" => "required|max:190'", 
 
-            'image' => 'required | max:1000'], 
+            'image' => 'required|max:2048'], 
             [
 
             "heading.required" => __("Slider heading is required"), 
 
         ]);
-
+        //dd($request->all());
         $slider = new Slider;
 
         $input = array_filter($request->all());
 
         $input['heading'] = $request->heading;
-         $input['topheading'] = $request->topheading;
-         $input['	buttonname'] = $request->buttonname;
+        $input['topheading'] = $request->topheading;
+        $input['buttonname'] = $request->buttonname;
+        $input['link_by'] = $request->link_by;
        // dd($input['des']);
 
        
 
        //dd($input['slug']);
 
-         $image = $request->file('image');
+        $image = $request->file('image');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->resize(300,300)->save('backend/slider/'.$name_gen);
+        Image::make($image)->resize(1200,500)->save('backend/slider/'.$name_gen);
         $save_url = 'backend/slider/'.$name_gen;
 
 
@@ -83,7 +82,7 @@ class SliderController extends Controller
         $input['status']=$request->status;
         $slider->create($input);
 
-        return redirect()->route('news.all')->with("added", __("Slider has been created !"));
+        return redirect()->route('slider.all')->with("added", __("Slider has been created !"));
 
 
 
@@ -100,13 +99,14 @@ class SliderController extends Controller
 
      public function update(Request $request,$id){
 
-         $news = Slider::findOrFail($id);
+        $news = Slider::findOrFail($id);
         $input = array_filter($request->all());
 
       
-         $input['heading'] = $request->heading;
-         $input['topheading'] = $request->topheading;
-         $input['	buttonname'] = $request->buttonname;
+        $input['heading'] = $request->heading;
+        $input['topheading'] = $request->topheading;
+        $input['buttonname'] = $request->buttonname;
+        $input['link_by'] = $request->link_by;
        // dd($input['des']);
 
        
@@ -114,7 +114,7 @@ class SliderController extends Controller
        //dd($input['slug']);
          if($request->file('image')!=Null){
 
-              $image = $request->file('image');
+        $image = $request->file('image');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
         Image::make($image)->resize(300,300)->save('backend/slider/'.$name_gen);
         $save_url = 'backend/slider/'.$name_gen;
@@ -126,7 +126,7 @@ class SliderController extends Controller
 
          }
 
-       
+         $input['status']=$request->status;
         $news->update($input);
 
         return redirect()->route('slider.all')->with('updated', __('Silder  has been updated !'));

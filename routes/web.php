@@ -137,28 +137,28 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
 
     // place 
 
-    Route::get('admin/all/place',[PlaceController::class,'index'])->name('place.all');
+     Route::get('admin/all/place',[PlaceController::class,'index'])->name('place.all');
     Route::get('admin/place/add',[PlaceController::class,'addplace'])->name('place.add');
      Route::get('admin/place/edit/{id}',[PlaceController::class,'edit'])->name('place.edit');
      Route::post('admin/place/update/{id}',[PlaceController::class,'update'])->name('place.update');
 
-    Route::post('admin/place/store',[PlaceController::class,'store'])->name('place.store');
-    Route::get('admin/place/multi/image/add/{id}',[PlaceController::class,'addMultiImage'])->name('place.multi_image');
+     Route::post('admin/place/store',[PlaceController::class,'store'])->name('place.store');
+     Route::get('admin/place/multi/image/add/{id}',[PlaceController::class,'addMultiImage'])->name('place.multi_image');
 
-    Route::post('admin/place/image/store',[PlaceController::class,'MultiImagestore'])->name('place.multi.image.store');
+     Route::post('admin/place/image/store',[PlaceController::class,'MultiImagestore'])->name('place.multi.image.store');
 
-    Route::get('admin/place/multi/image/edit/{id}',[PlaceController::class,'editmutiImage'])->name('admin.edit.multi.image');
+     Route::get('admin/place/multi/image/edit/{id}',[PlaceController::class,'editmutiImage'])->name('admin.edit.multi.image');
      Route::post('admin/place/multi/image/update/{id}',[PlaceController::class,'UpdatemutiImage'])->name('admin.update.multi.image');
 
 
-       Route::get('admin/place/multi/image/delete/{id}',[PlaceController::class,'mutiImagedel'])->name('admin.delete.multi.image');
+      Route::get('admin/place/multi/image/delete/{id}',[PlaceController::class,'mutiImagedel'])->name('admin.delete.multi.image');
 
    
 
-      Route::get('admin/place/details/{id}',[PlaceController::class,'details'])->name('place.details');
+     Route::get('admin/place/details/{id}',[PlaceController::class,'details'])->name('place.details');
 
     
-    Route::get('admin/place/delete/{id}',[PlaceController::class,'delete'])->name('place.delete');
+     Route::get('admin/place/delete/{id}',[PlaceController::class,'delete'])->name('place.delete');
 
 
 
@@ -170,12 +170,14 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
 
        Route::get('/changelang', [GuestController::class,'changelang'])->name('changelang');
 
- Route::get('/contact', [ContactController::class,'index'])->name('contact');
+    Route::get('/contact', [ContactController::class,'index'])->name('contact');
 
- Route::get('/reload-captcha', [ContactController::class, 'reloadCaptcha']);
- Route::post('/contact', [ContactController::class,'ContactSave'])->name('contact.store');
+    Route::get('/reload-captcha', [ContactController::class, 'reloadCaptcha']);
+     Route::post('/contact', [ContactController::class,'ContactSave'])->name('contact.store');
 
-  Route::get('/place/tour/{id}', [TourController::class, 'single_place'])->name('place.tour');
+     Route::get('/place/tour/{id}', [TourController::class, 'single_place'])->name('place.tour');
 
-   Route::get('/latest/news', [FrontendController::class, 'latestNews'])->name('news');
-    Route::get('/latest/news/{slug}', [FrontendController::class, 'newsDetails'])->name('news.details');
+     Route::get('/latest/news', [FrontendController::class, 'latestNews'])->name('news');
+     Route::get('/latest/news/{slug}', [FrontendController::class, 'newsDetails'])->name('news.details');
+
+     Route::get('/page/{slug}', [FrontendController::class, 'pageDetails'])->name('page'); 

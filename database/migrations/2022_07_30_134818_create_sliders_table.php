@@ -25,6 +25,7 @@ return new class extends Migration
                 $table->string('btntextcolor', 100)->nullable();
                 $table->string('btnbgcolor', 100)->nullable();
                 $table->text('moredesc', 65535)->nullable();
+                 $table->string('status', 1)->nullable();
                 $table->string('moredesccolor', 100)->nullable();
             $table->timestamps();
         });

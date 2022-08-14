@@ -93,7 +93,7 @@ top: -11px;">
                        
                          
                          <li class="nav-item  active">
-                            <a href="{{URL::to('/')}}" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('Home')  }} </a>                         
+                            <a href="{{URL::to('/')}}" class="nav-link">{{__('Home')  }} </a>                         
                     
                         </li>
                         <li class="nav-item ">
@@ -113,7 +113,7 @@ top: -11px;">
                               <div class="dropdown-menu" aria-labelledby="dropdownMenu3" style="width: 130px !important;padding: 2px !important;">
                                 @if($pages)
                                      @foreach($pages as $k=>$page)
-                                 <a href="#" class="nav-link drop-menu" >{{ __($page->name)}}</a>
+                                 <a href="{{URL::to('/page/'.$page->slug)}}" class="nav-link drop-menu" >{{ __($page->name)}}</a>
                                      @endforeach
 
                                 @endif
@@ -125,15 +125,13 @@ top: -11px;">
                             <a href="#" class="nav-link" >About us</a>
                            
                         </li>
-                        <li class="nav-item ">
-                            <a href="#" class="nav-link" >Career</a>                          
-                        </li>
+                       
                         <li class="nav-item ">
                             <a href="#" class="nav-link" >Faq</a>                          
                         </li>
 
                         <li class="nav-item ">
-                            <a href="#" class="nav-link" >News</a>                          
+                            <a href="{{route('news')}}" class="nav-link" >News</a>                          
                         </li> 
 
                     </ul>
@@ -174,7 +172,7 @@ top: -11px;">
                                 <a href="#home-links" class="items-list active" data-toggle="collapse" aria-expanded="false">
                                 <span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
                                 <div class="collapse sub-menu text-danger" id="home-links">
-                                    <a class="items-list active" href="#">Hotel</a>
+                                    <a class="items-list active" href="{{URL::to('/')}}">Home</a>
                                     <a class="items-list" href="#">Room</a>
                                     <a class="items-list" href="#">Restaurant & bar</a>
                                     <a class="items-list" href="#">Tagungen & event</a>

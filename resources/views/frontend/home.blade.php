@@ -370,7 +370,7 @@ Attractive hotels in attractive locations! Most of our hotels are beside the sta
                                                     <p>
                                                    {{Str::limit(__($val->des),200)}}
                                                     </p>
-                                                    <a href="">Discover More</a>
+                                                    <a href="{{route('news.details',$val->slug)}}" target="_blank">Discover More</a>
                                                 </div>
                                                 
                                             </div>
@@ -531,7 +531,7 @@ margin-left: 82px;
 }
 .detail-box a{
     border: 1px solid #b99fc9;
-    color: #b99fc9;
+    color: #7d20b6;
 }
 .detail-in{
     color: #fff;

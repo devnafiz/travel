@@ -6,28 +6,21 @@ position: relative;">
         
             <div class="flexslider slider" id="slider-1">
                 <ul class="slides">
+                    @foreach($sliders as $k=>$s_val)
                     
-                    <li class="item-1" style="background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url({{asset('frontend/images/slider/home1.png')}}) 50% 0%;background-size:cover;
+                    <li class="item-1" style="background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url({{asset($s_val->image)}}) 50% 0%;background-size:cover;
                         height:100%;">
                         <div class=" meta">         
                             <div class="container">
                                
-                                <h1>Dream Travel</h1>
-                                <a href="#" class="btn btn-default">View More</a>
+                                <h1>{{$s_val->topheading}}</h1>
+                                <a href="{{($s_val->link_by)? $s_val->link_by :'#'}}" class="btn btn-default">{{$s_val->buttonname}}</a>
                             </div><!-- end container -->  
                         </div><!-- end meta -->
                     </li><!-- end item-1 -->
+                    @endforeach
                     
-                    <li class="item-2" style="background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url({{asset('frontend/images/slider/slider_two.jpg')}}) 50% 0%;background-size:cover;
-                        height:100%;">
-                        <div class=" meta">         
-                            <div class="container">
-                              
-                                 <h1>Dream Travel</h1>
-                                <a href="#" class="btn btn-default">View More</a>
-                            </div><!-- end container -->  
-                        </div><!-- end meta -->
-                    </li><!-- end item-2 -->
+                    
                    
                 </ul>
             </div><!-- end slider -->
