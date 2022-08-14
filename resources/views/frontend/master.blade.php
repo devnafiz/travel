@@ -60,7 +60,7 @@
 
     <div class="wrapper">
         <!--====== LOADER =====-->
-        <div class="loader"></div>
+      <!--   <div class="loader"></div> -->
             
             
         <!--======== SEARCH-OVERLAY =========-->       
@@ -260,7 +260,7 @@ font-size: 20px;
 }
 
 ul.menu3  li a{
-   font-size: 11px !important;
+   font-size: 14px  !important;
 text-transform: uppercase; !important;
 }
 .main-navbar.navbar-custom .navbar-nav > li {

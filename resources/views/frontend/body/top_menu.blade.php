@@ -1,7 +1,7 @@
   <nav class="navbar navbar-expand-xl sticky-top navbar-custom main-navbar p-1" id="mynavbar-1">
             <div class="container">
         
-                <a href="#" class="navbar-brand py-1 m-0"><span></span><img src="{{asset('frontend/images/logo/logo.png')}}" width="100px" height="40px"></a>
+                <a href="{{url('/')}}" class="navbar-brand py-1 m-0"><span></span><img src="{{asset('frontend/images/logo/logo.png')}}" width="100px" height="40px"></a>
                 <div class="header-search d-xl-none my-auto ml-auto py-1">
                     <a href="#" class="search-button" onClick="openSearch()"><span><i class="fa fa-search"></i></span></a>
                 </div>
@@ -93,7 +93,7 @@ top: -11px;">
                        
                          
                          <li class="nav-item  active">
-                            <a href="#" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('Hotel')  }} </a>                         
+                            <a href="{{URL::to('/')}}" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('Home')  }} </a>                         
                     
                         </li>
                         <li class="nav-item ">
@@ -104,8 +104,21 @@ top: -11px;">
                             <a href="#" class="nav-link" >Restaurant & Bar</a>
                             
                         </li>
+                        @php
+                          $pages= DB::table('pages')->where('status','1')->get();
+                          //dd($page);
+                        @endphp
                         <li class="nav-item ">
-                            <a href="#" class="nav-link" >Tagungen & Events</a>
+                            <a href="#" class="nav-link" href="#home-links1"  class="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  id="dropdownMenu3">Pages</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenu3" style="width: 130px !important;padding: 2px !important;">
+                                @if($pages)
+                                     @foreach($pages as $k=>$page)
+                                 <a href="#" class="nav-link drop-menu" >{{ __($page->name)}}</a>
+                                     @endforeach
+
+                                @endif
+                               
+                              </div>
                             
                         </li>
                         <li class="nav-item ">

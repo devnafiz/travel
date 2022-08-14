@@ -16,17 +16,15 @@ use Illuminate\Support\Str;
 class PageController extends Controller
 {
      
-       public function index(){
+ public function index(){
 
-    	$data['all_page']=Page::where(['status'=>'1'])->paginate(10);
+    $data['all_page']=Page::where(['status'=>'1'])->paginate(10);
         //dd($data['all_news']);
 
-    	return view('admin.pages.index',$data);
+    return view('admin.pages.index',$data);
 
 
     }
-
-
 
 
     public function addPage(){
@@ -57,7 +55,7 @@ class PageController extends Controller
         $input = array_filter($request->all());
 
         $input['name'] = $request->name;
-         $input['des'] = $request->des;
+        $input['des'] = $request->des;
 
         $input['slug'] = Str::slug($request->name, '-');
        // dd($input['des']);
@@ -77,45 +75,30 @@ class PageController extends Controller
 
      public function edit($id){
 
-        $data['edit_data']=Slider::where('id',$id)->first();
+        $data['edit_data']=Page::where('id',$id)->first();
 
-        return view('admin.slider.edit_slider',$data);
+        return view('admin.pages.edit_page',$data);
 
 
      }
 
      public function update(Request $request,$id){
 
-         $news = Slider::findOrFail($id);
-         $input = array_filter($request->all());
+        $news = Page::findOrFail($id);
+        $input = array_filter($request->all());
 
       
-         $input['heading'] = $request->heading;
-         $input['topheading'] = $request->topheading;
-         $input['buttonname'] = $request->buttonname;
-       // dd($input['des']);
-
-       
-
-       //dd($input['slug']);
-         if($request->file('image')!=Null){
-
-              $image = $request->file('image');
-        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->resize(300,300)->save('backend/slider/'.$name_gen);
-        $save_url = 'backend/slider/'.$name_gen;
-
-
-       
-       
-        $input['image'] = $save_url;
-
-         }
-
+        $input['name'] = $request->name;
+        $input['des'] = $request->des;
+         // $input['buttonname'] = $request->buttonname;
+         // dd($input['des']);
+        $input['slug'] = Str::slug($request->slug, '-');
+            
+        $input['status']=$request->status;
        
         $news->update($input);
-
-        return redirect()->route('slider.all')->with('updated', __('Silder  has been updated !'));
+ 
+        return redirect()->route('page.all')->with('updated', __('Page  has been updated !'));
 
 
      }
@@ -123,17 +106,14 @@ class PageController extends Controller
 
      public function delete($id){
 
-         $slider = Slider::find($id);
+         $pages = Page::find($id);
 
      
-        if ($slider->image != '' && file_exists(public_path() . '/backend/slider/' . $slider->image)) {
-            unlink(public_path() . '/backend/slider/' . $slider->image);
-        }
-
-        $value = $slider->delete();
+       
+        $pages = $pages->delete();
         if ($value) {
-            session()->flash("deleted", __("slider has been deleted"));
-            return redirect()->route('slider.all');
+            session()->flash("deleted", __("Page has been deleted"));
+            return redirect()->route('page.all');
         }
      }
 }

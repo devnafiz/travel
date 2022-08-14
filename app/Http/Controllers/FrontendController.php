@@ -15,8 +15,11 @@ class FrontendController extends Controller
     
 
     public function index(Request $request){
+        $data['lang'] = session()->get('changed_language');
+        $data['news']=News::where('status','1')->orderBy('id','desc')->limit(3)->get();
+          //dd($data['news']);
 
-       $data['place']= Place::where('status','1')->orderBy('id','desc')->limit(4)->get();
+        $data['place']= Place::where('status','1')->orderBy('id','desc')->limit(4)->get();
        //dd($data['place']);
 
      return view('frontend.home',$data);
@@ -26,6 +29,7 @@ class FrontendController extends Controller
     //news 
 
     public function latestNews(Request $request){
+         $data['lang'] = session()->get('changed_language');
 
     	 $data['news']=News::where('status','1')->paginate(9);
     	 $data['cat'] =News_cat::all();

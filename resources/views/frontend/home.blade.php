@@ -355,49 +355,28 @@ Attractive hotels in attractive locations! Most of our hotels are beside the sta
         <!--======= hotel--=========-->
             
               <section id="hotel" class="section-padding">
-                   <div class="container">
+                   <div class="container-fluid">
                      <div class="row justify-content-md-center">
                              <div class="col-md-10 col-md-offset-2">
                                  <div class="card" >
                                     <div class="card-body">
-                                        <h4 class="text-center">Latest News</h4>
+                                        <h4 class="text-center">Latest News</h4><br>
                                         <div class="row">
-
+                                           @foreach($news as $val)
                                             <div class="col-md-4">
-                                                <img src="images/other/dortmounted.jpg" width="100%">
+                                                <img src="{{asset($val->image)}}" width="100%">
                                                
                                                 <div class="detail-box">
                                                     <p>
-                                                    simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
+                                                   {{Str::limit(__($val->des),200)}}
                                                     </p>
                                                     <a href="">Discover More</a>
                                                 </div>
                                                 
                                             </div>
-                                            <div class="col-md-4">
-                                                 <img src="images/other/bochum.jpg" width="100%">
-                                                
-                                                 <div class="detail-box">
-                                                    <p>
-                                                    simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-                                                    </p>
-                                                    <a href="">Discover More</a>
-                                                    
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="col-md-4">
-                                                   <img src="images/other/gelsch.jpg" width="100%">
-                                                 
-                                                 <div class="detail-box">
-                                                    <p>
-                                                    simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-                                                    </p>
-                                                    <a href="">Discover More</a>
-                                                    
-                                                </div>
-                                                
-                                            </div>
+                                            @endforeach
+                                            
+                                           
                                             
                                         </div>
                                         
@@ -592,7 +571,7 @@ font-size: 20px;
 }
 
 ul.menu3  li a{
-   font-size: 11px !important;
+   font-size: 14px !important;
 text-transform: uppercase; !important;
 }
 .main-navbar.navbar-custom .navbar-nav > li {
