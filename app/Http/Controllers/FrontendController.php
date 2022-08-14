@@ -11,6 +11,7 @@ use App\Models\News;
 use App\Models\News_cat;
 use App\Models\Page;
 use App\Models\Slider;
+use App\Models\Map;
 
 class FrontendController extends Controller
 {
@@ -19,6 +20,7 @@ class FrontendController extends Controller
     public function index(Request $request){
         $data['lang'] = session()->get('changed_language');
         $data['sliders']= Slider::where('status','1')->orderBy('id','desc')->limit(8)->get();
+        $data['maps']= Map::where('status','1')->orderBy('id','desc')->limit(5)->get();
         $data['news']=News::where('status','1')->orderBy('id','desc')->limit(3)->get();
           //dd($data['news']);
 

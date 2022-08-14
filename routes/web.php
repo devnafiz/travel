@@ -13,6 +13,7 @@ use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\GeneralController;
 use App\Http\Controllers\backend\PageController;
 use  App\Http\Controllers\backend\PlaceController;
+use  App\Http\Controllers\backend\MapController;
 use App\Http\Controllers\GuestController;
 
 use App\Http\Controllers\ContactController;
@@ -120,7 +121,24 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
     Route::get('admin/slider/delete/{id}',[SliderController::class,'delete'])->name('slider.delete');
 
 
+    //Map
+
+
+    Route::get('admin/all/map',[MapController::class,'index'])->name('map.all');
+    Route::get('admin/map/add',[MapController::class,'addMap'])->name('map.add');
+
+    Route::post('admin/map/store',[MapController::class,'store'])->name('map.store');
+
+    Route::get('admin/map/edit/{id}',[MapController::class,'edit'])->name('map.edit');
+
+    Route::post('admin/map/update/{id}',[MapController::class,'update'])->name('map.update');
+    Route::get('admin/map/delete/{id}',[MapController::class,'delete'])->name('map.delete');
+
+
     //pages
+
+
+
 
     Route::get('admin/all/pages',[PageController::class,'index'])->name('page.all');
     Route::get('admin/page/add',[PageController::class,'addPage'])->name('page.add');

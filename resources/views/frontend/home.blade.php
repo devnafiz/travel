@@ -133,11 +133,10 @@ Attractive hotels in attractive locations! Most of our hotels are beside the sta
                       <div class="col-md-6 col-lg-5 col-sm-6" style=" background: #cccccc3b;height: 89%;">
 
                         <ul class="nav nav-tabs tabs-left sideways pull-right">
-                            <li class="active"><a href="#home-v" data-toggle="tab" style="width:300px">Stay by friends Gelsenkirchen</a></li>
-                            <li><a href="#profile-v" data-toggle="tab" style="width:300px">Stay by friends Bochum </a></li>
-
-                             <li><a href="#profile-v1" data-toggle="tab" style="width:300px">Parkhotel Bochum by stays</a></li>
-                            <li><a href="#profile-v2" data-toggle="tab" style="width:300px">stays design hotel Dortmund</a></li>
+                            @foreach($maps as $k=>$m_val)
+                            <li class="{{($k==0)?'active': ''}}"><a href="#home-{{$k}}" data-toggle="tab" style="width:300px">{{__($m_val->name)}}</a></li>
+                            @endforeach
+                            
                             
                            
                           </ul>
@@ -152,11 +151,12 @@ Attractive hotels in attractive locations! Most of our hotels are beside the sta
 
                              <!-- Tab panes -->
                               <div class="tab-content">
-                                <div class="tab-pane active" id="home-v">
+                                @foreach($maps as $k=>$m_val)
+                                <div class="tab-pane {{($k==0)?'active': ''}}" id="home-{{$k}}">
                                     <div class="row">
                                         <div class="col-md-12">
+                                         <iframe src="{{$m_val->link}}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
                                           
-                                             <img src="images/other/web.png" width="100%">
                                         </div><!-- slider end=-->
 
                                         
@@ -169,47 +169,8 @@ Attractive hotels in attractive locations! Most of our hotels are beside the sta
                                           
                                      
                                 </div>
-                                <div class="tab-pane" id="profile-v">
-
-                                        <div class="row">
-                                        <div class="col-md-12">
-                                          
-                                             <img src="images/other/Gelsenkirchen.png" width="100%">
-                                        </div><!-- slider end=-->
-
-                                        
-                                       
-                                        
-                                    </div>
-                                </div>
-                                 <div class="tab-pane" id="profile-v1">
-                                     
-                                      <div class="row">
-                                        <div class="col-md-12">
-                                          
-                                             <img src="images/other/web.png" width="90%">
-                                        </div><!-- slider end=-->
-
-                                        
-                                       
-                                        
-                                    </div>
-                                 </div>
-                                <div class="tab-pane" id="profile-v2">
-                                    
-                                     <div class="row">
-                                        <div class="col-md-12">
-                                         
-                                        <img src="images/other/web.png" width="90%">
-                                        </div><!-- slider end=-->
-
-                                        
-                                       
-                                        
-                                    </div>
-                                </div>
-                               <!--  <div class="tab-pane" id="profile-v3">Profile Tab23.</div>
-                                <div class="tab-pane" id="profile-v4">Profile Tab4.</div> -->
+                                @endforeach
+                              
                                 
                               </div>
                             </div>
