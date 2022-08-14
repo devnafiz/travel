@@ -9,23 +9,23 @@
 		<div class="row">
 
 			 <div class="col-lg-8  col-md-8">
-              @foreach($news as $k=>$val)
+            
 			 	 <div class="card" style="background-color: #fff;">
                                     <div class="card-body">
                                        
                                         <div class="row">
 
-                                            <div class="col-md-4">
-                                                <img src="{{asset($val->image)}}" width="100%">
-                                                <span class="place" >Dortmund</span>
+                                            <div class="col-md-12">
+                                                <img src="{{asset($news_details->image)}}" width="100%">
+                                               <!--  <span class="place" >Dortmund</span> -->
                                             </div>
-                                            <div class="col-md-8 col-lg-8">
+                                            <div class="col-md-12 col-lg-12">
                                                 <div class="detail-box">
-                                                	<h3><a>{{__($val->heading)}}</a></h3>
+                                                	<h3><a>{{__($news_details->heading)}}</a></h3>
                                                     <p>
-                                                    {{Str::limit(__($val->des),200)}}
+                                                    {{__($news_details->des)}}
                                                     </p>
-                                                    <a href="{{route('news.details',$val->slug)}}"> More</a>
+                                                   
                                                 </div>
                                                 
                                             </div>
@@ -37,15 +37,14 @@
                                      
                                  </div> 
 
-                     @endforeach            
+                              
 			 	
 			 </div>
 
 
 			 <div class="col-md-4 col-lg-4">
-
-			 	<div class="detail-box ">
-                   <h3 class="text-center"> News Category</h3>
+                <div class="detail-box ">
+                   <h3 class="text-center"> New Category</h3>
                    
                 </div> 
                 <ul class="list-unstyled">
@@ -65,6 +64,7 @@
 
                        @endforeach
                    </ul>
+
 
 			 	
 			 </div>

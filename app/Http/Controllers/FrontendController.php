@@ -34,5 +34,14 @@ class FrontendController extends Controller
     	 return view('frontend.news',$data);
     }
 
+     public function newsDetails(Request $request,$slug){
+          $data['news']=News::where('status','1')->paginate(6);
+         $data['news_details']=News::where('slug',$slug)->first();
+         $data['cat'] =News_cat::all();
+         //dd($data['news']);
+
+         return view('frontend.news_details',$data);
+    }
+
 
 }

@@ -178,3 +178,4 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
   Route::get('/place/tour/{id}', [TourController::class, 'single_place'])->name('place.tour');
 
    Route::get('/latest/news', [FrontendController::class, 'latestNews'])->name('news');
+    Route::get('/latest/news/{slug}', [FrontendController::class, 'newsDetails'])->name('news.details');
