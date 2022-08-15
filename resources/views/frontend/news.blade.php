@@ -3,6 +3,32 @@
 
 @section('content')
 
+<div class="main-breadcrumb-area section-padding"  style="background: url(https://dev.geniusocean.net/booking-genius/assets/images/genarel-settings/1587788309bigbanner.jpg.png);">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="pagetitle" style="color: #fff">
+             NEWS
+            </h1>
+            <!-- <ul class="pages">
+              <li>
+              <a href="https://dev.geniusocean.net/booking-genius">
+                  Home
+                </a>
+              </li>
+              <li class="active">
+              <a href="https://dev.geniusocean.net/booking-genius/contact">
+                  Contact Us
+                </a>
+              </li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Main Breadcrumb Area End -->    
+<!-- Contact Us Area Start -->
+
 
 <section class="section-padding">
 	<div class="container">

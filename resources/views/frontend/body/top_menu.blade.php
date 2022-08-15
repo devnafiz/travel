@@ -69,16 +69,8 @@ position: relative;">My Booking</span></a>
                         </li>-->
                          <li >
                             @if(Auth::check())
-                              <a href="#home-links1"  class="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  id="dropdownMenu2"><i class="fa fa-user"></i>&nbsp {{Auth::user()->name}}</a>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenu2" style="width: 100px !important;padding: 2px !important;">
-                                    <a class="items-list active" href="{{url('/dashboard')}}"><i class="fa fa-home"></i>&nbspDashboard</a>
-                                   <hr class="hr hr-blurry" />
-                                    <a class="items-list" href="#"><i class="fa fa-user-circle"></i>&nbspLogout</a>
-                                    
-                                   
-                                </div><!-- end sub-menu -->
-
-
+                               <a href="{{route('dashboard')}}" class="nav-link" >Dashboard</a>
+                              
                             @else
                             <a href="{{route('login')}}"  ><i class="fa fa-sign"></i> Login</a>
                             @endif
@@ -97,11 +89,11 @@ top: -11px;">
                     
                         </li>
                         <li class="nav-item ">
-                            <a href="#" class="nav-link" >Rooms</a>
+                            <a href="{{route('hotel.booking')}}" class="nav-link" >Hotel</a>
                             
                         </li>
                         <li class="nav-item ">
-                            <a href="#" class="nav-link" >Restaurant & Bar</a>
+                            <a href="{{route('tour.booking')}}" class="nav-link" >Tour</a>
                             
                         </li>
                         @php
@@ -173,19 +165,17 @@ top: -11px;">
                                 <span><i class="fa fa-home link-icon"></i></span>Home<span><i class="fa fa-chevron-down arrow"></i></span></a>
                                 <div class="collapse sub-menu text-danger" id="home-links">
                                     <a class="items-list active" href="{{URL::to('/')}}">Home</a>
-                                    <a class="items-list" href="#">Room</a>
-                                    <a class="items-list" href="#">Restaurant & bar</a>
+                                    <a class="items-list" href="{{route('hotel.booking')}}">Hotel</a>
+                                    <a class="items-list" href="{{route('tour.booking')}}">Tour</a>
                                     <a class="items-list" href="#">Tagungen & event</a>
                                     <a class="items-list" href="#">Gruppenanfrage</a>
-                                    <a class="items-list" href="#">Geschäftskunden</a>
-                                    <a class="items-list" href="#">Deals</a>
-                                    <a class="items-list" href="#">Travel Agency Page</a>
+                                    
                                 </div><!-- end sub-menu -->
        
                                 <a class="items-list" href="#flights-links" data-toggle="collapse"><span><i class="fa fa-plane link-icon"></i></span>Other<span><i class="fa fa-chevron-down arrow"></i></span></a>
                                 <div class="collapse sub-menu" id="flights-links">
                                     <a class="items-list" href="#">Faq</a>
-                                    <a class="items-list" href="#">Career</a>
+                                    <a class="items-list" href="{{route('news')}}">News</a>
                                     <a class="items-list" href="#">About Us</a>
                                    
                                 </div>

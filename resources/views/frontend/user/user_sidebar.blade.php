@@ -12,7 +12,7 @@
 
 <a href="{{route('user.profile')}}" class="btn btn-primary btn-sm btn-block">Profile Update</a>
 
-<a href="#" class="btn btn-primary btn-sm btn-block">Change Password </a>
+<a href="{{route('change.password')}}" class="btn btn-primary btn-sm btn-block">Change Password </a>
 
 
 

@@ -61,4 +61,25 @@ class FrontendController extends Controller
     }
 
 
+    public function HotelBooking(Request $request){
+             $data['hotels']=Place::where('status','1')->where('type','hotel')->orderBy('id','desc')->paginate(9);
+             //dd($data['hotels']);
+
+
+             return view('frontend.hotel.index',$data);
+
+
+    }
+
+    public function TourBooking(Request $request){
+             $data['tours']=Place::where('status','1')->where('type','tour')->orderBy('id','desc')->paginate(9);
+             //dd($data['hotels']);
+
+
+             return view('frontend.tour.index',$data);
+
+
+    }
+
+
 }

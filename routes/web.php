@@ -215,3 +215,5 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
      Route::get('/latest/news/{slug}', [FrontendController::class, 'newsDetails'])->name('news.details');
 
      Route::get('/page/{slug}', [FrontendController::class, 'pageDetails'])->name('page'); 
+     Route::get('/hotel/booking',[FrontendController::class,'HotelBooking'])->name('hotel.booking');
+      Route::get('/tour/booking',[FrontendController::class,'TourBooking'])->name('tour.booking');

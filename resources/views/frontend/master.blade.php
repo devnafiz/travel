@@ -260,7 +260,7 @@ font-size: 20px;
 }
 
 ul.menu3  li a{
-   font-size: 14px  !important;
+   font-size: 16px  !important;
 text-transform: uppercase; !important;
 }
 .main-navbar.navbar-custom .navbar-nav > li {

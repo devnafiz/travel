@@ -44,8 +44,7 @@
                         <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-contact">
                             <h3 class=" navigationFooter__link">ABOUT US</h3>
                             <ul class="list-unstyled">
-                                <li><a href="#">An overview of the company</a></li>
-                                <li><a href="#">Press</a></li>
+                               
                                 
                             </ul>
                         </div><!-- end columns -->
@@ -53,14 +52,14 @@
                         <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-links">
                             <h3 class="navigationFooter__link">INVESTORS' AREA</h3>
                             <ul class="list-unstyled">
-                                <li><a href="#">Investor Relations</a></li>
+                             <li><a href="{{route('contact')}}">Contact</a></li>
                                
                                 
                             </ul>
                         </div><!-- end columns -->
                         
                         <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-links ftr-pad-left">
-                            <h3 class="navigationFooter__link">APARTMENTS</h3>
+                            <h3 class="navigationFooter__link">Address</h3>
                             <ul class="list-unstyled">
                                 <li><a href="#">Bonn</a></li>
                                
@@ -70,7 +69,7 @@
                         
                       </div><!--end row--->
 
-                        <div class="row">
+                       <!-- <div class="row">
                                 
                         <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-contact">
                             <h3 class=" navigationFooter__link">Others </h3>
@@ -79,7 +78,7 @@
                                 <li><a href="{{route('contact')}}">Contact</a></li>
                                 
                             </ul>
-                        </div><!-- end columns -->
+                        </div>
                         
                         <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-links">
                             <h3 class="navigationFooter__link">Legal </h3>
@@ -91,7 +90,7 @@
                                
                                 
                             </ul>
-                        </div><!-- end columns -->
+                        </div>
                         
                         <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-links ftr-pad-left">
                             <h3 class="navigationFooter__link">Folgen Sie uns </h3>
@@ -99,10 +98,10 @@
                                 <li><a href="#">Bonn</a></li>
                                
                             </ul>
-                        </div><!-- end columns -->
+                        </div>
         
                         
-                      </div>
+                      </div>-->
 
                          
 
