@@ -35,8 +35,7 @@
     <!--Date-Picker Stylesheet-->
      <link href="{{ url('backend/plugins/datepicker/datepicker.min.css') }}" rel="stylesheet" type="text/css">
     
-    <!-- Magnific Gallery -->
-    <link rel="stylesheet" href="{{asset('frontend/css/magnific-popup.css')}}">
+    
     <link rel="stylesheet" href="{{asset('frontend/css/custom.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
