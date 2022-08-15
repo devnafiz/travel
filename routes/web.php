@@ -15,6 +15,8 @@ use App\Http\Controllers\backend\PageController;
 use  App\Http\Controllers\backend\PlaceController;
 use  App\Http\Controllers\backend\MapController;
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\IndexController;
+
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TourController;
@@ -49,6 +51,19 @@ Route::middleware([
     })->name('dashboard');
 });
 
+
+Route::get('/user/logout', [IndexController::class, 'UserLogout'])->name('user.logout');
+
+Route::get('/user/profile', [IndexController::class, 'UserProfile'])->name('user.profile');
+
+Route::post('/user/profile/store', [IndexController::class, 'UserProfileStore'])->name('user.profile.store');
+
+Route::get('/user/change/password', [IndexController::class, 'UserChangePassword'])->name('change.password');
+
+Route::post('/user/password/update', [IndexController::class, 'UserPasswordUpdate'])->name('user.password.update');
+
+
+
 Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
     Route::get('/login', [AdminController::class, 'loginForm']);
     Route::post('/login',[AdminController::class, 'store'])->name('admin.login');
@@ -57,6 +72,7 @@ Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
 Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function () {
     return view('admin.index');
 })->name('dashboard')->middleware('auth:admin');
+
   
 
   Route::get('/admin/general',[GeneralController::class,'index'])->name('general');
