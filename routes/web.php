@@ -217,3 +217,8 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
      Route::get('/page/{slug}', [FrontendController::class, 'pageDetails'])->name('page'); 
      Route::get('/hotel/booking',[FrontendController::class,'HotelBooking'])->name('hotel.booking');
       Route::get('/tour/booking',[FrontendController::class,'TourBooking'])->name('tour.booking');
+
+      //order 
+
+
+      Route::post('/new/order',[IndexController::class,'OrderSave'])->name('new.order');

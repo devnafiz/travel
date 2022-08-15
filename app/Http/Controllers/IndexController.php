@@ -7,6 +7,8 @@ use Auth;
 use Session;
 use DB;
 use App\Models\User;
+use App\Models\Place;
+use App\Models\Order;
 
 class IndexController extends Controller
 {
@@ -121,6 +123,35 @@ class IndexController extends Controller
 
 
 	} // end method 
+
+
+
+	public function OrderSave(Request $request){
+
+         $request->validate([
+
+
+         	"start_date" => "required",
+         	"end_date" => "required"
+
+
+
+         ]);
+
+         $order = new Order();
+
+         $order->tour_id =$request->place_id;
+         $order->tour_id =$request->place_id;
+         $order->tour_id =$request->place_id;
+         $order->tour_id =$request->place_id;
+         $order->tour_id =$request->place_id;
+         $order->tour_id =$request->place_id;
+         $order->save();
+
+         
+
+
+	}
 
 
 }

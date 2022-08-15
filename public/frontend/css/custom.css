@@ -336,7 +336,7 @@ a {
   padding: 12px 20px 20px;
   margin-top: 30px;
 }
-.aside-right .book-now-area .title {
+.aside-right .book-now .title {
   font-size: 16px;
   line-height: 26px;
   margin-bottom: 0px;
@@ -344,17 +344,17 @@ a {
   border-bottom: 1px dashed #d5d2d2;
   padding-bottom: 12px;
 }
-.aside-right .book-now-area .start-time {
+.aside-right .book-now .start-time1 {
   padding: 14px 0px 20px;
 }
-.aside-right .book-now-area .start-time span {
+.aside-right .book-now .start-time1 span {
   display: block;
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
   margin-bottom: 10px;
 }
-.aside-right .book-now-area .start-time input {
+.aside-right .book-now .start-time1 input {
   width: 100%;
   height: 25px;
   font-size: 14px;
@@ -362,28 +362,28 @@ a {
   border-radius: 50px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.aside-right .book-now-area .start-time input::-moz-placeholder {
+.aside-right .book-now .start-time1 input::-moz-placeholder {
   color: #ddd !important;
 }
-.aside-right .book-now-area .start-time input::-webkit-placeholder {
+.aside-right .book-now .start-time1 input::-webkit-placeholder {
   color: #ddd !important;
 }
-.aside-right .book-now-area .start-time input::-webkit-input-placeholder {
+.aside-right .book-now .start-time1 input::-webkit-input-placeholder {
   color: #ddd !important;
 }
-.aside-right .book-now-area .start-time input::-moz-placeholder {
+.aside-right .book-now .start-time1 input::-moz-placeholder {
   color: #ddd !important;
 }
-.aside-right .book-now-area .start-time input:-ms-input-placeholder {
+.aside-right .book-now .start-time1 input:-ms-input-placeholder {
   color: #ddd !important;
 }
-.aside-right .book-now-area .start-time input::-ms-input-placeholder {
+.aside-right .book-now .start-time1 input::-ms-input-placeholder {
   color: #ddd !important;
 }
-.aside-right .book-now-area .start-time input::placeholder {
+.aside-right .book-now .start-time1 input::placeholder {
   color: #ddd !important;
 }
-.aside-right .book-now-area .people-count {
+.aside-right .book-now .people-count {
   padding-top: 15px;
   border-top: 1px dashed #d5d2d2;
   display: -webkit-box;
@@ -393,34 +393,34 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.aside-right .book-now-area .people-count .left .title {
+.aside-right .book-now .people-count .left .title {
   border-bottom: 0px;
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
-.aside-right .book-now-area .people-count .left p {
+.aside-right .book-now .people-count .left p {
   font-size: 13px;
   margin-bottom: 0px;
   line-height: 18px;
 }
-.aside-right .book-now-area .people-count .right {
+.aside-right .book-now .people-count .right {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
-.aside-right .book-now-area .people-count .right .qty ul li {
+.aside-right .book-now .people-count .right .qty ul li {
   display: inline-block;
   margin-right: 5px;
 }
-.aside-right .book-now-area .people-count .right .qty ul li:last-child {
+.aside-right .book-now .people-count .right .qty ul li:last-child {
   margin-right: 0px;
 }
-.aside-right .book-now-area .people-count .right .qty ul li .qttotal1 {
+.aside-right .book-now .people-count .right .qty ul li .qttotal1 {
   color: #58606f;
   font-size: 12px;
   font-weight: 600;
 }
-.aside-right .book-now-area .people-count .right .qty ul li span {
+.aside-right .book-now .people-count .right .qty ul li span {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -433,10 +433,10 @@ a {
   -webkit-box-shadow: 0.656px 0.755px 20px 0px rgba(183, 183, 183, 0.3);
           box-shadow: 0.656px 0.755px 20px 0px rgba(183, 183, 183, 0.3);
 }
-.aside-right .book-now-area .people-count.child {
+.aside-right .book-now .people-count.child {
   margin-top: 20px;
 }
-.aside-right .book-now-area .extra-price-wizerd .title {
+.aside-right .book-now .extra-price-wizerd .title {
   margin-top: 15px;
   padding-top: 10px;
   border-top: 1px dashed #d5d2d2;
@@ -444,10 +444,10 @@ a {
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
-.aside-right .book-now-area .extra-price-wizerd .extra-list {
+.aside-right .book-now .extra-price-wizerd .extra-list {
   padding-top: 10px;
 }
-.aside-right .book-now-area .extra-price-wizerd .extra-list li {
+.aside-right .book-now .extra-price-wizerd .extra-list li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -456,11 +456,11 @@ a {
           justify-content: space-between;
   font-size: 14px;
 }
-.aside-right .book-now-area .extra-price-wizerd .extra-list.two {
+.aside-right .book-now .extra-price-wizerd .extra-list.two {
   border-top: 1px dashed #d5d2d2;
   margin-top: 4px;
 }
-.aside-right .book-now-area .book-btn {
+.aside-right .book-now .book-btn {
   display: block !important;
   width: 100% !important;
   margin-top: 20px;
@@ -477,11 +477,11 @@ a {
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
-.aside-right .book-now-area .book-btn:hover {
+.aside-right .book-now .book-btn:hover {
   color: #0663fc;
   background: #fff;
 }
-.aside-right .book-now-area .book-btn:focus {
+.aside-right .book-now .book-btn:focus {
   -webkit-box-shadow: unset;
           box-shadow: unset;
   outline: 0px;
@@ -997,3 +997,40 @@ Top Dastination Area start
     width: 127px;
 
 } 
+
+.hotel-right .price-area {
+    background: #8a06fc5e;
+    padding: 19px 20px 20px;
+    overflow: hidden;
+    position: relative;
+}
+.aside-right .price-area p {
+    color: #fff;
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+.aside-right .price-area p small {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #163cc5;
+    margin-left: -5px;
+}
+.aside-right .price-area .discount {
+    position: absolute;
+    font-size: 13px;
+    color: #fff;
+    background: #53bc1c;
+    height: 20px;
+    width: 100px;
+    right: -32px;
+    line-height: 20px;
+    top: 11px;
+    text-align: center;
+    -webkit-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    transform: rotate(50deg);
+    z-index: 3;
+}

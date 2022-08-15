@@ -69,43 +69,6 @@
                         
                       </div><!--end row--->
 
-                       <!-- <div class="row">
-                                
-                        <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-contact">
-                            <h3 class=" navigationFooter__link">Others </h3>
-                            <ul class="list-unstyled">
-                                
-                                <li><a href="{{route('contact')}}">Contact</a></li>
-                                
-                            </ul>
-                        </div>
-                        
-                        <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-links">
-                            <h3 class="navigationFooter__link">Legal </h3>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Legal information</a></li>
-                                <li><a href="#">Contest Rules</a></li>
-                                <li><a href="#">Privacy policy</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                               
-                                
-                            </ul>
-                        </div>
-                        
-                        <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-links ftr-pad-left">
-                            <h3 class="navigationFooter__link">Folgen Sie uns </h3>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Bonn</a></li>
-                               
-                            </ul>
-                        </div>
-        
-                        
-                      </div>-->
-
-                         
-
-
                     </div>
                         
                     </div><!-- end row -->
@@ -140,20 +103,24 @@
 
 
  <!-- Page Scripts Starts -->
-    <script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
+
+ <script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script> 
     <script src="{{asset('frontend/js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{asset('frontend/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
     <script src="{{asset('frontend/js/bootstrap-4.4.1.min.js')}}"></script>
     <script src="{{asset('frontend/js/jquery.flexslider.js')}}"></script>
     <script src="{{asset('frontend/js/bootstrap-datepicker.js')}}"></script>
     <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('frontend/js/custom-navigation.js')}}"></script>
+   <!--  <script src="{{asset('frontend/js/custom-navigation.js')}}"></script> -->
     <script src="{{asset('frontend/js/custom-flex.js')}}"></script>
     <script src="{{asset('frontend/js/custom-owl.js')}}"></script>
-    <script src="{{asset('frontend/js/custom-date-picker.js')}}"></script>
-    <script src="{{asset('frontend/js/custom-video.js')}}"></script>
+   <!--  <script src="{{asset('frontend/js/custom-date-picker.js')}}"></script> -->
+    <!-- <script src="{{asset('frontend/js/custom-video.js')}}"></script> -->
     <script src="{{asset('frontend/js/popup-ad.js')}}"></script>
-    <script src="{{asset('frontend/js/user.js')}}"></script>
+  
+    <script src="{{ url('backend/plugins/datepicker/i18n/datepicker.en.js') }}"></script>
+   <script src="{{ url('backend/js/custom-form-datepicker.js') }}"></script> 
+  
 
 
     <script type="text/javascript">
@@ -176,4 +143,26 @@
     });
 
     </script>
+    <script>
+ @if(Session::has('message'))
+ var type = "{{ Session::get('alert-type','info') }}"
+ switch(type){
+    case 'info':
+    toastr.info(" {{ Session::get('message') }} ");
+    break;
+
+    case 'success':
+    toastr.success(" {{ Session::get('message') }} ");
+    break;
+
+    case 'warning':
+    toastr.warning(" {{ Session::get('message') }} ");
+    break;
+
+    case 'error':
+    toastr.error(" {{ Session::get('message') }} ");
+    break; 
+ }
+ @endif 
+</script>
     <!-- Page Scripts Ends -->

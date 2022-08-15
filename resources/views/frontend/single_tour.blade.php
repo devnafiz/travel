@@ -5,7 +5,11 @@
 
 
 <script src="{{asset('frontend/js/details.js')}}"></script>
-<script src="{{asset('frontend/js/details-slider.js')}}"></script>
+<!-- <script src="{{asset('frontend/js/details-slider.js')}}"></script> -->
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 
 @endsection
@@ -79,47 +83,76 @@
                   
                 </div>
                 <div class="col-lg-4">
-                    <div class="aside-right">
+                    <div class="aside-right hotel-right">
+                        <form  method="post" action="{{route('new.order')}}">
+                            @csrf
+                           
+                            <input type="hidden" name="place_id" value="{{$place->id}}" id="place_id">
+                             <input type="hidden" name="type" id="type" value="{{$place->type}}">
                         <div class="price-area">
-                                                        <div class="discount">
-                                10%
+                                                       @if($place->discount_price!=null)  <div class="discount">
+                                                             @php
+                                                 $amount=$place->sale_price;
+                                                 $discount=$amount*$place->discount_price/100;
+
+                                                 $total= $place->sale_price - $discount;
+
+                                              @endphp
+                                             
+                                {{(float)$place->discount_price}}%
+                               
                             </div>
+                            @else
+                                  
+                            @endif
+                                                       
                                                         <p class="price">
-                            $5.88
-                                                        <small><del>$6.03</del></small>
+                            @if($place->discount_price!=null)                                
+                            ${{$total}}
+                                                        <small>$<del>{{$place->sale_price}}</del></small>
+                             @else
+                               ${{$place->sale_price}}
+                             @endif                           
                                                         </p>
                         </div>
-                            <div class="book-now-area">
+                            <div class="book-now">
                                 <h4 class="title">
                                     Book A Reservation
                                 </h4>
-                                <div class="start-time">
+                                <div class="start-time1" >
                                     <span>
                                         Start Date :
                                     </span>
-                                    <input type="text" class="date-range date_check select-date" name="date" value="" />
+                                    <input type="date" class="start_date"   name="start_date" value="" />
                                 </div>
                                 
                                  <hr>
-                                <div class="date_show d-none">
-                                    <li>
-                                        <span>Start date:</span>
-                                        <span class="start_date_show"></span>
-                                    </li>
-                                    <li>
-                                        <span>End date:</span>
-                                        <span class="end_date_show"></span>
-                                    </li>
+                                  <div class="start-time1" >
+                                    <span>
+                                        End Date :
+                                    </span>
+                                    <input type="date" class="end_date  default-date"   name="end_date" value=""  />
                                 </div>
+                                
                                 <div class="extra-price-wrap d-flex justify-content-between is_mobile mt-3">
                                     <div  class="flex-grow-1"><label>
                                             <h4 class="total">Total:</h4>
                                         </label></div>
-
-                                    <div class="total-room-price"><span>$</span> <span class="total_price"> 0.00 </span></div>
+                                     
+                                    <div class="total-room-price"><span>$</span>
+                                    @if($place->discount_price!=null)  
+                                     <span class="total_price1"> {{$total}} </span>
+                                      <input type="hidden" name="amount" id="amount" value="{{$total}}">
+                                     @else
+                                     <span class="total_price1"> {{$place->sale_price}} </span>
+                                     <input type="hidden" name="amount" id="amount" value="{{$place->sale_price}}">
+                                     @endif
+                                 </div>
                                 </div>
-                                <button type="button"  class="book-btn book_button">Book Now</button>
+                                <input type="submit"  class="btn btn-primary" value="Book Now" style="width: 100%">
                             </div>
+
+                        </form>
 
                        
                     </div>
@@ -128,10 +161,7 @@
         </div>
     </section>
 
-<input type="hidden" value="23" id="tourId">
-<input type="hidden" value="4" id="tourDoration">
-<input type="hidden" value="6" id="tourMaxPeapule">
-<input type="hidden" value="5.88" id="tourMainPrice">
+
 <!-- Trending Tour Area Start -->
  
 
@@ -162,7 +192,7 @@
                                              <div class="col-md-6 col-lg-6 ">
 
                                                      <div class="col-md-12 col-lg-12 tab-img">
-                                                    <img src="images/room/room3.jpg" class="img-fluid" alt="flight-detail-img" />
+                                                 
                                                 </div><!-- end columns -->
                                                 
                                                 <div class="col-md-12 col-lg-12 tab-text">
@@ -189,7 +219,7 @@
                                               <div class="col-md-6 col-lg-6 ">
 
                                                      <div class="col-md-12 col-lg-12 tab-img">
-                                                    <img src="images/room/room4.jpg" class="img-fluid" alt="flight-detail-img" />
+                                                   
                                                 </div><!-- end columns -->
                                                 
                                                 <div class="col-md-12 col-lg-12 tab-text">
@@ -245,11 +275,57 @@
          </section>
          <!-- ============end  tab ================= -->
 
-	<style type="text/css">
-    
-    </style>
 
 <script type="text/javascript">
+
+
+
+ $(document).ready(function(){
+    $('#Booking').on('submit',function(){
+
+        var place_id =$('#place_id').val();
+        var type =$('#type').val();
+        var amount =$('#amount').val();
+        var start_date =$('.start_date').val();
+        var end_date =$('.end_date').val();
+        //alert(end_date);
+       
+     
+       $.ajax({
+
+            url: "{{url('/new/order')}}",
+            type:"POST",
+            dataType:"json",
+            data:{place_id:place_id,type:type,amount:amount,start_date:start_date,end_date:end_date,
+           
+        _token:"{{ csrf_token() }}"
+            },
+
+            success:function(response){
+
+
+
+                   }
+
+
+
+
+
+
+
+           });
+        });
+
+     });
+
+
+
+  
+
+     
+
    
 </script>
+
+
 @endsection
