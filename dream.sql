@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2022 at 12:57 PM
+-- Generation Time: Aug 15, 2022 at 07:41 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -239,6 +239,28 @@ CREATE TABLE `locations` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `maps`
+--
+
+CREATE TABLE `maps` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(356) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `maps`
+--
+
+INSERT INTO `maps` (`id`, `name`, `link`, `status`, `created_at`, `updated_at`) VALUES
+(1, '{\"en\":\"stay hotel\"}', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42990289.85125594!2d-137.48034145382087!3d48.878819550727954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b68a40abc00001%3A0xf1662b43d3e680a0!2sTribal%20Nations%20Maps!5e0!3m2!1sen!2sus!4v1660502714458!5m2!1sen!2sus', '1', '2022-08-14 12:42:42', '2022-08-14 12:54:38');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -281,7 +303,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (26, '2022_08_02_082945_create_multi_images_table', 1),
 (27, '2022_08_02_085410_create_place_attributes_table', 1),
 (28, '2022_08_02_090059_create_faq_places_table', 1),
-(29, '2022_08_06_174539_create_currenceys_table', 1);
+(29, '2022_08_06_174539_create_currenceys_table', 1),
+(30, '2022_08_14_174537_create_maps_table', 2),
+(32, '2022_08_15_091231_create_orders_table', 3);
 
 -- --------------------------------------------------------
 
@@ -383,6 +407,25 @@ INSERT INTO `news_cats` (`id`, `title`, `icon`, `image`, `description`, `positio
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tour_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `start_dat` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `end_date` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `amount` varchar(125) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pages`
 --
 
@@ -395,6 +438,14 @@ CREATE TABLE `pages` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pages`
+--
+
+INSERT INTO `pages` (`id`, `name`, `des`, `slug`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'About us', '{\"en\":\"<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\"><span id=\\\"docs-internal-guid-2e3eaf89-7fff-455f-82d1-2b3403a49984\\\" style=\\\"box-sizing: border-box;\\\">o date, a simple google search of \\\"What is Bitcoin\\\" reveals more than 1,340,000,000 search results. From over a billion outcomes, Filipinos who want to learn more about Web3 will often have to do their own research using multiple websites and then cross-check the reliability of found resources. Added to that - most, if not all, educational content on crypto is in pure English, which immediately adds a barrier to entry for Filipinos who aren\'t as fluent with the language.&nbsp;<\\/span><\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">The point is that transitioning to Web3 for a Filipino Web2 native becomes painstaking, with multiple immediate hurdles present with the first step they take.&nbsp;<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">Enter Bitskwela.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">Bitskwela is a Filipino EduTech company focused on accelerating crypto-adoption regionally in the Philippines by providing inclusive Web3 education for Filipinos, by Filipinos. Bitskwela strives for its mission through multilingual courses, alternative learning methods, educational software, and educational engagements.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">\\\"The Bitskwela team provides cryptocurrency education for Filipinos in different languages and learning methods. We understand that to push for regional crypto adoption and truly make Web 3 known to every Filipino, the learning materials we provide should be simple and diverse enough to cater to all ethnicities,\\\" says Jiro Reyes, CEO of Bitskwela.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">The Philippines is dubbed as the \\\"social media capital of the world,\\\" with 89 million active social media users. On average, Filipinos spend over four hours daily using social media platforms like Facebook and Instagram, the highest across the Asia Pacific region. These alone show how much the country has embraced the internet over the past decade.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">The sky-high Web2 activity in the Philippines forms the perfect runway for Web3 adoption in the country, which is still only. As early as now, the Philippines is already ranked #15 in terms of global cryptocurrency adoption, just under China and Brazil. This proves the capability of the Philippine population to transition into a Web3 hotspot within Asia and eventually even the world. Through Web3, every Filipino will be one step closer to true ownership of data, increased global connectivity, and elevated financial inclusion. The possibilities are endless.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">A Message from the Team:&nbsp;<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">\\\"We dream of a Philippines that\'s properly positioned for Web3, a population where Filipinos are equipped and prepared for the next revolution, possibly as big as the internet boom, but this time tayo naman &lsquo;yung mauuna,&rdquo; says Vince Edralin, Bitskwela&rsquo;s Chief Operating Officer (COO).<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">The Community:&nbsp;<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">To date, Bitskwela has grown its Facebook community to more than 2000 community members who engage in cryptocurrency education and building. The company has also obtained speaking engagements with top brands and organizations in the Philippines, such as Globe, Virtusio, DICT, and PDAX - covering different educational engagements for crypto and Web3.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">\\\"Our most recent stint was the historic CONQuest 2022 powered by AcadArena, where Web3 met gaming. Bitskwela was able to connect with other brand partners for more educational engagements, both public and private projects, while strengthening Bitskwela\'s brand positioning in the Metro,\\\" adds JC Macalintal, Bitskwela\'s Chief Marketing Officer.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">The Bitswela team also recently guested on PDAX\'s Fresh Money webinar series, where their CEO and CMO discussed the importance of Web 3 adoption and Bitskwela\'s upcoming releases. Bitskwela\'s CEO and Marketing team also gave Web3 workshops, in partnership with Virtusio and Globe, to help onboard media giants into the space.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">Bitskwela\'s CFO, Lance Chua, also cites the importance of Bitskwela\'s involvement with Web3 companies in the Philippines such as PDAX. \\\"With our partnerships with these organizations, Bitskwela is a step closer to helping the Philippines prepare to harness the potential of Web 3 by giving Filipinos the tools they need to become early adopters of the technology,\\\" he comments.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">&nbsp;<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">Chief Product Officer and co-founder Camille Puentespina also adds that they\'re diligently working on Bitskwela V2&mdash;a more updated iteration of their current product that focuses on peer-to-peer mentorship, curriculum-based learning materials, and community programs.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\"><em style=\\\"box-sizing: border-box;\\\">Bitskwela V2 is expected to launch by the end of August. Bitskwela is also reportedly opening its first funding round soon to accelerate its mission to help Filipinos own a piece of the internet, one region at a time.<\\/em><\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\">&nbsp;<\\/p>\"}', 'about-us', '1', '2022-08-14 06:09:39', '2022-08-14 06:09:39'),
+(2, 'privecy', '{\"en\":\"<p style=\\\"box-sizing: border-box; margin: 1em 0px; color: #333333; font-family: Montserrat, sans-serif; background-color: #ffffff; font-size: 16px !important;\\\"><img style=\\\"box-sizing: border-box; border: 0px; vertical-align: middle; float: left; padding-right: 8px; width: 300px;\\\" src=\\\"https:\\/\\/www.prnob.com\\/companylogo\\/Picture1.png\\\" alt=\\\"Picture1\\\" \\/><\\/p>\\r\\n<div id=\\\"article_cc\\\" style=\\\"box-sizing: border-box; color: #333333; font-family: Montserrat, sans-serif; font-size: 14px; background-color: #ffffff;\\\">\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\"><span id=\\\"docs-internal-guid-2e3eaf89-7fff-455f-82d1-2b3403a49984\\\" style=\\\"box-sizing: border-box;\\\">To date, a simple google search of \\\"What is Bitcoin\\\" reveals more than 1,340,000,000 search results. From over a billion outcomes, Filipinos who want to learn more about Web3 will often have to do their own research using multiple websites and then cross-check the reliability of found resources. Added to that - most, if not all, educational content on crypto is in pure English, which immediately adds a barrier to entry for Filipinos who aren\'t as fluent with the language.&nbsp;<\\/span><\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">The point is that transitioning to Web3 for a Filipino Web2 native becomes painstaking, with multiple immediate hurdles present with the first step they take.&nbsp;<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">Enter Bitskwela.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">Bitskwela is a Filipino EduTech company focused on accelerating crypto-adoption regionally in the Philippines by providing inclusive Web3 education for Filipinos, by Filipinos. Bitskwela strives for its mission through multilingual courses, alternative learning methods, educational software, and educational engagements.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">\\\"The Bitskwela team provides cryptocurrency education for Filipinos in different languages and learning methods. We understand that to push for regional crypto adoption and truly make Web 3 known to every Filipino, the learning materials we provide should be simple and diverse enough to cater to all ethnicities,\\\" says Jiro Reyes, CEO of Bitskwela.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">The Philippines is dubbed as the \\\"social media capital of the world,\\\" with 89 million active social media users. On average, Filipinos spend over four hours daily using social media platforms like Facebook and Instagram, the highest across the Asia Pacific region. These alone show how much the country has embraced the internet over the past decade.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">The sky-high Web2 activity in the Philippines forms the perfect runway for Web3 adoption in the country, which is still only. As early as now, the Philippines is already ranked #15 in terms of global cryptocurrency adoption, just under China and Brazil. This proves the capability of the Philippine population to transition into a Web3 hotspot within Asia and eventually even the world. Through Web3, every Filipino will be one step closer to true ownership of data, increased global connectivity, and elevated financial inclusion. The possibilities are endless.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">A Message from the Team:&nbsp;<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">\\\"We dream of a Philippines that\'s properly positioned for Web3, a population where Filipinos are equipped and prepared for the next revolution, possibly as big as the internet boom, but this time tayo naman &lsquo;yung mauuna,&rdquo; says Vince Edralin, Bitskwela&rsquo;s Chief Operating Officer (COO).<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">The Community:&nbsp;<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">To date, Bitskwela has grown its Facebook community to more than 2000 community members who engage in cryptocurrency education and building. The company has also obtained speaking engagements with top brands and organizations in the Philippines, such as Globe, Virtusio, DICT, and PDAX - covering different educational engagements for crypto and Web3.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">\\\"Our most recent stint was the historic CONQuest 2022 powered by AcadArena, where Web3 met gaming. Bitskwela was able to connect with other brand partners for more educational engagements, both public and private projects, while strengthening Bitskwela\'s brand positioning in the Metro,\\\" adds JC Macalintal, Bitskwela\'s Chief Marketing Officer.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">The Bitswela team also recently guested on PDAX\'s Fresh Money webinar series, where their CEO and CMO discussed the importance of Web 3 adoption and Bitskwela\'s upcoming releases. Bitskwela\'s CEO and Marketing team also gave Web3 workshops, in partnership with Virtusio and Globe, to help onboard media giants into the space.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">Bitskwela\'s CFO, Lance Chua, also cites the importance of Bitskwela\'s involvement with Web3 companies in the Philippines such as PDAX. \\\"With our partnerships with these organizations, Bitskwela is a step closer to helping the Philippines prepare to harness the potential of Web 3 by giving Filipinos the tools they need to become early adopters of the technology,\\\" he comments.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">&nbsp;<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">Chief Product Officer and co-founder Camille Puentespina also adds that they\'re diligently working on Bitskwela V2&mdash;a more updated iteration of their current product that focuses on peer-to-peer mentorship, curriculum-based learning materials, and community programs.<\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\"><em style=\\\"box-sizing: border-box;\\\">Bitskwela V2 is expected to launch by the end of August. Bitskwela is also reportedly opening its first funding round soon to accelerate its mission to help Filipinos own a piece of the internet, one region at a time.<\\/em><\\/p>\\r\\n<p dir=\\\"ltr\\\" style=\\\"box-sizing: border-box; margin: 1em 0px; font-size: 16px !important;\\\">&nbsp;<\\/p>\\r\\n<\\/div>\"}', 'privecy-policy', '1', '2022-08-14 06:24:57', '2022-08-14 06:25:40');
 
 -- --------------------------------------------------------
 
@@ -454,7 +505,7 @@ CREATE TABLE `places` (
 --
 
 INSERT INTO `places` (`id`, `heading`, `des`, `mainimage`, `type`, `p_name`, `sale_price`, `discount_price`, `location`, `status`, `start_date`, `end_date`, `created_at`, `updated_at`) VALUES
-(1, '{\"en\":\"The demand in the Fishing Reels Market grew\"}', '{\"en\":\"by year-on-year (YoY) rate of 4.3% in 2021, reaching a market valuation of US$ 5.3 Bn in 2021.\\r\\n                   Managed relational databases systems and web development and web services\\r\\nManaged and maintained development of PHP backend for dynamic database driven websites\\r\\nProvided technical support in the assurance of quality systems and system changes\"}', 'backend/place/1740984499814039.jpg', NULL, 'Biodegradable plastic', 400, 10, '{\"en\":\"dhaka ,bangladesh\"}', '1', '17-08-2022', '2022-08-11', '2022-08-12 13:23:23', '2022-08-13 04:10:50');
+(1, '{\"en\":\"The demand in the Fishing Reels Market grew\"}', '{\"en\":\"by year-on-year (YoY) rate of 4.3% in 2021, reaching a market valuation of US$ 5.3 Bn in 2021.\\r\\n                   Managed relational databases systems and web development and web services\\r\\nManaged and maintained development of PHP backend for dynamic database driven websites\\r\\nProvided technical support in the assurance of quality systems and system changes\"}', 'backend/place/1740984499814039.jpg', 'hotel', 'Biodegradable plastic', 400, 15, '{\"en\":\"dhaka ,bangladesh\"}', '1', '17-08-2022', '2022-08-11', '2022-08-12 13:23:23', '2022-08-13 04:10:50');
 
 -- --------------------------------------------------------
 
@@ -508,7 +559,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('4XFGpA9Mw6Jep4ND8QScYf1nrn9zJiMS2oeKuHvv', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoibEk1cGFRYnoxZXY5bUIycHVBV3lhcjBRVTRGQXRRaFdOc3RFeDJJbiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sYXRlc3QvbmV3cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1660462649);
+('IwNcfupTYHIiVKTSVZQAzonUctBbUc4adwkDrR52', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiZ29kWktGb0ZWbzg3eXQxMTcza09wVmNNdlpnaEQ4Ull6aXdaTzJuUiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkbThqRFJyb2hWMjFneWswRzYwUDZ0LmlIcWV6TE9MSkdpRks2Sjhyck9JdWF0ZlBtYWljcWEiO3M6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjQ3OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvY2FwdGNoYS9kZWZhdWx0P1NJUGt1ZXBUPSI7fXM6MzoidXJsIjthOjE6e3M6ODoiaW50ZW5kZWQiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9kYXNoYm9hcmQiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6NzoiY2FwdGNoYSI7YTozOntzOjk6InNlbnNpdGl2ZSI7YjowO3M6Mzoia2V5IjtzOjMxMjoiZXlKcGRpSTZJbGRRYW5NeFMwUklabkpKWm5kNE4zTTJVVWRCUzBFOVBTSXNJblpoYkhWbElqb2llVTV5WXpkMGVrZGxaVll3WjFSNVQwUnFkRXR6ZVRoa2VucDVWSE5vTUc4MFZGQXlXVEY1YkcxV1RHRjFXWFo2UjBaSlJIZG9aV3RQUm5OMk1WUkpiWEZhTWxvNFJtVkRhRWhPYlVOc1RuVnFja1I1TDFCb1VWVTRiRGgwYW1kdGNWRmlVVmhRTUVjdk5GVTlJaXdpYldGaklqb2lNekJoTVRNME4ySTVOak5pWVRZM05tVTNaalUzWTJRMU5UTmpNVFUzWm1Wa1pUaGhOell5WVdFd01UWTRNakZoWmpjNVpEUmlNalJpTkdSaVpUZ3hNU0lzSW5SaFp5STZJaUo5IjtzOjc6ImVuY3J5cHQiO2I6MTt9fQ==', 1660585203),
+('XZ2XYdMKT5h6NfldRKk7ThQ2Scn7gT1D2zdTFK8p', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiT3NpeTVwc2R5WXZqUXVtanNEcnhpSEFrWE1CMGM0MVcyRWIwdXpiSSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9kYXNoYm9hcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YTowOnt9czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1660583327);
 
 -- --------------------------------------------------------
 
@@ -518,7 +570,7 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 
 CREATE TABLE `sliders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `link_by` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link_by` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `category_id` int(10) UNSIGNED DEFAULT NULL,
   `child` int(10) UNSIGNED DEFAULT NULL,
   `grand_id` int(10) UNSIGNED DEFAULT NULL,
@@ -529,9 +581,20 @@ CREATE TABLE `sliders` (
   `btnbgcolor` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `moredesc` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `moredesccolor` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
+  `image` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `link_by`, `category_id`, `child`, `grand_id`, `topheading`, `heading`, `buttonname`, `btntextcolor`, `btnbgcolor`, `moredesc`, `moredesccolor`, `status`, `image`, `created_at`, `updated_at`) VALUES
+(1, NULL, NULL, NULL, NULL, '{\"en\":\"he demand in the\"}', '{\"en\":\"The demand in the Fishing\"}', '{\"en\":\"read\"}', NULL, NULL, NULL, NULL, 1, 'backend/slider/1741156922300342.jpg', '2022-08-14 11:03:57', '2022-08-14 11:03:57'),
+(2, NULL, NULL, NULL, NULL, '{\"en\":\"he demand in the\"}', '{\"en\":\"testsb test one hopew\"}', '{\"en\":\"more\"}', NULL, NULL, NULL, NULL, 1, 'backend/slider/1741157161429355.jpg', '2022-08-14 11:07:46', '2022-08-14 11:07:46'),
+(3, NULL, NULL, NULL, NULL, '{\"en\":\"he demand in the\"}', '{\"en\":\"The demand in the Fishing Reels Market\"}', '{\"en\":\"more\"}', NULL, NULL, NULL, NULL, 1, 'backend/slider/1741157850222270.jpg', '2022-08-14 11:18:42', '2022-08-14 11:18:42');
 
 -- --------------------------------------------------------
 
@@ -562,6 +625,13 @@ CREATE TABLE `teams` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `teams`
+--
+
+INSERT INTO `teams` (`id`, `user_id`, `name`, `personal_team`, `created_at`, `updated_at`) VALUES
+(1, 1, 'nafiz\'s Team', 1, '2022-08-14 13:24:22', '2022-08-14 13:24:22');
 
 -- --------------------------------------------------------
 
@@ -611,9 +681,17 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `current_team_id` bigint(20) UNSIGNED DEFAULT NULL,
   `profile_photo_path` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `remember_token`, `current_team_id`, `profile_photo_path`, `phone`, `created_at`, `updated_at`) VALUES
+(1, 'Nazmul hossain', 'nafiz016@gmail.com', NULL, '$2y$10$m8jDRrohV21gyk0G60P6t.iHqezLOLJGiFK6J8rrOIuatfPmaicqa', NULL, NULL, NULL, NULL, NULL, '202208150643001.jpg', '01963577002', '2022-08-14 13:24:22', '2022-08-15 00:43:32');
 
 --
 -- Indexes for dumped tables
@@ -688,6 +766,12 @@ ALTER TABLE `locations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `maps`
+--
+ALTER TABLE `maps`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -715,6 +799,12 @@ ALTER TABLE `news`
 -- Indexes for table `news_cats`
 --
 ALTER TABLE `news_cats`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -877,10 +967,16 @@ ALTER TABLE `locations`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `maps`
+--
+ALTER TABLE `maps`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `multi_currencies`
@@ -907,10 +1003,16 @@ ALTER TABLE `news_cats`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -940,7 +1042,7 @@ ALTER TABLE `seos`
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `socials`
@@ -952,7 +1054,7 @@ ALTER TABLE `socials`
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `team_invitations`
@@ -970,7 +1072,7 @@ ALTER TABLE `team_user`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
