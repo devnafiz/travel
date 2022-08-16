@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('Pname', 191)->nullable();
             $table->text('des', 65535)->nullable();
             $table->text('slug', 65535)->nullable();
-            $table->enum('status', array('0','1'));
+            $table->tinyInteger('status')->default(1);
             $table->string('image')->nullable();
 
             $table->timestamps();

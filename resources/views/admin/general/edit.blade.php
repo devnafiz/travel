@@ -2,12 +2,14 @@
 
 
 @section('admin')
+@php
+ //dd($row->copyright);
+@endphp
 
     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="{{route('news.category.add')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-plus fa-sm text-white-50"></i> Create News Category</a>
+                      
                     </div>
 
                     <!-- Content Row -->
@@ -102,7 +104,7 @@
                     <div class="input-group mb-3">
 
                       
-                        <input readonly id="chooselogo" name="logo" type="text" class="form-control">
+                        <input readonly id="chooselogo" name="logo" type="file" class="form-control">
                         <div class="input-group-append">
                           <span data-input="chooselogo" class="bg-primary text-light midia-toggle input-group-text">{{ __('Browse') }}</span>
                         </div>
@@ -127,36 +129,7 @@
 
               </div>
 
-              <div class="col-md-6">
-
-                <div class="row">
-                  <div class="col-md-8">
-                    <div class="form-group">
-                      <label>{{__("Favicon")}}:</label>
-                      <div class="input-group mb-3">
-
-                        <input readonly id="choosefevicon" name="fevicon" type="text" class="form-control">
-                        <div class="input-group-append">
-                          <span data-input="choosefevicon" class="bg-primary text-light midia-toggle input-group-text">{{ __('Browse') }}</span>
-                        </div>
-
-                        
-                      </div>
-                      <small class="text-muted"><i class="fa fa-question-circle"></i> {{__("Please choose a site favicon")}} ({{__('supported format:')}} <b>PNG, JPG, JPEG, ICO</b>).</small>
-                    </div>
-                  </div>
-
-                  <div class="col-custom col-md-4">
-                    @if(!empty($row))
-                    <div class="bg-primary-rgba p-3">
-                      <center><img title="Current Favicon" src=" {{url('images/genral/'.$row->fevicon)}}"
-                          class="pro-img"></center>
-                    </div>
-                    @endif
-                  </div>
-                </div>
-
-              </div>
+              
 
               <div class="col-md-6">
 
@@ -170,17 +143,7 @@
 
               </div>
 
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label class="control-label" for="first-name">
-                    {{__('Cart Amount')}}: <span class="required">*</span>
-                  </label>
-
-                  <input type="text" name="cart_amount" value="{{$row->cart_amount ?? ''}}" onkeyup="sync()"
-                    class="form-control">
-                  <small class="text-muted"><i class="fa fa-question-circle"></i> {{__("Enter cart amount eg. 500 so if user cart amount is greater or equal to this amount than shipping will be free")}} ({{__('Put')}} <b>0</b> {{__("for disable it")}}).</small>
-                </div>
-              </div>
+              
 
               
 
@@ -284,19 +247,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>{{ __('Login Display Price') }}:</label>
-                    <br>
-                    <label class="switch">
-                      <input type="checkbox" name="login" {{ $row->login=='1' ? "checked" : "" }}>
-                      <span class="knob"></span>
-                    </label>
-                    <br>
-                    <small class="text-muted"><i class="fa fa-question-circle"></i> {{ __('If enabled than Prices of products
-                      and deals only visible to Logged In users.') }}</small>
-                  </div>
-                </div>
+                
 
                 <div class="col-md-3">
                   <div class="form-group">
@@ -331,32 +282,8 @@
                   </div>
                 </div>
 
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>{{__("Enable Multiseller system On Portal")}}:</label>
-                    <br>
-                    <label class="switch">
-                      <input type="checkbox" name="vendor_enable" {{ $row->vendor_enable== 1 ? "checked" : "" }}>
-                      <span class="knob"></span>
-                    </label>
-                    <br>
-                    <small class="text-muted"><i class="fa fa-question-circle"></i> {{ __("If enabled than Multiseller system will be active on your portal.") }}</small>
-                  </div>
-                </div>
-
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label>{{__("Enable email verification on user registration")}}:</label>
-                    <br>
-                    <label class="switch">
-                      <input type="checkbox" name="email_verify_enable"
-                        {{ $row->email_verify_enable == 1 ? "checked" : "" }}>
-                      <span class="knob"></span>
-                    </label>
-                    <br>
-                    <small class="text-muted"><i class="fa fa-question-circle"></i> {{ __('If enabled than email verification when user register he/she need to verify his/her email to access the site.') }}</small>
-                  </div>
-                </div>
+               
+                
 
                
 
@@ -461,37 +388,7 @@
               </div>
             </div>
 
-            <div class="bg-primary-rgba p-3 mt-2 rounded shadow-sm">
-              <a target="__blank" title="Get your keys from here" class=" pull-right text-info"
-                href="https://tagmanager.google.com/#/home/"><i class="fa fa-key"></i> {{ __("Get your GTM keys from here") }}</a>
-              <h4><i class="fa fa-google"></i> {{__("Google Tag Manager Settings") }}</h4>
-              <hr>
-              <div class="row">
-
-                <div class="col-md-6">
-                  <div class="form-group eyeCy">
-                    <label>
-                      {{__("GOOGLE TAG MANAGER ID")}}
-                    </label>
-                    <input value="{{ env('GOOGLE_TAG_MANAGER_ID') }}" id="GOOGLE_TAG_MANAGER_ID"
-                      name="GOOGLE_TAG_MANAGER_ID" type="text" class="form-control"
-                      placeholder="{{ __('Enter GOOGLE TAG MANAGER ID here') }}">
-                      <span toggle="#GOOGLE_TAG_MANAGER_ID" class="fa fa-fw fa-eye field_icon toggle-password"></span>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>{{__("Enable Google Tag Manager")}} :</label>
-                    <br>
-                    <label class="switch">
-                      <input id="GOOGLE_TAG_MANAGER_ENABLED" type="checkbox" name="GOOGLE_TAG_MANAGER_ENABLED"
-                        {{ env('GOOGLE_TAG_MANAGER_ENABLED') =='1' ? "checked" : "" }}>
-                      <span class="knob"></span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
+          
 
             <div class="bg-primary-rgba p-3 mt-2 rounded shadow-sm">
               <a target="__blank" title="{{ __("Get your keys from here") }}" class=" pull-right text-info"
@@ -551,8 +448,8 @@
 
 
             <div class="form-group mt-2">
-              <button @if(env('DEMO_LOCK')==0) type="submit" @else disabled title="{{ __('This operation is disabled is demo !') }}"
-                @endif class="btn col-3 btn-success"><i class="fa fa-save"></i>
+              <button type="submit"  
+               class="btn col-3 btn-success"><i class="fa fa-save"></i>
                 Save</button>
             </div>
             <div class="clear-both"></div>
@@ -581,36 +478,12 @@
     }
   });
 
-  $('#GOOGLE_TAG_MANAGER_ENABLED').on('change', function () {
-    if ($('#GOOGLE_TAG_MANAGER_ENABLED').is(':checked')) {
-      $('#GOOGLE_TAG_MANAGER_ID').attr('required', 'required');
-    } else {
-      $('#GOOGLE_TAG_MANAGER_ID').removeAttr('required');
-    }
-  });
+ 
 
-  $("input[name='ENABLE_SELLER_SUBS_SYSTEM']").on('change', function () {
-
-
-    if ($("input[name='ENABLE_SELLER_SUBS_SYSTEM']").is(':checked')) {
-
-      $('.purbox').removeClass('display-none');
-
-      $("input[name='purchase_code']").attr('required', 'required');
-
-    } else {
-
-
-      $('.purbox').addClass('display-none');
-
-      $("input[name='purchase_code']").removeAttr('required');
-
-    }
-
-  });
+  
 
   $(".midia-toggle").midia({
-        base_url: '{{url('')}}',
+        base_url: '{{url('/')}}',
     directory_name : 'logo',
     dropzone : {
       acceptedFiles: '.jpg,.png,.jpeg,.webp,.bmp,.gif'

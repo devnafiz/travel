@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Image;
 use Jackiedo\DotenvEditor\Facades\DotenvEditor;
 use App\Models\Genral;
+use DB;
 
 
 class GeneralController extends Controller
@@ -15,9 +16,11 @@ class GeneralController extends Controller
         
     public function index()
     {
-        //abort_if(!auth()->user()->can('site-settings.genral-settings'), 403, __('User does not have the right permissions.'));
+      
 
         $row = Genral::first();
+        //$copy = DB::table('genrals')->first()->copyright;
+        //dd($copy);
 
         $env_files = ['APP_NAME' => env('APP_NAME')];
 
@@ -39,9 +42,10 @@ class GeneralController extends Controller
     public function store(Request $request)
     {
 
-      //  abort_if(!auth()->user()->can('site-settings.genral-settings'), 403, __('User does not have the right permissions.'));
+      
 
         $input = array_filter($request->all());
+        //dd($input);
 
         $active = @file_get_contents(public_path() . '/config.txt');
 
@@ -51,17 +55,24 @@ class GeneralController extends Controller
         }
 
         $d = \Request::getHost();
-
+         //dd($d );
         $domain = str_replace("www.", "", $d);
+
+       $this->quicksettings($request);
 
 		return $this->verifiedupdate($input,$request);
 
+
     }
+
+
+
+    //public function
 
     public function verifiedupdate($input, $request)
     {
 
-       // abort_if(!auth()->user()->can('site-settings.genral-settings'), 403, __('User does not have the right permissions.'));
+     
 
         $cat = Genral::first();
 
@@ -77,9 +88,8 @@ class GeneralController extends Controller
             'TIMEZONE' => $request->TIMEZONE,
             'MAILCHIMP_APIKEY' => $request->MAILCHIMP_APIKEY,
             'MAILCHIMP_LIST_ID' => $request->MAILCHIMP_LIST_ID,
-            'HIDE_SIDEBAR' => $request->HIDE_SIDEBAR ? 1 : 0,
-            'GOOGLE_TAG_MANAGER_ENABLED' => $request->GOOGLE_TAG_MANAGER_ENABLED ? "true" : "false",
-            'GOOGLE_TAG_MANAGER_ID' => $request->GOOGLE_TAG_MANAGER_ID,
+            
+            
             'PRICE_DISPLAY_FORMAT' => $request->PRICE_DISPLAY_FORMAT ? 'comma' : 'decimal',
             'SHOW_IMAGE_INSTEAD_COLOR' => $request->SHOW_IMAGE_INSTEAD_COLOR ? 'true' : 'false',
             'PUSHER_APP_ID' => $request->PUSHER_APP_ID,
@@ -91,47 +101,31 @@ class GeneralController extends Controller
         $env_keys_save->save();
 
        
-        if ($request->logo != null) {
+        if ($request->file('logo') != null) {
+
+              $image = $request->file('logo');
+              //dd($image);
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(16,16)->save('backend/general/'.$name_gen);
+              $save_url = 'backend/general/'.$name_gen;
+              $input['logo'] = $save_url;
 
             
-            if(strstr($request->logo, '.png') || strstr($request->logo, '.jpg') || strstr($request->logo, '.jpeg') || strstr($request->logo, '.webp') || strstr($request->logo, '.gif')){
+               // $input['logo'] = $request->logo;
 
-                $input['logo'] = $request->logo;
-
-            }else{
-                return back()->withInput()->withErrors([
-                    __('Invalid image type')
-                ]);
             }
 
-        }
-
-        if ($request->fevicon != null) {
-
-
-            if(strstr($request->fevicon, '.png') || strstr($request->fevicon, '.jpg') || strstr($request->fevicon, '.jpeg') || strstr($request->fevicon, '.webp') || strstr($request->fevicon, '.ico')){
-
-                $input['fevicon'] = $request->fevicon;
-
-            }else{
-                return back()->withInput()->withErrors([
-                    __('Invalid image type')
-                ]);
-            }
- 
-        }
-
+        //dd($input['logo']);
+        //dd($request->file('fevicon'));
+           //dd($request->right_click);
+           
         if (isset($request->right_click)) {
             $input['right_click'] = '1';
         } else {
             $input['right_click'] = '0';
         }
-
-        if (isset($request->captcha_enable)) {
-            $input['captcha_enable'] = '1';
-        } else {
-            $input['captcha_enable'] = '0';
-        }
+         // dd($input['right_click']);
+        
 
         if (isset($request->inspect)) {
             $input['inspect'] = '1';
@@ -151,17 +145,11 @@ class GeneralController extends Controller
             $input['guest_login'] = '0';
         }
 
-        if (isset($request->vendor_enable)) {
-            $input['vendor_enable'] = 1;
-        } else {
-            $input['vendor_enable'] = 0;
-        }
-
-        if (isset($request->email_verify_enable)) {
-            $input['email_verify_enable'] = 1;
-        } else {
-            $input['email_verify_enable'] = 0;
-        }
+       
+           $input['copyright'] =$request->copyright;
+            $input['mobile'] =$request->mobile;
+             $input['address'] =$request->address;
+      
 
         if ($request->file('preloader')) {
             $dir = 'images/preloader';
@@ -184,7 +172,7 @@ class GeneralController extends Controller
             $img->save($destinationPath . '/' . $preloader);
         }
 
-        $input['cart_amount'] = $request->cart_amount ?? 0;
+       //dd($input);     
 
         $cat->update($input);
 
@@ -196,7 +184,7 @@ class GeneralController extends Controller
    
     public function quicksettings(Request $request){
 
-        abort_if(!auth()->user()->can('site-settings.genral-settings'), 403, __('User does not have the right permissions.'));
+       
 
         $env = DotenvEditor::setkeys([
 
@@ -211,15 +199,15 @@ class GeneralController extends Controller
 
         $settings = Genral::first();
 
-        $settings->vendor_enable                  = $request->vendor_enable ? '1' : '0';
+      
         $settings->right_click                    = $request->right_click ? '1' : '0';
         $settings->inspect                        = $request->inspect ? '1' : '0';
         $settings->login                          =  $request->login ? '1' : '0';
-        $settings->email_verify_enable            =  $request->email_verify_enable ? '1' : '0';
+       
         
         $settings->save();
 
-        notify()->success(__('Settings updated !'));
+       
 
         return back();
 

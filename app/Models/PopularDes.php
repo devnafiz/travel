@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PopularDes extends Model
 {
     use HasFactory;
+
+      protected $fillable =['title','des','Pname','image','slug'];
 }

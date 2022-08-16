@@ -22,7 +22,7 @@ class PopularDesController extends Controller
     public function index(){
 
     	$data['all_data']=PopularDes::where(['status'=>'1'])->paginate(10);
-        //dd($data['all_news']);
+        //dd($data['all_data']);
 
     	return view('admin.destination.index',$data);
 
@@ -40,12 +40,12 @@ class PopularDesController extends Controller
      
 
     public function store(Request $request){
-       // dd($request->all());
+        //dd($request->all());
 
         $request->validate([
 
             "title" => "required|max:190", 
-            "Pname" => "required|max:190'", 
+            "Pname" => "required|max:190", 
 
             'image' => 'required|max:2048'], 
             [
@@ -61,7 +61,7 @@ class PopularDesController extends Controller
         $input['title'] = $request->title;
         $input['Pname'] = $request->Pname;
         $input['des'] = $request->des;
-        $input['slug'] = Str::slug($request->name,'-');
+        $input['slug'] = Str::slug($request->title,'-');
        // dd($input['des']);
 
        
@@ -101,10 +101,10 @@ class PopularDesController extends Controller
         $input = array_filter($request->all());
 
       
-        $$input['title'] = $request->title;
+        $input['title'] = $request->title;
         $input['Pname'] = $request->Pname;
         $input['des'] = $request->des;
-        $input['slug'] = Str::slug($request->name,'-');
+        $input['slug'] =$request->slug;
        // dd($input['des']);
 
        

@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="main-breadcrumb-area section-padding"  style="background: url(https://dev.geniusocean.net/booking-genius/assets/images/genarel-settings/1587788309bigbanner.jpg.png);">
+<div class="main-breadcrumb-area banner-padding-page"  style="background: url(https://dev.geniusocean.net/booking-genius/assets/images/genarel-settings/1587788309bigbanner.jpg.png);">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">

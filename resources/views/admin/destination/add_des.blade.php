@@ -31,7 +31,7 @@
                                 @csrf
                                 <div class="form-group ">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control " placeholder="{{ __('Please enter TopHeading') }}" type="text" id="title" name="title">
+                                        <input type="text" class="form-control " placeholder="{{ __('Please enter title') }}" type="text" id="title" name="title">
                                     </div>
                                     
                                 </div>
@@ -74,10 +74,7 @@
 
                                                 <input required  id="image" name="image" type="file"
                                                     class="form-control">
-                                                <!-- <div class="input-group-append">
-                                                    <span data-input="image"
-                                                        class="bg-primary text-light midia-toggle input-group-text">{{ __("Browse") }}</span>
-                                                </div> -->
+                                               
                                               </div>
                                               <small class="text-info"> <i class="text-dark feather icon-help-circle"></i>({{__("Choose Image for blog post")}})</small>
 

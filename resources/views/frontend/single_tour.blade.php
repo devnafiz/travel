@@ -16,7 +16,7 @@
 @section('content')
 
 <section class="section-padding" style="padding-top: 2px;">
-    <div class="main-breadcrumb-area section-padding"  style="background: url({{asset($place->mainimage)}});">
+    <div class="main-breadcrumb-area banner-padding-page"  style="background: url({{asset($place->mainimage)}});">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

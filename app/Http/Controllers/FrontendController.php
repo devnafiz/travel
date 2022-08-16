@@ -12,6 +12,7 @@ use App\Models\News_cat;
 use App\Models\Page;
 use App\Models\Slider;
 use App\Models\Map;
+use App\Models\PopularDes;
 
 class FrontendController extends Controller
 {
@@ -21,6 +22,7 @@ class FrontendController extends Controller
         $data['lang'] = session()->get('changed_language');
         $data['sliders']= Slider::where('status','1')->orderBy('id','desc')->limit(8)->get();
         $data['maps']= Map::where('status','1')->orderBy('id','desc')->limit(5)->get();
+          $data['p_des']= PopularDes::where('status','1')->orderBy('id','desc')->limit(3)->get();
         $data['news']=News::where('status','1')->orderBy('id','desc')->limit(3)->get();
           //dd($data['news']);
 
@@ -79,6 +81,11 @@ class FrontendController extends Controller
              return view('frontend.tour.index',$data);
 
 
+    }
+
+    public function singleDestination(Request $request,$slug){
+
+        
     }
 
 

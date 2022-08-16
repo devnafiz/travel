@@ -200,49 +200,32 @@ Attractive hotels in attractive locations! Most of our hotels are beside the sta
           <!--======= hotel--=========-->
             
               <section id="hotel" class="section-padding">
-                   <div class="container">
+                   <div class="container-fluid">
                      <div class="row justify-content-md-center">
                              <div class="col-md-10 col-md-offset-2">
                                  <div class="card" style="background-color: #cccccc3d;">
                                     <div class="card-body">
                                         <h4 class="text-center">Pupolar Destinations for Travelers</h4>
                                         <div class="row">
-
+                                          @foreach($p_des as $k=>$des)
                                             <div class="col-md-4">
-                                                <img src="images/other/dortmounted.jpg" width="100%">
-                                                <span class="place" >Dortmund</span>
+                                                <img src="{{asset($des->image)}}" width="100%" height="250">
+                                                <span class="place">{{$des->Pname}}</span>
                                                 <div class="detail-box">
                                                     <p>
-                                                    simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
+                                                    {{Str::limit($des->des,200)}}
                                                     </p>
-                                                    <a href="">Discover More</a>
+                                                    @if($des->slug)
+                                                    <a href="{{route('single.destination',$des->slug)}}">Discover More</a>
+                                                    @else
+                                                          <a href="#">Discover More</a>
+                                                    @endif
                                                 </div>
                                                 
                                             </div>
-                                            <div class="col-md-4">
-                                                 <img src="images/other/bochum.jpg" width="100%">
-                                                  <span class="place" >Bochum</span>
-                                                 <div class="detail-box">
-                                                    <p>
-                                                    simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-                                                    </p>
-                                                    <a href="">Discover More</a>
-                                                    
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="col-md-4">
-                                                   <img src="images/other/gelsch.jpg" width="100%">
-                                                    <span class="place" >Gelsenkirchen</span>
-                                                 <div class="detail-box">
-                                                    <p>
-                                                    simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-                                                    </p>
-                                                    <a href="">Discover More</a>
-                                                    
-                                                </div>
-                                                
-                                            </div>
+                                            @endforeach
+                                            
+                                            
                                             
                                         </div>
                                         
@@ -487,11 +470,14 @@ ul.list-unstyled  li a{
 }
 
 .place {
-    background: #cccccc91;;
-width: 117px !important;
-text-align: center;
-padding: 14px;
-margin-left: 82px;
+    background: #27262691;
+    width: 138px !important;
+    text-align: center;
+    padding: 14px;
+    margin-left: -226px;
+    position: absolute;
+    margin-top: 233px;
+    color: #e8d9d9;
 }
 .detail-box{
     background: #cccccc91;;

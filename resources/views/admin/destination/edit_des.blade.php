@@ -41,6 +41,12 @@
                                     </div>
                                     
                                 </div>
+                                <div class="form-group ">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control "  type="text" id="slug" name="slug" value="{{$edit_data->slug}}">
+                                    </div>
+                                    
+                                </div>
 
                                  <div class="form-group ">
                                     <div class="col-sm-12 mb-3 mb-sm-0">

@@ -104,9 +104,9 @@
             
 
              <li class="nav-item">
-                <a class="nav-link" href="{{route('site.lang')}}">
+                <a class="nav-link" href="{{route('des.all')}}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Blog</span></a>
+                    <span>Popular Destination</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
