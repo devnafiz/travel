@@ -105,17 +105,16 @@
  <!-- Page Scripts Starts -->
 
  <script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script> 
-    <script src="{{asset('frontend/js/jquery.magnific-popup.min.js')}}"></script>
+  <!--   <script src="{{asset('frontend/js/jquery.magnific-popup.min.js')}}"></script> -->
     <script src="{{asset('frontend/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
     <script src="{{asset('frontend/js/bootstrap-4.4.1.min.js')}}"></script>
     <script src="{{asset('frontend/js/jquery.flexslider.js')}}"></script>
     <script src="{{asset('frontend/js/bootstrap-datepicker.js')}}"></script>
     <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
-   <!--  <script src="{{asset('frontend/js/custom-navigation.js')}}"></script> -->
+    <script src="{{asset('frontend/js/nav.js')}}"></script>
     <script src="{{asset('frontend/js/custom-flex.js')}}"></script>
     <script src="{{asset('frontend/js/custom-owl.js')}}"></script>
-   <!--  <script src="{{asset('frontend/js/custom-date-picker.js')}}"></script> -->
-    <!-- <script src="{{asset('frontend/js/custom-video.js')}}"></script> -->
+  
     <script src="{{asset('frontend/js/popup-ad.js')}}"></script>
   
     <script src="{{ url('backend/plugins/datepicker/i18n/datepicker.en.js') }}"></script>

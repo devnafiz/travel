@@ -52,7 +52,7 @@
 
      <script src="{{ asset('backend/js/admin.js')}}"></script>
     <!-- Page level plugins -->
-    <script src="{{ asset('backend/vendor/chart.js/Chart.min.js')}}"></script>
+ <
 
      <!-- datepicker -->
 <script src="{{ url('backend/plugins/datepicker/datepicker.js') }}"></script>

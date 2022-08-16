@@ -14,6 +14,7 @@ use App\Http\Controllers\backend\GeneralController;
 use App\Http\Controllers\backend\PageController;
 use  App\Http\Controllers\backend\PlaceController;
 use  App\Http\Controllers\backend\MapController;
+use  App\Http\Controllers\backend\PopularDesController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\IndexController;
 
@@ -149,6 +150,21 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
 
     Route::post('admin/map/update/{id}',[MapController::class,'update'])->name('map.update');
     Route::get('admin/map/delete/{id}',[MapController::class,'delete'])->name('map.delete');
+
+
+
+    //des
+
+
+    Route::get('admin/all/des',[PopularDesController::class,'index'])->name('des.all');
+    Route::get('admin/des/add',[PopularDesController::class,'addDes'])->name('des.add');
+
+    Route::post('admin/des/store',[PopularDesController::class,'store'])->name('des.store');
+
+    Route::get('admin/des/edit/{id}',[PopularDesController::class,'edit'])->name('des.edit');
+
+    Route::post('admin/des/update/{id}',[PopularDesController::class,'update'])->name('des.update');
+    Route::get('admin/des/delete/{id}',[PopularDesController::class,'delete'])->name('des.delete');
 
 
     //pages

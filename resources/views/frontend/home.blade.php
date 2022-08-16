@@ -13,8 +13,7 @@
             <link rel="stylesheet" href="{{asset('frontend/css/bootstrap-4.4.1.min.css')}}">
     
 
-    <!-- Sidebar Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/jquery.mCustomScrollbar.min.css')}}">
+    
     
     <!-- Font Awesome Stylesheet -->
     <link rel="stylesheet" href="{{asset('frontend/css/font-awesome.min.css')}}">
@@ -157,7 +156,7 @@ Attractive hotels in attractive locations! Most of our hotels are beside the sta
                                 <div class="tab-pane {{($k==0)?'active': ''}}" id="home-{{$k}}">
                                     <div class="row">
                                         <div class="col-md-12">
-                                         <iframe src="{{$m_val->link}}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+                                         <iframe src="{{$m_val->link}}"  width="90%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe> 
                                           
                                         </div><!-- slider end=-->
 
@@ -378,7 +377,15 @@ Attractive hotels in attractive locations! Most of our hotels are beside the sta
     </div>
            <style>
         
-
+ .responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}  
     /* TODO list */
 ul.todo li {
   padding-left: 1.3em;
