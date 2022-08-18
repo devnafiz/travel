@@ -47,29 +47,7 @@
 	  });
 	});
 
-	// Color Picker
-	//mainDocument.on('ready', function(){
-//		colorPanel.ColorPanel({
-//			styleSheet: '#cpswitch'
-//            , colors: {
-//                '#faa61a': 'css/orange.css'
-//                , '#00adef': 'css/lightblue.css'
-//				, '#a6ce39': 'css/green.css'
-//                , '#e62a2b': 'css/red.css'
-//                , '#cc6699': 'css/purple.css'
-//				, '#00cc99': 'css/caribbean-green.css'
-//				, '#00cccc': 'css/egg-blue.css'
-//				, '#ff884d': 'css/atomic.css'
-//				, '#c68c53': 'css/brown.css'
-//				, '#8a39ee': 'css/blue-violet.css'
-//				, '#ff6262': 'css/pink.css'
-//				, '#00cc44': 'css/pigment-green.css'
-//		
-//            , }
-//            , linkClass: 'linka'
-//            , animateContainer: false
-//		});
-//	});
+	
 
 })(jQuery);
 

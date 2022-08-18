@@ -4,8 +4,6 @@
 @section('extra-css')
 
 
-<script src="{{asset('frontend/js/details.js')}}"></script>
-<!-- <script src="{{asset('frontend/js/details-slider.js')}}"></script> -->
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -87,7 +85,7 @@
                             
                         </div>
                         <div class="col-lg-8">
-                            <h4>{{__($val->heading)}}</h4>
+                            <h4><a href="{{route('')}}">{{__($val->heading)}}</a></h4>
                             
                         </div>
                     </div>

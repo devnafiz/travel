@@ -6,9 +6,7 @@
 */
 
 
-/* ======================================================
-	TABLE OF CONTENTS
-   ====================================================== */
+
 
 
 /* -----------------------------------------------------
@@ -343,7 +341,7 @@ nav.navbar#mynavbar-1 .header-search .fa{
 }
 
 nav.navbar#mynavbar-1 .navbar-search-link > li:nth-child(2) a{
-	border:1px solid #b99fc9;
+	border:1px solid #403d42;
 	color:#b99fc9;
 	border-radius:100%;
 }
@@ -397,9 +395,9 @@ nav.navbar#mynavbar-1 .navbar-nav li .dropdown-menu li:last-child a
 }
 
 nav.navbar#mynavbar-1 .navbar-search-link > li:nth-child(2) a{
-	border:1px solid #b99fc9;
-	color:#b99fc9;
-	border-radius:100%;
+	
+	width: 82px;
+    color: #000;
 }
 
 nav.navbar#mynavbar-1 .navbar-nav > li.dropdown > .dropdown-menu {

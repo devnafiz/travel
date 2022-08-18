@@ -216,7 +216,11 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
    //order
 
    Route::get('admin/pending/order/view',[OrderController::class,'index'])->name('pending.order');
-    Route::get('admin/active/order/view',[OrderController::class,'activeOrder'])->name('active.order');
+
+   Route::get('admin/order/view/detail/{id}',[OrderController::class,'orderDetails'])->name('order.details');
+
+    Route::get('admin/accepted/order/view',[OrderController::class,'activeOrder'])->name('active.order');
+     Route::get('admin/cancel/order/view',[OrderController::class,'CancelOrder'])->name('cancel.order');
 
 
 
@@ -234,7 +238,7 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
     Route::get('/reload-captcha', [ContactController::class, 'reloadCaptcha']);
      Route::post('/contact', [ContactController::class,'ContactSave'])->name('contact.store');
 
-     Route::get('/place/tour/{id}', [TourController::class, 'single_place'])->name('place.tour');
+     Route::get('/place/details/{id}', [TourController::class, 'single_place'])->name('place.tour');
 
      Route::get('/latest/news', [FrontendController::class, 'latestNews'])->name('news');
      Route::get('/latest/news/{slug}', [FrontendController::class, 'newsDetails'])->name('news.details');

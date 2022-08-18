@@ -89,6 +89,11 @@
               <div class="card-body">
                
                 <p class="mb-1" style="font-size: .77rem;">Booking Tour Plan</p>
+
+                @php
+                 $orders=App\Models\Order::where('user_id',Auth::user()->id)->orderBy('id','desc')->get();
+
+                @endphp
                 <table class="table table-bordered">
                   <thead>
                     <tr>
@@ -96,20 +101,37 @@
                       <th>Type</th>
                       <th>Amount</th>
                       <th>Booking Date</th>
-                      <th>Action</th>
+                      <th>End date</th>
+                      <th>status</th>
+                     
 
                     </tr>
                   </thead>
                   <tbody>
-                    
+                    @if(isset($orders))
+                    @foreach($orders as $k=>$order)
                     <tr>
                       
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
+                      <td>{{$k+1}}</td>
+                      <td>{{$order->type}}</td>
+                      <td>{{$order->amount}}</td>
+                      <td>{{$order->start_date}}</td>
+                      <td>{{$order->end_date}}</td>
+                       <td>
+                          @if($order->status==0)
+                          <span class="badge badge-danger">pending</span>
+                          @elseif($order->status==1)
+
+                        <span class="badge badge-success">accept</span>
+
+                        @else
+                          <span class="badge badge-danger">Cancel</span>
+                       @endif
+                      </td>
+
                     </tr>
+                    @endforeach
+                    @endif
                   </tbody>
                   
                 </table>

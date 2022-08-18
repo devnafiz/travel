@@ -26,6 +26,50 @@ class OrderController extends Controller
         return view('admin.order.index',$data);
      }
 
+     public function activeOrder(){
+        $data['all_data']=DB::table('orders')
+                          ->leftjoin('places','orders.tour_id','places.id')
+                          ->leftjoin('users','orders.user_id','users.id')
+                          ->select('orders.*','places.heading','users.name','users.phone','users.email')
+
+                          ->where('orders.status','1')
+                          ->get();
+                     //dd( $data['all_data']);     
+
+        return view('admin.order.index',$data);
+
+     }
+      public function CancelOrder(){
+        $data['all_data']=DB::table('orders')
+                          ->leftjoin('places','orders.tour_id','places.id')
+                          ->leftjoin('users','orders.user_id','users.id')
+                          ->select('orders.*','places.heading','users.name','users.phone','users.email')
+
+                          ->where('orders.status','2')
+                          ->get();
+                     //dd( $data['all_data']);     
+
+        return view('admin.order.index',$data);
+
+     }
+
+
+     public function orderDetails(Request $request,$id){
+
+        $data['data_details']=DB::table('orders')
+                          ->leftjoin('places','orders.tour_id','places.id')
+                          ->leftjoin('users','orders.user_id','users.id')
+                          ->select('orders.*','places.heading','users.name','users.phone','users.email')
+
+                          ->where('orders.id',$id)
+                          ->first();
+                          dd( $data['data_details']);
+
+              return view('admin.order.order_details',$data);            
+
+
+     }
+
   //seo
 
     public function seo(){

@@ -12,6 +12,7 @@
 
                     <!-- Content Row -->
                     <div class="row">
+                        
 
                    </div> 	
 
@@ -32,7 +33,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>SL</th>
+                                          
                                             <th>Heading</th>
                                             <th>User Id(Name)</th>
                                             <th>Amount </th>
@@ -44,34 +45,22 @@
                                             
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>SL</th>
-                                            <th>Heading</th>
-                                            <th>User Id(Name)</th>
-                                            <th>Amount </th>
-                                            <th>Start Date</th>
-                                            
-                                             <th>Status</th>
-
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
+                                   
                                     <tbody>
 
-                                        @foreach($all_data as $k=>$val)
+                                      
                                         <tr>
-                                             <td>{{$k+1}}</td>
-                                            <td>{{__($val->heading)}}</td>
-                                            <td>{{$val->user_id}}</td>
-                                            <td>{{$val->start_date}}</td>
-                                            <td>{{$val->amount}}</td>
+                                             
+                                            <td>{{__($data_details->heading)}}</td>
+                                            <td>{{$data_details->user_id}}</td>
+                                            <td>{{$data_details->start_date}}</td>
+                                            <td>{{$data_details->amount}}</td>
                                             <td>
 
 
-                                         @if($val->status==0)
+                                         @if($data_details->status==0)
                                           <span class="badge badge-danger">pending</span>
-                                          @elseif($val->status==1)
+                                          @elseif($data_details->status==1)
 
                                         <span class="badge badge-success">accept</span>
 
@@ -80,13 +69,13 @@
                                        @endif
                                             </td>
                                             <td>
-                                                <a href="{{route('order.details',$val->id)}}"><i class="fa fa-eye"></i></a>
-                                                <a href="{{route('news.edit',$val->id)}}"><i class="fas fa-edit"></i></a>
-                                               <a href="{{route('news.delete',$val->id)}}"><i class="fas fa-trash"></i></a>
+                                                <a href=""><i class="fa fa-eye"></i></a>
+                                                <a href="{{route('news.edit',$data_details->id)}}"><i class="fas fa-edit"></i></a>
+                                             
                                             </td>
                                             
                                         </tr>
-                                       @endforeach
+                                      
                                     </tbody>
                                 </table>
                             </div>

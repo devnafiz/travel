@@ -33,23 +33,7 @@
                         </li>
 
 
-                         <li class="nav-item " style="padding: 0px 0;">
-                             <div class="form-group language">
-                                                   <!--  <span><i class="fa fa-angle-down"></i></span> -->
-                    @php
-                    $langauges = DB::table('locales')->where('status', '=', 1)->get();
-                    @endphp                                <select class="form-control changed_language"  id="changed_lng" style="width: 52px;font-size: 13px;
-background: #b9bfb38f;color: #000;">
-   @foreach($langauges as $lang)
-                                                        <option {{ Session::get('changed_language') == $lang->lang_code ? "selected" : ""}}
-                      value="{{ $lang->lang_code }}">{{ ucfirst( $lang->lang_code) }}</option>
- @endforeach
-                                                        
-                                                        
-                                                        
-                                                    </select>
-                                                </div><!-- end form-group -->
-                         </li> 
+                        
 
                      
                          <li >
@@ -57,7 +41,7 @@ background: #b9bfb38f;color: #000;">
                                <a href="{{route('dashboard')}}" class="nav-link" >Dashboard</a>
                               
                             @else
-                            <a href="{{route('login')}}"  ><i class="fa fa-sign"></i> Login</a>
+                            <a href="{{route('login')}}"  ><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a>
                             @endif
                         </li>
 
