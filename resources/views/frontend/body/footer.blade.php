@@ -9,8 +9,12 @@
                 <div class="row justify-content-md-center">
                     <div class="col-md-10 col-md-offset-2">  
                         <div class="row">  
+
+                            @php
+                              $general= DB::table('genrals')->first();
+                            @endphp
                             <div class="col-md-4 col-lg-4 footer-widget ftr-contact ">
-                                <h4>stays by friends Gelsenkirchen</h4>
+                                <h4>{{(isset($general->title))? $general->title :''}}</h4>
                                 
                             </div>
                             <div class="col-md-4 col-lg-4 footer-widget ftr-contact">
@@ -19,8 +23,8 @@
                                 
                             </div>
                             <div class="col-md-4 col-lg-4  footer-widget ftr-contact">
-                                  <h4>Phone: +491011001010 3</h4>
-                                <h5>E-mail:example@stays.hotels.com</h5>
+                                  <h4>Phone: {{(isset($general->mobile))? $general->mobile :''}}</h4>
+                                <h5>E-mail:{{(isset($general->email))? $general->email :''}}</h5>
                             </div>
                         </div>
                       </div>

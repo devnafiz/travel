@@ -89,7 +89,7 @@ class OrderController extends Controller
     }
 
      public function updateSeo(Request $request){
-      dd($request->id);
+      //dd($request->id);
 
             $id=$request->id;
 
@@ -101,12 +101,24 @@ class OrderController extends Controller
             $data['google_analytics']=$request->google_analytics;
             $data['bing_analytics']=$request->bing_analytics;
             
+          //dd($data);
 
-            DB::table('seos')->where('id',$id)->update($data);
-             $notification = array(
+             $row= DB::table('seos')->where('id',$id)->first();
+            if( $row==null){
+                 DB::table('seos')->insert($data);
+                  $notification = array(
+            'message' => 'SEO insert Successfully',
+            'alert-type' => 'success'
+        );
+            }else{
+               DB::table('seos')->where('id',$id)->update($data);
+                $notification = array(
             'message' => 'SEO update Successfully',
             'alert-type' => 'success'
         );
+            }
+           
+            
 
         return redirect()->back()->with($notification);
 

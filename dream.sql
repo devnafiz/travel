@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2022 at 07:41 PM
+-- Generation Time: Aug 18, 2022 at 08:48 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -197,7 +197,7 @@ CREATE TABLE `genrals` (
 --
 
 INSERT INTO `genrals` (`id`, `project_name`, `email`, `title`, `currency_code`, `currency_symbol`, `pincode`, `copyright`, `logo`, `fevicon`, `address`, `mobile`, `login`, `right_click`, `inspect`, `guest_login`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Dream Travel', 'nafiz@gmail.com', 'dream', '', 'fa fa-dolar', NULL, 'all Right reserve', NULL, NULL, NULL, '012764374', 0, '0', '1', '', '1', NULL, NULL);
+(1, 'Dream Travel', 'nafiz@gmail.com', 'dream', '', 'fa fa-dolar', NULL, 'all Right reserve one', 'backend/general/1741341614973763.png', NULL, '{\"en\":\"Dahaka ,bangldesh\"}', '012764374', 0, '0', '1', '0', '1', NULL, '2022-08-16 11:59:34');
 
 -- --------------------------------------------------------
 
@@ -291,7 +291,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (14, '2022_07_30_134818_create_sliders_table', 1),
 (15, '2022_07_30_134843_create_contacts_table', 1),
 (16, '2022_08_01_041359_create_genrals_table', 1),
-(17, '2022_08_01_061352_create_seos_table', 1),
 (18, '2022_08_01_061559_create_socials_table', 1),
 (19, '2022_08_01_062050_create_allcountries_table', 1),
 (20, '2022_08_01_062213_create_multi_currencies_table', 1),
@@ -305,7 +304,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (28, '2022_08_02_090059_create_faq_places_table', 1),
 (29, '2022_08_06_174539_create_currenceys_table', 1),
 (30, '2022_08_14_174537_create_maps_table', 2),
-(32, '2022_08_15_091231_create_orders_table', 3);
+(32, '2022_08_15_091231_create_orders_table', 3),
+(33, '2022_08_15_183948_create_popular_des_table', 4),
+(34, '2022_08_01_061352_create_seos_table', 5);
 
 -- --------------------------------------------------------
 
@@ -415,13 +416,21 @@ CREATE TABLE `orders` (
   `tour_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `user_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `type` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `start_dat` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `start_date` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `end_date` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `amount` varchar(125) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `tour_id`, `user_id`, `type`, `start_date`, `end_date`, `amount`, `status`, `created_at`, `updated_at`) VALUES
+(6, '1', '1', 'hotel', '2022-08-19', '2022-08-27', NULL, '0', '2022-08-16 21:44:58', '2022-08-16 21:44:58'),
+(7, '1', '1', 'hotel', '2022-08-18', '2022-08-20', '340', '1', '2022-08-16 21:46:48', '2022-08-16 21:46:48');
 
 -- --------------------------------------------------------
 
@@ -525,19 +534,54 @@ CREATE TABLE `place_attributes` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `popular_des`
+--
+
+CREATE TABLE `popular_des` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Pname` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `des` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT 1,
+  `image` varchar(125) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `popular_des`
+--
+
+INSERT INTO `popular_des` (`id`, `title`, `Pname`, `des`, `slug`, `status`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'The growing penetration of walk-in', 'Dhaka', 'The growing penetration of walk-in coolers and freezers in developing regions is opening up new growth opportunities in the global walk-in coolers and freezers market. These refrigeration products are becoming more popular as a result of their increased capacity to store and preserve sensitive products while also extending their shelf life.', '', 1, 'backend/destination/1741289341795895.jpg', '2022-08-15 22:08:43', '2022-08-15 22:08:43'),
+(2, 'Because oak wood pellets contain l', 'Bankok', 'The best wood pellets for heating are made entirely of sawdust from softwoods because they produce less smoke and residue, saving time on maintenance and cleaning and preventing pollution of the environment.\r\n\r\nIn recent years, the pellets market has expanded due to increased demand from both industrial applications in large-scale power plants and small-scale applications in domestic heating', '', 1, 'backend/destination/1741290506502651.jpg', '2022-08-15 22:21:40', '2022-08-15 22:27:15'),
+(3, 'The standard chunk of Lorem', 'Islambad', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\r\n\r\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', 'the-standard-chunk-of-lorem', 1, 'backend/destination/1741290646236951.jpg', '2022-08-15 22:29:27', '2022-08-15 22:29:27');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `seos`
 --
 
 CREATE TABLE `seos` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `project_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `metadata_des` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `metadata_key` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `google_analysis` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `fb_pixel` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mata_author` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_tag` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google_analytics` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bing_analytics` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `seos`
+--
+
+INSERT INTO `seos` (`id`, `meta_title`, `mata_author`, `meta_tag`, `meta_description`, `google_analytics`, `bing_analytics`, `created_at`, `updated_at`) VALUES
+(1, 'These methods test a couple of simple cases.one', 'D-tagatose, allulose, and other natural sweeteners serve', 'D-tagatose, allulose, and other natural sweeteners serve as low-calorie sweeteners. These sweeteners are replacing table sugar in the food industry. Hence, th', 'D-tagatose, allulose, and other natural sweeteners serve as low-calorie sweeteners. These sweeteners are replacing table sugar in the food industry. Hence, th', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -559,8 +603,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('IwNcfupTYHIiVKTSVZQAzonUctBbUc4adwkDrR52', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiZ29kWktGb0ZWbzg3eXQxMTcza09wVmNNdlpnaEQ4Ull6aXdaTzJuUiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkbThqRFJyb2hWMjFneWswRzYwUDZ0LmlIcWV6TE9MSkdpRks2Sjhyck9JdWF0ZlBtYWljcWEiO3M6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjQ3OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvY2FwdGNoYS9kZWZhdWx0P1NJUGt1ZXBUPSI7fXM6MzoidXJsIjthOjE6e3M6ODoiaW50ZW5kZWQiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9kYXNoYm9hcmQiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6NzoiY2FwdGNoYSI7YTozOntzOjk6InNlbnNpdGl2ZSI7YjowO3M6Mzoia2V5IjtzOjMxMjoiZXlKcGRpSTZJbGRRYW5NeFMwUklabkpKWm5kNE4zTTJVVWRCUzBFOVBTSXNJblpoYkhWbElqb2llVTV5WXpkMGVrZGxaVll3WjFSNVQwUnFkRXR6ZVRoa2VucDVWSE5vTUc4MFZGQXlXVEY1YkcxV1RHRjFXWFo2UjBaSlJIZG9aV3RQUm5OMk1WUkpiWEZhTWxvNFJtVkRhRWhPYlVOc1RuVnFja1I1TDFCb1VWVTRiRGgwYW1kdGNWRmlVVmhRTUVjdk5GVTlJaXdpYldGaklqb2lNekJoTVRNME4ySTVOak5pWVRZM05tVTNaalUzWTJRMU5UTmpNVFUzWm1Wa1pUaGhOell5WVdFd01UWTRNakZoWmpjNVpEUmlNalJpTkdSaVpUZ3hNU0lzSW5SaFp5STZJaUo5IjtzOjc6ImVuY3J5cHQiO2I6MTt9fQ==', 1660585203),
-('XZ2XYdMKT5h6NfldRKk7ThQ2Scn7gT1D2zdTFK8p', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiT3NpeTVwc2R5WXZqUXVtanNEcnhpSEFrWE1CMGM0MVcyRWIwdXpiSSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9kYXNoYm9hcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YTowOnt9czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1660583327);
+('xLvVnLACVDNz3AlS7xOM1ynhTbGw3yRZB3kS9lMz', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiZGhGYXlZVDRIRmpic0FJSXdDZTlwMHNmQ0FCaU5wY1RIY1E3VUgwRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sYXRlc3QvbmV3cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTAkbThqRFJyb2hWMjFneWswRzYwUDZ0LmlIcWV6TE9MSkdpRks2Sjhyck9JdWF0ZlBtYWljcWEiO30=', 1660848446),
+('zLfHnv0bZJACvfYbYalvk90YAPVFWCq7Fv2HWWr5', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoibDJJbmtPV0psdktwYmpCZU1yajNKUW1GcWZmNjU5d2tDZ2xFSmR2USI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9zZW8iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1660846505);
 
 -- --------------------------------------------------------
 
@@ -840,6 +884,12 @@ ALTER TABLE `place_attributes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `popular_des`
+--
+ALTER TABLE `popular_des`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `seos`
 --
 ALTER TABLE `seos`
@@ -976,7 +1026,7 @@ ALTER TABLE `maps`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `multi_currencies`
@@ -1006,7 +1056,7 @@ ALTER TABLE `news_cats`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `pages`
@@ -1033,10 +1083,16 @@ ALTER TABLE `place_attributes`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `popular_des`
+--
+ALTER TABLE `popular_des`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `seos`
 --
 ALTER TABLE `seos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sliders`
