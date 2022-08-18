@@ -84,8 +84,13 @@ class FrontendController extends Controller
     }
 
     public function singleDestination(Request $request,$slug){
-
+         $data['hotels']=Place::where('status','1')->where('type','hotel')->orderBy('id','desc')->limit(5)->get();
         
+          $data['p_des']= PopularDes::where('status','1')->orderBy('id','desc')->limit(3)->get();
+         //dd( $data['hotels']);
+
+         $data['destination']=PopularDes::where('slug',$slug)->first();
+        return view('frontend.single_destination',$data);
     }
 
 

@@ -16,12 +16,12 @@
 @section('content')
 
 <section class="section-padding" style="padding-top: 2px;">
-    <div class="main-breadcrumb-area banner-padding-page"  style="background: url({{asset($place->mainimage)}});">
+    <div class="main-breadcrumb-area banner-padding-page"  style="background: url({{asset($destination->image)}});">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="pagetitle" style="color:#fff">
-                            Destination
+                            {{($destination->Pname)}}
                         </h1>
                        
                     </div>
@@ -47,32 +47,23 @@
                        @php
                         //dd($place->images)
                        @endphp
-                       @foreach($place->images as $img)
+                     
 
-                       @php
-                        //dd($img->image)
-                       @endphp
+                     
                         <div class="item">
-                            <img src="{{asset($img->image)}}" width="100%" height="400" />
+                            <img src="{{asset($destination->image)}}" width="100%" height="400" />
                         </div>
-                        @endforeach
+                       
                         
                     </div>
-                    <div id="thumb" class="owl-carousel product-thumb">
-                         @foreach($place->images as $image)
-                        <div class="item">
-                            <img src="{{asset($img->image)}}" />
-                        </div>
-                         @endforeach
-                        
-                    </div>
+                    
                
                     <div class="overview-area">
                         <h4 class="title">
-                         {{($place->type=='Tour')?'Tour' :'Hotel'}}   Overview :
+                         {{($destination->Pname)}}
                         </h4>
                         <p>
-                         <p>{{__($place->des)}}</p>
+                         <p>{{__($destination->des)}}</p>
                         </p>
                     </div>
 
@@ -83,7 +74,48 @@
                   
                 </div>
                 <div class="col-lg-4">
-                   
+                    <div class="detail-box">
+                      <h3 class="text-center">Hotel </h3>
+                     </div>
+                     <br>
+                    @foreach($hotels as $k=>$val)
+                    <div class="row">
+                        <div class="col-lg-4">
+                          
+                            <img src="{{asset($val->mainimage)}}" width="60" height="60">
+                          
+                            
+                        </div>
+                        <div class="col-lg-8">
+                            <h4>{{__($val->heading)}}</h4>
+                            
+                        </div>
+                    </div>
+
+
+                    @endforeach     
+
+                     <div class="detail-box">
+                      <h3 class="text-center">More Popular Destination </h3>
+                     </div>
+                     <br>
+                    @foreach($p_des as $k=>$val)
+                    <div class="row">
+                        <div class="col-lg-4">
+                          
+                            <img src="{{asset($val->image)}}" width="60" height="60">
+                          
+                            
+                        </div>
+                        <div class="col-lg-8">
+                             <h4>{{__($val->Pname)}}</h4>
+                            <p>{{__($val->title)}}</p>
+                            
+                        </div>
+                    </div>
+
+                    <br>
+                    @endforeach                 
                 </div>
             </div>
         </div>
@@ -97,56 +129,7 @@
 
 
 
-<script type="text/javascript">
 
-
-
- $(document).ready(function(){
-    $('#Booking').on('submit',function(){
-
-        var place_id =$('#place_id').val();
-        var type =$('#type').val();
-        var amount =$('#amount').val();
-        var start_date =$('.start_date').val();
-        var end_date =$('.end_date').val();
-        //alert(end_date);
-       
-     
-       $.ajax({
-
-            url: "{{url('/new/order')}}",
-            type:"POST",
-            dataType:"json",
-            data:{place_id:place_id,type:type,amount:amount,start_date:start_date,end_date:end_date,
-           
-        _token:"{{ csrf_token() }}"
-            },
-
-            success:function(response){
-
-
-
-                   }
-
-
-
-
-
-
-
-           });
-        });
-
-     });
-
-
-
-  
-
-     
-
-   
-</script>
 
 
 @endsection
