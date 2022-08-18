@@ -218,6 +218,7 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
    Route::get('admin/pending/order/view',[OrderController::class,'index'])->name('pending.order');
 
    Route::get('admin/order/view/detail/{id}',[OrderController::class,'orderDetails'])->name('order.details');
+     Route::post('admin/order/view/edit/{id}',[OrderController::class,'orderStatus'])->name('order.update');
 
     Route::get('admin/accepted/order/view',[OrderController::class,'activeOrder'])->name('active.order');
      Route::get('admin/cancel/order/view',[OrderController::class,'CancelOrder'])->name('cancel.order');

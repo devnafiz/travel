@@ -63,12 +63,19 @@ class OrderController extends Controller
 
                           ->where('orders.id',$id)
                           ->first();
-                          dd( $data['data_details']);
+                          //dd( $data['data_details']);
 
               return view('admin.order.order_details',$data);            
 
 
      }
+
+    public function orderStatus(Request $request,$id){
+
+       DB::table('orders')->where('id',$id)->update(['status'=>$request->status]);
+       return redirect()->back()->with('success','updated status');
+    } 
+
 
   //seo
 
@@ -82,6 +89,7 @@ class OrderController extends Controller
     }
 
      public function updateSeo(Request $request){
+      dd($request->id);
 
             $id=$request->id;
 

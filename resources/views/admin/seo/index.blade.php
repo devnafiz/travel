@@ -76,7 +76,7 @@
 									<div class="col-md">
 										<div class="form-group">
 											<label for="inputGroupSelect00" class="">Google Analytics</label>
-											<input type="text" class="form-control" required id="inputGroupSelect00" name="google_analytics" value="{{(isset($seo->google_analytics))? $seo->google_analytics :''}}">
+											<input type="text" class="form-control"  id="inputGroupSelect00" name="google_analytics" value="{{(isset($seo->google_analytics))? $seo->google_analytics :''}}">
 										</div><!-- end form-group -->
 									</div><!-- end column -->
 									
@@ -85,7 +85,7 @@
 									<div class="col-md">
 										<div class="form-group">
 											<label for="inputGroupSelect00" class="">bing Analytics</label>
-											<input type="text" class="form-control" required id="inputGroupSelect00" name="bing_analytics" value="{{(isset($seo->bing_analytics)) ? $seo->bing_analytics :'' }}">
+											<input type="text" class="form-control"  id="inputGroupSelect00" name="bing_analytics" value="{{(isset($seo->bing_analytics)) ? $seo->bing_analytics :'' }}">
 										</div><!-- end form-group -->
 									</div><!-- end column -->
 									
