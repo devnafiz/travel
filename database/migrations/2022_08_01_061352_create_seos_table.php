@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('seos', function (Blueprint $table) {
             $table->id();
-               $table->string('project_name', 191)->nullable();
-                $table->text('metadata_des', 65535)->nullable();
-                $table->text('metadata_key', 65535)->nullable();
-                $table->text('google_analysis', 65535)->nullable();
-                $table->text('fb_pixel', 65535)->nullable();
+               $table->string('meta_title', 191)->nullable();
+                $table->text('mata_author', 65535)->nullable();
+                $table->text('meta_tag', 65535)->nullable();
+                $table->text('meta_description', 65535)->nullable();
+                $table->text('google_analytics', 65535)->nullable();
+                 $table->text('bing_analytics', 65535)->nullable();
             $table->timestamps();
         });
     }

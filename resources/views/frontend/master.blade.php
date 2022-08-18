@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Index</title>
+    <title>{{ env('APP_NAME') }} |</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
@@ -22,7 +22,7 @@
         
     <!-- Custom Stylesheets -->	
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
-    <link rel="stylesheet" id="cpswitch" href="{{asset('frontend/css/purple.css')}}">
+  <link rel="stylesheet" id="cpswitch" href="{{asset('frontend/css/extra.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
 
     <!-- Owl Carousel Stylesheet -->
@@ -39,6 +39,8 @@
     <link rel="stylesheet" href="{{asset('frontend/css/custom.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+    
+
 
 
     @yield('extra-css')
@@ -59,12 +61,13 @@
 
 
 <body id="main-homepage">
-
+    
     <div class="wrapper">
         <!--====== LOADER =====-->
-      <!--   <div class="loader"></div> -->
+       @if(env("ENABLE_PRELOADER") == 1)
+      <div class="loader"></div> 
             
-            
+          @endif   
         <!--======== SEARCH-OVERLAY =========-->       
       
         @include('frontend.body.header')
@@ -83,19 +86,7 @@
         <!--============= End Stay at  glance==============-->
        
 
-         
-
-
-          <!--=======end hotel--=========-->
-
-
-
         
-        
-     
-                               
-       
-                
         
      
         @include('frontend.body.footer')

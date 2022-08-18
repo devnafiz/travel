@@ -1,7 +1,16 @@
   <nav class="navbar navbar-expand-xl sticky-top navbar-custom main-navbar p-1" id="mynavbar-1">
             <div class="container">
         
-                <a href="{{url('/')}}" class="navbar-brand py-1 m-0"><span></span><img src="{{asset('frontend/images/logo/logo.png')}}" width="100px" height="40px"></a>
+                <a href="{{url('/')}}" class="navbar-brand py-1 m-0"><span></span>
+                  @php
+                    $logo=App\Models\Genral::first()->logo;
+                   //dd( $logo);
+                  @endphp
+                  @if(isset($logo))
+                  <!-- <img src="{{asset('frontend/images/logo/logo.png')}}" width="100px" height="40px"> -->
+                  <img src="{{asset($logo)}}" width="100px" height="40px">
+                  @endif
+                </a>
                 <div class="header-search d-xl-none my-auto ml-auto py-1">
                     <a href="#" class="search-button" onClick="openSearch()"><span><i class="fa fa-search"></i></span></a>
                 </div>
@@ -42,31 +51,7 @@ background: #b9bfb38f;color: #000;">
                                                 </div><!-- end form-group -->
                          </li> 
 
-                       <!--  <li class="nav-item">
-                             
-
-                             <a><i class="fa   fa-user-circle " style="margin-top: -7px;
-font-size: 22px;
-padding: 3px;
-width: 25px;
-height: 24px;
-border: 1px solid #ccc;
-background: #b9bdb8;"></i><span style="
-  font-size: 12px;
-  padding: 3px;;
-display: block ruby;
-top: -5px;
-position: relative;">My Booking</span></a>
-                             
-                         </li>-->
-                        <!--<li >
-                            <a href="#" class="nav-link" > Faq</a>
-                            
-                        </li>
-                        <li >
-                            <a href="#" class="nav-link" > Career</a>
-                            
-                        </li>-->
+                     
                          <li >
                             @if(Auth::check())
                                <a href="{{route('dashboard')}}" class="nav-link" >Dashboard</a>

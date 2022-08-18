@@ -115,6 +115,11 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Language</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.seo')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Seo Setting</span></a>
+            </li>
 
              <li class="nav-item">
                 <a class="nav-link" href="{{route('general')}}">

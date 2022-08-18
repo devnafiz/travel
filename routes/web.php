@@ -15,6 +15,7 @@ use App\Http\Controllers\backend\PageController;
 use  App\Http\Controllers\backend\PlaceController;
 use  App\Http\Controllers\backend\MapController;
 use  App\Http\Controllers\backend\PopularDesController;
+use App\Http\Controllers\backend\OrderController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\IndexController;
 
@@ -209,6 +210,14 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
 
     
      Route::get('admin/place/delete/{id}',[PlaceController::class,'delete'])->name('place.delete');
+     Route::get('/admin/seo', [OrderController::class, 'seo'])->name('admin.seo');
+   Route::post('/admin/seo/update', [OrderController::class, 'updateSeo'])->name('update.seo');
+
+   //order
+
+   Route::get('admin/pending/order/view',[OrderController::class,'index'])->name('pending.order');
+    Route::get('admin/active/order/view',[OrderController::class,'activeOrder'])->name('active.order');
+
 
 
 

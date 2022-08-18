@@ -106,7 +106,7 @@ class GeneralController extends Controller
               $image = $request->file('logo');
               //dd($image);
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-            Image::make($image)->resize(16,16)->save('backend/general/'.$name_gen);
+            Image::make($image)->resize(106,60)->save('backend/general/'.$name_gen);
               $save_url = 'backend/general/'.$name_gen;
               $input['logo'] = $save_url;
 

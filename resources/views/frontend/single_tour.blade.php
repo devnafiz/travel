@@ -149,7 +149,11 @@
                                      @endif
                                  </div>
                                 </div>
+                                @if(Auth::check())
                                 <input type="submit"  class="btn btn-primary" value="Book Now" style="width: 100%">
+                                @else
+                                   <a  href="{{url('/login')}}" class="btn btn-primary" style="width: 100%">Book Now</a>
+                                @endif
                             </div>
 
                         </form>

@@ -127,6 +127,10 @@ class IndexController extends Controller
 
 
 	public function OrderSave(Request $request){
+		//dd('ok');
+		//if(Auth::check()!=true){
+			//redirect()->route('login');
+		//}
 
          $request->validate([
 
@@ -141,15 +145,22 @@ class IndexController extends Controller
          $order = new Order();
 
          $order->tour_id =$request->place_id;
-         $order->tour_id =$request->place_id;
-         $order->tour_id =$request->place_id;
-         $order->tour_id =$request->place_id;
-         $order->tour_id =$request->place_id;
-         $order->tour_id =$request->place_id;
+         $order->type =$request->type;
+         $order->amount =$request->amount;
+         $order->start_date =$request->start_date;
+         $order->end_date =$request->end_date;
+         $order->user_id =Auth::user()->id;
+         $order->status = '0';
+       
          $order->save();
 
          
+            $notification = array(
+            'message' => 'Order  sent',
+            'alert-type' => 'success'
+        );
 
+        return redirect()->back()->with($notification);
 
 	}
 

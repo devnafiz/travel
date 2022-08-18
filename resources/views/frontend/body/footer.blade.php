@@ -119,6 +119,8 @@
   
     <script src="{{ url('backend/plugins/datepicker/i18n/datepicker.en.js') }}"></script>
    <script src="{{ url('backend/js/custom-form-datepicker.js') }}"></script> 
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
   
 
 

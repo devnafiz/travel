@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('tour_id',191)->nullable();
             $table->string('user_id',191)->nullable();
             $table->string('type',191)->nullable();
-            $table->string('start_dat',191)->nullable();
+            $table->string('start_date',191)->nullable();
             $table->string('end_date',191)->nullable();
             $table->string('amount')->nullable();
             $table->string('status',1)->default(0);
