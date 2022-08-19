@@ -65,9 +65,11 @@
                         <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-links ftr-pad-left">
                             <h3 class="navigationFooter__link">Address</h3>
                             <ul class="list-unstyled">
-                                <li><a href="#">Bonn</a></li>
+                               <!--  <li><a href="#">Bonn</a></li> -->
+
                                
                             </ul>
+                            <p>{{(isset($general->address))? $general->address:''}}</p>
                         </div><!-- end columns -->
         
                         

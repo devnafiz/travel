@@ -15,7 +15,7 @@ class Page extends Model
 
     protected $fillable=[
 	
-		'name','des','slug','status'
+		'name','des','slug','status','header','footer'
 
 	];
 }

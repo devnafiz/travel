@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name', 191)->nullable();
             $table->text('des', 65535)->nullable();
             $table->text('slug', 65535)->nullable();
+            $table->tinyinteger('footer',)->default(0);
+            $table->tinyinteger('header',)->default(0);
             $table->enum('status', array('0','1'));
             $table->timestamps();
         });

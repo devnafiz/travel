@@ -12,7 +12,7 @@ class Genral extends Model
 
     use HasTranslations;
 
-	public $translatable = ['project_name','title','address'];
+	public $translatable = ['project_name','title'];
 
     protected $fillable=[
 	

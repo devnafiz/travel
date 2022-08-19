@@ -62,9 +62,21 @@ class PageController extends Controller
 
        
 
-       //dd($input['slug']);
+       //dd($request->header);
 
-        $input['status']=$request->status;
+     if (isset($request->header)) {
+            $input['header'] = '1';
+        } else {
+            $input['header'] = '0';
+        }
+
+        if (isset($request->footer)) {
+            $input['footer'] = '1';
+        } else {
+            $input['footer'] = '0';
+        }
+
+        $input['footer']=$request->footer;
         $page->create($input);
 
         return redirect()->route('page.all')->with("added", __("Page has been created !"));
@@ -84,6 +96,8 @@ class PageController extends Controller
 
      public function update(Request $request,$id){
 
+       // dd($request->all());
+
         $news = Page::findOrFail($id);
         $input = array_filter($request->all());
 
@@ -93,8 +107,26 @@ class PageController extends Controller
          // $input['buttonname'] = $request->buttonname;
          // dd($input['des']);
         $input['slug'] = Str::slug($request->slug, '-');
+        //dd($request->header);
+
+
+        if (isset($request->header)) {
+            $input['header'] = '1';
+        } else {
+            $input['header'] = '0';
+        }
+
+        if (isset($request->footer)) {
+            $input['footer'] = '1';
+        } else {
+            $input['footer'] = '0';
+        }
+
+      
             
         $input['status']=$request->status;
+        
+       
        
         $news->update($input);
  
