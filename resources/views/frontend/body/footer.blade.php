@@ -100,7 +100,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-6 col-xl-6" id="copyright">
-                            <p>© 2022 <a href="#">Dream Travel</a>{{$Copyright}}</p>
+                            <p>© 2022 <a href="#">Dream Travel</a>{{(isset($general->copyright))? $general->copyright: ''}}</p>
                         </div><!-- end columns -->
                         
                         <div class="col-12 col-md-6 col-lg-6 col-xl-6" id="terms">
