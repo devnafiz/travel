@@ -3,7 +3,7 @@
         
                 <a href="{{url('/')}}" class="navbar-brand py-1 m-0"><span></span>
                   @php
-                    $logo=App\Models\Genral::first()->logo;
+                    $logo=DB::table('genrals')->first()->logo;
                    //dd( $logo);
                   @endphp
                   @if(isset($logo))
