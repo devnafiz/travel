@@ -3,12 +3,12 @@
         
                 <a href="{{url('/')}}" class="navbar-brand py-1 m-0"><span></span>
                   @php
-                    $logo=DB::table('genrals')->first()->logo;
+                    $logo_all=DB::table('genrals')->first();
                    //dd( $logo);
                   @endphp
-                  @if(isset($logo))
+                  @if(isset($logo_all))
                   <!-- <img src="{{asset('frontend/images/logo/logo.png')}}" width="100px" height="40px"> -->
-                  <img src="{{asset($logo)}}" width="100px" height="40px">
+                  <img src="{{asset($logo_all->logo)}}" width="100px" height="40px">
                   @endif
                 </a>
                 <div class="header-search d-xl-none my-auto ml-auto py-1">
