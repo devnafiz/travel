@@ -3,11 +3,18 @@
 
 @section('content')
 
-<div class="main-breadcrumb-area banner-padding-page"  style="background: url(https://dev.geniusocean.net/booking-genius/assets/images/genarel-settings/1587788309bigbanner.jpg.png);">
+@php
+   $currentURL = Request::url();
+
+  $banner=App\Models\Banner::where('cat','page')->first();
+  //dd($banner);
+@endphp
+
+<div class="main-breadcrumb-area banner-padding-page"  style="background: url({{(isset($banner->image))?asset($banner->image):''}});height: 400px;background-size: cover;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h1 class="pagetitle">
+            <h1 class="pagetitle" style="color: #fff">
               {{$page->name}}
             </h1>
             

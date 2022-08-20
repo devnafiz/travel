@@ -66,7 +66,7 @@ top: -11px;">
                             
                         </li>
                         @php
-                          $pages= DB::table('pages')->where('status','1')->get();
+                          $pages= DB::table('pages')->where('status','1')->where('header','1')->get();
                           //dd($page);
                         @endphp
                         <li class="nav-item ">

@@ -2,26 +2,21 @@
 
 
 @section('content')
+@php
+   $currentURL = Request::url();
 
-<div class="main-breadcrumb-area banner-padding-page"  style="background: url(https://dev.geniusocean.net/booking-genius/assets/images/genarel-settings/1587788309bigbanner.jpg.png);">
+  $banner=App\Models\Banner::where('cat','news')->first();
+  //dd($banner);
+@endphp
+
+<div class="main-breadcrumb-area banner-padding-page"  style="background: url({{(isset($banner->image))?asset($banner->image):''}});height: 400px;background-size: cover;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <h1 class="pagetitle" style="color: #fff">
              NEWS
             </h1>
-            <!-- <ul class="pages">
-              <li>
-              <a href="https://dev.geniusocean.net/booking-genius">
-                  Home
-                </a>
-              </li>
-              <li class="active">
-              <a href="https://dev.geniusocean.net/booking-genius/contact">
-                  Contact Us
-                </a>
-              </li>
-            </ul> -->
+           
           </div>
         </div>
       </div>
@@ -63,7 +58,11 @@
                                      
                                  </div> 
 
-                     @endforeach            
+                     @endforeach  
+
+                     <div class="pagination">
+                       {{$news->links()}}
+                     </div>          
 			 	
 			 </div>
 

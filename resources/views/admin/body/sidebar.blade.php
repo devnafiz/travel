@@ -94,6 +94,7 @@
                        
                         <a class="collapse-item" href="{{route('map.all')}}">ALL Maps</a>
                         <a class="collapse-item" href="{{route('news.all')}}">All News</a>
+                        <a class="collapse-item" href="{{route('banner.all')}}">All banner</a>
                         
                     </div>
                 </div>

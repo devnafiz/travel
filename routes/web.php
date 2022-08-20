@@ -8,6 +8,7 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\backend\NewsCatController;
 use App\Http\Controllers\backend\NewsController;
+use App\Http\Controllers\backend\BannerController;
 
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\GeneralController;
@@ -153,6 +154,21 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
 
     Route::post('admin/slider/update/{id}',[SliderController::class,'update'])->name('slider.update');
     Route::get('admin/slider/delete/{id}',[SliderController::class,'delete'])->name('slider.delete');
+
+
+    //banner
+
+   
+
+    Route::get('admin/all/banner',[BannerController::class,'index'])->name('banner.all');
+    Route::get('admin/banner/add',[BannerController::class,'addbanner'])->name('banner.add');
+
+    Route::post('admin/banner/store',[BannerController::class,'store'])->name('banner.store');
+
+    Route::get('admin/banner/edit/{id}',[BannerController::class,'edit'])->name('banner.edit');
+
+    Route::post('admin/banner/update/{id}',[BannerController::class,'update'])->name('banner.update');
+    Route::get('admin/banner/delete/{id}',[BannerController::class,'delete'])->name('banner.delete');
 
 
     //Map

@@ -55,7 +55,20 @@
                         
                         <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-links">
                             <h3 class="navigationFooter__link">INVESTORS' AREA</h3>
+
+                             @php
+                          $pages= DB::table('pages')->where('status','1')->where('footer','1')->get();
+                          //dd($page);
+                        @endphp
                             <ul class="list-unstyled">
+                               @if($pages)
+                                     @foreach($pages as $k=>$page)
+                               
+                                  <li><a href="{{URL::to('/page/'.$page->slug)}}">{{ __($page->name)}}</a></li>
+                                     @endforeach
+
+                                @endif
+                           
                              <li><a href="{{route('contact')}}">Contact</a></li>
                                
                                 
@@ -111,7 +124,7 @@
  <!-- Page Scripts Starts -->
 
  <script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script> 
-  <!--   <script src="{{asset('frontend/js/jquery.magnific-popup.min.js')}}"></script> -->
+  
     <script src="{{asset('frontend/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
     <script src="{{asset('frontend/js/bootstrap-4.4.1.min.js')}}"></script>
     <script src="{{asset('frontend/js/jquery.flexslider.js')}}"></script>
