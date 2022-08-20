@@ -68,7 +68,7 @@ class AppServiceProvider extends ServiceProvider
               //dd( Schema::hasTable('seos'));
             if (Schema::hasTable('genrals') && Schema::hasTable('seos')) {
 
-                $defCurrency = MultiCurrency::where('default_currency', '=', 1)->first();
+                $defCurrency = DB::table('multi_currencies')->where('default_currency', '=', 1)->first();
              //dd($defCurrency) ;
                 $rightclick = DB::table('genrals')->find('1')->right_click ;
 
