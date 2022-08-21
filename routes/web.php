@@ -9,6 +9,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\backend\NewsCatController;
 use App\Http\Controllers\backend\NewsController;
 use App\Http\Controllers\backend\BannerController;
+use App\Http\Controllers\backend\AboutController;
 
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\GeneralController;
@@ -156,9 +157,19 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
     Route::get('admin/slider/delete/{id}',[SliderController::class,'delete'])->name('slider.delete');
 
 
-    //banner
+    //about
 
-   
+    Route::get('admin/all/overview',[AboutController::class,'index'])->name('about.all');
+    Route::get('admin/overview/add',[AboutController::class,'add'])->name('about.add');
+
+    Route::post('admin/overview/store',[AboutController::class,'store'])->name('about.store');
+
+    Route::get('admin/overview/edit/{id}',[AboutController::class,'edit'])->name('about.edit');
+
+    Route::post('admin/overview/update/{id}',[AboutController::class,'update'])->name('about.update');
+    Route::get('admin/overview/delete/{id}',[AboutController::class,'delete'])->name('about.delete');
+
+   //banner
 
     Route::get('admin/all/banner',[BannerController::class,'index'])->name('banner.all');
     Route::get('admin/banner/add',[BannerController::class,'addbanner'])->name('banner.add');
