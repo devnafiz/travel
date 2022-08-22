@@ -49,12 +49,12 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                    <label class="control-label" for="first-name"> {{__('Description')}} <span class="required"></span>
+                                    <label class="control-label" for="first-name"> {{__('Overview')}} <span class="required"></span>
               </label>
                                    <textarea cols="100%" id="editor1" name="des" rows="5" class="form-control">
                                          {{old('des')}}
                                     </textarea>
-                                         <small class="text-info"> <i class="text-dark feather icon-help-circle"></i>({{__('Please enter description')}})</small>
+                                         <small class="text-info"> <i class="text-dark feather icon-help-circle"></i>({{__('Please enter Overview')}})</small>
                                      </div>    
                                 </div>
 
@@ -118,6 +118,27 @@
                                     </div>
                                     
                                 </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <label class="control-label" for="first-name"> {{__('Long Description')}} <span class="required"></span>
+              </label>
+                                   <textarea cols="100%" id="editor1" name="long_des" rows="5" class="form-control">
+                                         {{old('long_des')}}
+                                    </textarea>
+                                         <small class="text-info"> <i class="text-dark feather icon-help-circle"></i>({{__('Please enter Long description')}})</small>
+                                     </div>    
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <label class="control-label" for="first-name"> {{__('Feature')}} <span class="required"></span>
+              </label>
+                                   <textarea cols="100%" id="mytextarea" name="feature" rows="5" class="form-control">
+                                         {{old('feature')}}
+                                    </textarea>
+                                         <small class="text-info"> <i class="text-dark feather icon-help-circle"></i>({{__('Please Add Feature')}})</small>
+                                     </div>    
+                                </div>
                               <div class="form-group row">
                                      <!-- <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control iconvalue" name="icon" value="{{ __('Choose icon') }}">
@@ -170,6 +191,14 @@
         </div>
 
     </div>
+    <script>
+      
+
+
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
 
 
    @endsection

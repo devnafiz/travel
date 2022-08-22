@@ -62,12 +62,12 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2"
+                    aria-expanded="true" aria-controls="collapseUtilities2">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>News</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                        
@@ -95,6 +95,7 @@
                         <a class="collapse-item" href="{{route('map.all')}}">ALL Maps</a>
                         <a class="collapse-item" href="{{route('news.all')}}">All News</a>
                         <a class="collapse-item" href="{{route('banner.all')}}">All banner</a>
+                         <a class="collapse-item" href="{{route('about.all')}}">All Overview</a>
                         
                     </div>
                 </div>

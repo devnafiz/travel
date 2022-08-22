@@ -13,6 +13,7 @@ use App\Models\Page;
 use App\Models\Slider;
 use App\Models\Map;
 use App\Models\PopularDes;
+use App\Models\About;
 
 class FrontendController extends Controller
 {
@@ -25,7 +26,7 @@ class FrontendController extends Controller
           $data['p_des']= PopularDes::where('status','1')->orderBy('id','desc')->limit(3)->get();
         $data['news']=News::where('status','1')->orderBy('id','desc')->limit(3)->get();
           //dd($data['news']);
-
+          $data['overview']= About::where('status','1')->first();  
         $data['place']= Place::where('status','1')->orderBy('id','desc')->limit(4)->get();
        //dd($data['place']);
 

@@ -17,7 +17,7 @@ class AboutController extends Controller
     	$data['about_us']=About::where(['status'=>'1'])->first();
         //dd($data['all_news']);
 
-    	return view('admin.about.index',$data);
+    	return view('admin.overview.index',$data);
 
 
     }
@@ -27,7 +27,7 @@ class AboutController extends Controller
 
     public function add(){
 
-           return view('admin.slider.add_slider');
+           return view('admin.overview.add_about');
 
         }
      
@@ -64,7 +64,7 @@ class AboutController extends Controller
        
         $input['image'] = $save_url;
         $input['status']=$request->status;
-        $slider->create($input);
+        $data->create($input);
 
         return redirect()->route('about.all')->with("added", __("Over view has been created !"));
 
@@ -76,7 +76,7 @@ class AboutController extends Controller
 
         $data['edit_data']=About::where('id',$id)->first();
 
-        return view('admin.about.edit_about',$data);
+        return view('admin.overview.edit_about',$data);
 
 
      }
@@ -113,7 +113,7 @@ class AboutController extends Controller
          $input['status']=$request->status;
         $news->update($input);
 
-        return redirect()->route('slider.all')->with('updated', __('Silder  has been updated !'));
+        return redirect()->route('about.all')->with('updated', __('Silder  has been updated !'));
 
 
      }
@@ -125,7 +125,7 @@ class AboutController extends Controller
 
      
         if ($about->image != '' && file_exists(public_path() . '/backend/overview/' . $about->image)) {
-            unlink(public_path() . '/backend/slider/' . $about->image);
+            unlink(public_path() . '/backend/overview/' . $about->image);
         }
 
         $value = $about->delete();

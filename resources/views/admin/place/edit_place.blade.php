@@ -118,13 +118,30 @@
                                     </div>
                                     
                                 </div>
+
+                                  <div class="form-group">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <label class="control-label" for="first-name"> {{__('Long Description')}} <span class="required"></span>
+              </label>
+                                   <textarea cols="100%" id="editor1" name="long_des" rows="5" class="form-control">
+                                         {{$edit_data->long_des}}
+                                    </textarea>
+                                         <small class="text-info"> <i class="text-dark feather icon-help-circle"></i>({{__('Please enter Long description')}})</small>
+                                     </div>    
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <label class="control-label" for="first-name"> {{__('Feature')}} <span class="required"></span>
+              </label>
+                                   <textarea cols="100%" id="mytextarea" name="feature" rows="5" class="form-control">
+                                        
+                                          {{$edit_data->feature}}
+                                    </textarea>
+                                         <small class="text-info"> <i class="text-dark feather icon-help-circle"></i>({{__('Please Add Feature')}})</small>
+                                     </div>    
+                                </div>
                               <div class="form-group row">
-                                     <!-- <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control iconvalue" name="icon" value="{{ __('Choose icon') }}">
-                                    <span class="input-group-append">
-                                  <button type="button" class="btnicon btn btn-outline-secondary" role="iconpicker"></button>
-                                     </span>
-                                    </div>-->
+                                     
 
                                     <div class="col-sm-6">
                                         <label class="control-label" for="first-name">
@@ -146,17 +163,14 @@
 
                                                 <input   id="image" name="mainimage" type="file"
                                                     class="form-control">
-                                                <!-- <div class="input-group-append">
-                                                    <span data-input="image"
-                                                        class="bg-primary text-light midia-toggle input-group-text">{{ __("Browse") }}</span>
-                                                </div> -->
+                                               
                                               </div>
                                               <small class="text-info"> <i class="text-dark feather icon-help-circle"></i>({{__("Choose Image for blog post")}})</small>
 
                                         </div>
                                     </div>
 
-                                <button class="btn btn-primary btn-user btn-block" type="submit">Save</button>
+                                <button class="btn btn-primary btn-user btn-block" type="submit">Update</button>
                                 
                                 <hr>
                                

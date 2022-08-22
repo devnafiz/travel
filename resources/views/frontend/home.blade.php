@@ -94,19 +94,22 @@
             
             <div class="container">
                  <div class="row">
-                     <div class="col-lg-12 col-md-12 col-sm-12">
+                     <div class="col-lg-7 col-md-7 col-sm-12">
 
                         <div class="title" style="padding: 57px;">
-                            <h3 class="text-center">stays hotels Group</h3> 
-                            <p>Attractive hotels in attractive locations! Most of our hotels are beside the stadium. Attractive hotels in attractive locations! Most of our hotels 
-are beside the stadium. Attractive hotels in attractive locations! Most of our hotels are beside the stadium. Attractive hotels in attractive locations!
-Attractive hotels in attractive locations! Most of our hotels are beside the stadium. Attractive hotels in attractive locations! Most of our hotels 
-Attractive hotels in attractive locations! Most of our hotels are beside the stadium. Attractive hotels in attractive locations! Most of our hotels </p>
+                            <h4 class="text-center"><a href="#">{{$overview->title}}</a></h4> 
+                            <p>{!!Str::limit($overview->des,300)!!} </p>
 
                         </div>
                      
 
 
+                     </div>
+                     <div class="col-lg-5 col-md-5 col-sm-12">
+                       <div>
+                          <img src="{{asset($overview->image)}}" width="90%">
+                       </div>
+                       
                      </div>
 
                  </div>

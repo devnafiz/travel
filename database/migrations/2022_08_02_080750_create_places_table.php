@@ -24,6 +24,8 @@ return new class extends Migration
             $table->float('discount_price',10,0)->nullable();
             $table->string('location',256)->nullable();
             $table->string('status')->default(1);
+            $table->text('long_des')->nullable();
+            $table->text('feature')->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
 

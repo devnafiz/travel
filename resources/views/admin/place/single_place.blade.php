@@ -39,9 +39,11 @@
                                         <tr>
                                             <th>Image</th>
                                             <th>Heading</th>
-                                            <th>Description</th>
+                                            <th>OverView</th>
                                             <th>Price</th>
                                             <th>discount Price</th>
+                                            <th>Description</th>
+                                            <th>Feature</th>
                                             <th>Type</th>
                                             <th>Status</th>
                                             <th>Action</th>
@@ -58,6 +60,8 @@
                                             <td>{{$p_details[0]->des}}</td>
                                             <td>{{$p_details[0]->sale_price}}</td>
                                             <td>{{$p_details[0]->discount_price}}</td>
+                                             <td>{{$p_details[0]->long_des}}</td>
+                                            <td>{{$p_details[0]->feature}}</td>
                                             <td>{{$p_details[0]->type}}</td>
                                             <td>{{($p_details[0]->status==1)? 'active' :'Deactive'}}</td>
                                             <td>
