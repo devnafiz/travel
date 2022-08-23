@@ -200,21 +200,9 @@
                                                 </div><!-- end columns -->
                                                 
                                                 <div class="col-md-12 col-lg-12 tab-text">
-                                                    <h3>Cruise Information</h3>
-                                                    <p>1.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, .</p>
-                                                    <span class="aminitis">AMINITIS <span><i class="fa fa-angle-down"></i></span></span>
-                                                    <ul>
-                                                        <li>65” flat-screen TV </li>
-                                                        <li>Individually controlled heat and air-conditioning</li>
-                                                        <li>Hair dryer</li>
-                                                        <li>Plush robes and slippers</li>
-                                                        <li>Iron and ironing board</li>
-                                                        <li>Tea-making facilities and Nespresso® coffeemaker</li>
-                                                        <li>Minibar</li>
-                                                        <li>Laptop-sized in-room safe</li>
-                                                        <li>Crib upon request</li>
-
-                                                    </ul>
+                                                    <h3>Description</h3>
+                                                    <p>{{$place->long_des}}</p>
+                                                    
                                                 </div><!-- end columns -->
 
                                                  
@@ -227,19 +215,10 @@
                                                 </div><!-- end columns -->
                                                 
                                                 <div class="col-md-12 col-lg-12 tab-text">
-                                                    <h3>Cruise Information</h3>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut .</p>
-                                                    <span class="aminitis">AMINITIS <span><i class="fa fa-angle-down"></i></span></span>
+                                                    
+                                                    <span class="aminitis">Feature <span><i class="fa fa-angle-down"></i></span></span>
                                                     <ul>
-                                                        <li>65” flat-screen TV </li>
-                                                        <li>Individually controlled heat and air-conditioning</li>
-                                                        <li>Hair dryer</li>
-                                                        <li>Plush robes and slippers</li>
-                                                        <li>Iron and ironing board</li>
-                                                        <li>Tea-making facilities and Nespresso® coffeemaker</li>
-                                                        <li>Minibar</li>
-                                                        <li>Laptop-sized in-room safe</li>
-                                                        <li>Crib upon request</li>
+                                                        {{$place->feature}}
 
                                                     </ul>
                                                 </div><!-- end columns -->

@@ -10,6 +10,7 @@ use App\Http\Controllers\backend\NewsCatController;
 use App\Http\Controllers\backend\NewsController;
 use App\Http\Controllers\backend\BannerController;
 use App\Http\Controllers\backend\AboutController;
+use App\Http\Controllers\backend\UserController;
 
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\GeneralController;
@@ -94,6 +95,8 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
 })->name('dashboard')->middleware('auth:admin');
 
   
+  Route::get('/admin/all/user',[UserController::class,'index'])->name('admin.view.user');
+   Route::delete('/admin/user/delete/{id}',[UserController::class,'delete'])->name('user.delete');
 
   Route::get('/admin/general',[GeneralController::class,'index'])->name('general');
    Route::post('/admin/general',[GeneralController::class,'store'])->name('general.store');

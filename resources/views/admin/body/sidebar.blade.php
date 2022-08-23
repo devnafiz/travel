@@ -119,6 +119,12 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Pages</span></a>
             </li>
+             <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.view.user')}}">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Users</span></a>
+            </li>
+
 
             
 
