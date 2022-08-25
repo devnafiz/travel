@@ -181,23 +181,7 @@
 	}
 }
 
-/************* CRUISE HOMEPAGE *************/
 
-@media(min-width:768px) and (max-width:991px){
-
-	#cruise-homepage #top-bar #info li:first-child{
-		margin-right:5px;
-	}
-	
-	#cruise-homepage #top-bar #links > ul > li form{
-		padding-left:18px;
-		margin-left:10px;
-	}
-	
-	#cruise-homepage #top-bar form ul li:last-child{
-		margin-left:4px;
-	}
-}
 
 /* -----------------------------------------------------
 		Navbar
@@ -462,14 +446,6 @@
 	
 }
 
-/************* CRUISE HOMEPAGE *************/
-
-@media(min-width:768px) and (max-width:1199px){
-	
-	#cruise-homepage .main-navbar .navbar-toggle{
-		margin-right:15px;
-	}
-}
 
 /* -----------------------------------------------------
 		Slider

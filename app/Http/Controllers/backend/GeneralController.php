@@ -147,8 +147,9 @@ class GeneralController extends Controller
 
        
            $input['copyright'] =$request->copyright;
-            $input['mobile'] =$request->mobile;
-             $input['address'] =$request->address;
+           $input['mobile'] =$request->mobile;
+           $input['address'] =$request->address;
+           $input['f_content'] =$request->f_content;
       
 
         if ($request->file('preloader')) {

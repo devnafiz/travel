@@ -20,7 +20,7 @@ class OrderController extends Controller
                           ->select('orders.*','places.heading','users.name','users.phone','users.email')
 
                           ->where('orders.status','0')
-                          ->get();
+                          ->paginate(10);
                      //dd( $data['all_data']);     
 
         return view('admin.order.index',$data);

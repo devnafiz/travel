@@ -11,6 +11,7 @@ use App\Http\Controllers\backend\NewsController;
 use App\Http\Controllers\backend\BannerController;
 use App\Http\Controllers\backend\AboutController;
 use App\Http\Controllers\backend\UserController;
+use App\Http\Controllers\backend\AdminProfileController;
 
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\GeneralController;

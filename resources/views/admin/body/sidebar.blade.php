@@ -102,11 +102,7 @@
             </li>
 
 
-             <!--  <li class="nav-item">
-                <a class="nav-link" href="{{route('slider.all')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Slider</span></a>
-            </li> -->
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -135,11 +131,11 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="{{route('site.lang')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Language</span></a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.seo')}}">
                     <i class="fas fa-fw fa-table"></i>

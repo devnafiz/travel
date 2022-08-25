@@ -119,7 +119,7 @@
                     @if(!empty($row))
                     <div class="bg-primary-rgba p-3">
 
-                      <img title="Current Logo" src=" {{url('images/genral/'.$row->logo)}}" class="img-fluid">
+                      <img title="Current Logo" src=" {{asset($row->logo)}}" class="img-fluid" width="40" height="40">
 
                     </div>
                     @endif
@@ -139,6 +139,18 @@
                   <textarea rows="3" cols="10" value="{{old('address' ?? '')}}" name="address"
                     class="form-control">{{$row->address ?? ''}}</textarea>
                   <small class="text-muted"><i class="fa fa-question-circle"></i> {{ __('Please enter address (it will also show in your site footer).') }}</small>
+                </div>
+
+              </div>
+
+              <div class="col-md-6">
+
+                <div class="form-group">
+                  <label>{{__('Foooter Content')}}:</label>
+
+                  <textarea rows="3" cols="10" value="{{old('f_content' ?? '')}}" name="f_content"
+                    class="form-control">{{$row->f_content ?? ''}}</textarea>
+                  <small class="text-muted"><i class="fa fa-question-circle"></i> {{ __('Please enter content (it will also show in your site footer).') }}</small>
                 </div>
 
               </div>

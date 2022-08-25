@@ -26,6 +26,8 @@ return new class extends Migration
                 $table->string('logo', 191)->nullable();
                 $table->string('fevicon', 191)->nullable();
                 $table->text('address', 65535)->nullable();
+                $table->text('f_content', 65535)->nullable();
+                
                 $table->string('mobile', 191)->nullable();
                 $table->integer('login')->unsigned();
                 $table->enum('right_click', array('0','1'));

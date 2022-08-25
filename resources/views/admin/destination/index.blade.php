@@ -71,6 +71,10 @@
                                        @endforeach
                                     </tbody>
                                 </table>
+                                 <div class="pagination">
+                                  {{$all_data->links()}}
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -3,12 +3,12 @@
         
                 <a href="{{url('/')}}" class="navbar-brand py-1 m-0"><span></span>
                   @php
-                    $logo_all=DB::table('genrals')->first();
+                    $general=DB::table('genrals')->first();
                    //dd( $logo);
                   @endphp
-                  @if(isset($logo_all))
+                  @if(isset($general))
                   <!-- <img src="{{asset('frontend/images/logo/logo.png')}}" width="100px" height="40px"> -->
-                  <img src="{{asset($logo_all->logo)}}" width="100px" height="40px">
+                  <img src="{{asset($general->logo)}}" width="100px" height="40px">
                   @endif
                 </a>
                 <div class="header-search d-xl-none my-auto ml-auto py-1">
@@ -87,9 +87,7 @@ top: -11px;">
                            
                         </li>
                        
-                        <li class="nav-item ">
-                            <a href="#" class="nav-link" >Faq</a>                          
-                        </li>
+                       
 
                         <li class="nav-item ">
                             <a href="{{route('news')}}" class="nav-link" >News</a>                          
@@ -123,7 +121,7 @@ top: -11px;">
         <div class="sidenav-content">
             <!-- Sidebar  -->
             <nav id="sidebar" class="sidenav">
-                <h2 id="web-name"><span><i class="fa fa-plane"></i></span>Dream Travel</h2>
+                <h2 id="web-name"><span><i class="fa fa-plane"></i></span>{{$general->project_name}}</h2>
         
                 <div id="main-menu">
                     <div id="dismiss">
@@ -136,16 +134,37 @@ top: -11px;">
                                     <a class="items-list active" href="{{URL::to('/')}}">Home</a>
                                     <a class="items-list" href="{{route('hotel.booking')}}">Hotel</a>
                                     <a class="items-list" href="{{route('tour.booking')}}">Tour</a>
-                                    <a class="items-list" href="#">Tagungen & event</a>
-                                    <a class="items-list" href="#">Gruppenanfrage</a>
+                                     <a class="items-list" href="{{route('news')}}">News</a>
+
+                                     @if(Auth::check())
+                              
+                                 <a class="items-list" href="{{route('dashboard')}}"> Dashboard</a>
+                              
+                            @else
+                           
+                             <a class="items-list" href="{{route('login')}}"> <i class="fa fa-sign-in" aria-hidden="true"></i>Sign in</a>
+                            @endif
+                                 
+                                   
+                                  
                                     
                                 </div><!-- end sub-menu -->
        
-                                <a class="items-list" href="#flights-links" data-toggle="collapse"><span><i class="fa fa-plane link-icon"></i></span>Other<span><i class="fa fa-chevron-down arrow"></i></span></a>
+                                <a class="items-list" href="#flights-links" data-toggle="collapse"><span><i class="fa fa-plane link-icon"></i></span>Pages<span><i class="fa fa-chevron-down arrow"></i></span></a>
                                 <div class="collapse sub-menu" id="flights-links">
-                                    <a class="items-list" href="#">Faq</a>
-                                    <a class="items-list" href="{{route('news')}}">News</a>
-                                    <a class="items-list" href="#">About Us</a>
+                                     @php
+                          $pages= DB::table('pages')->where('status','1')->where('header','1')->get();
+                          //dd($page);
+                        @endphp
+
+                          @if($pages)
+                                     @foreach($pages as $k=>$page)
+                                   
+                                    <a class="items-list" href="{{URL::to('/page/'.$page->slug)}}">{{ __($page->name)}}</a>
+
+                                      @endforeach
+
+                                @endif
                                    
                                 </div>
         

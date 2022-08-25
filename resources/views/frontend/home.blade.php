@@ -4,6 +4,16 @@
     <title>{{ env('APP_NAME') }} |</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    @php
+     $seo =DB::table('seos')->first();
+
+    @endphp
+    @if(isset($seo))
+      <meta name="description" content="{{$seo->meta_title}}">
+      <meta property="og:title" content="{{$seo->meta_description}}"/>
+
+     @endif 
     <link rel="icon" href="{{asset('frontend/images/logo/favicon.ico')}}" type="image/x-icon">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     
@@ -130,13 +140,13 @@
 
           <!-- ===new location --=======================-->
 
-             <section id="new-location" class="section-padding">
+             <section id="hotel" class="section-padding">
                      <div class="container">
 
-                        <div class="row">
+                        <div class="row justify-content-md-center" style="padding: 50px;">
 
                          
-                      <div class="col-md-6 col-lg-5 col-sm-6" style=" background: #cccccc3b;height: 89%;">
+                      <div class="col-md-5 col-lg-5 col-sm-6 col-md-offset-1" style=" background: #cccccc3b;height: 89%;">
 
                         <ul class="nav nav-tabs tabs-left sideways pull-right">
                             @foreach($maps as $k=>$m_val)
@@ -151,7 +161,7 @@
 
                          
                      </div>
-                     <div class="col-md-6 col-lg-7 col-sm-6" style="background:#cccccc52;">
+                     <div class="col-md-6 col-lg-7 col-sm-5 col-md-offset-1" style="background:#cccccc52;">
 
                         <!--tab content-->
 
@@ -161,7 +171,7 @@
                                 <div class="tab-pane {{($k==0)?'active': ''}}" id="home-{{$k}}">
                                     <div class="row">
                                         <div class="col-md-12">
-                                         <iframe src="{{$m_val->link}}"  width="90%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe> 
+                                         <iframe src="{{$m_val->link}}"  width="98%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe> 
                                           
                                         </div><!-- slider end=-->
 

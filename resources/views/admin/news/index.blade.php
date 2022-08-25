@@ -68,6 +68,11 @@
                                        @endforeach
                                     </tbody>
                                 </table>
+                                <div class="pagination">
+                                  {{$all_news->links()}}
+                                    
+                                </div>
+                                    
                             </div>
                         </div>
                     </div>

@@ -101,20 +101,23 @@
 						</div>
 					</div>
 				</div>
+				 @php
+                              $general= DB::table('genrals')->first();
+                            @endphp
 				<div class="col-lg-5">
 					<div class="right-area">
 						<div class="contact-info">
 							<div class="left ">
 									<div class="icon">
-											<img src="https://dev.geniusocean.net/booking-genius/assets/front/images/emal.png" alt="">
+											<i class="fa fa-envelope"></i>
 									</div>
 							</div>
 							<div class="content">
 									<h4 class="">
 										Email
 									</h4>
-                                    <a href="javascript:;">
-										contact@gmail.com
+                                    <a href="javascript:{{ $general->email}};">
+										{{ $general->email}}
 									</a>
 									
 							</div>
@@ -122,7 +125,9 @@
 						<div class="contact-info">
 							<div class="left ">
 									<div class="icon">
-											<img src="https://dev.geniusocean.net/booking-genius/assets/front/images/location.png" alt="">
+										<i class="fa fa-area"></i>
+										<i class="fa fa-address-card"></i>
+											
 									</div>
 							</div>
 							<div class="content">
@@ -130,7 +135,7 @@
 										Location 
 									</h4>
                                     <a href="javascript:;">
-										Dhaka,  Bangladesh
+										{{ $general->address}}
 									</a>
 									
 							</div>
@@ -138,7 +143,7 @@
 						<div class="contact-info">
 							<div class="left ">
 									<div class="icon">
-											<img src="https://dev.geniusocean.net/booking-genius/assets/front/images/call.png" alt="">
+											<i class="fa fa-phone"></i>
 									</div>
 							</div>
 							<div class="content">
@@ -146,12 +151,12 @@
 										Phone
 									</h4>
 										<a href="javascript:;">
-												190000005
+												{{ $general->mobile}}
 										</a>
 										
 							</div>
 						</div>
-						<div class="social-links">
+						<!--<div class="social-links">
 							<h4 class="">Find us here :</h4>
 							<ul>
                                                                                         <li>
@@ -180,7 +185,7 @@
 									</a>
 								</li>
 								                            </ul>
-						</div>
+						</div>-->
 					</div>
 				</div>
 			</div>

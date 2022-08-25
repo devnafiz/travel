@@ -4,6 +4,15 @@
     <title>{{ env('APP_NAME') }} |</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    @php
+     $seo =DB::table('seos')->first();
+
+    @endphp
+    @if(isset($seo))
+      <meta name="description" content="{{$seo->meta_title}}">
+      <meta property="og:title" content="{{$seo->meta_description}}"/>
+
+     @endif 
       <link rel="icon" href="{{asset('frontend/images/logo/favicon.ico')}}" type="image/x-icon">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">

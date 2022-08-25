@@ -45,15 +45,12 @@
                         <div class="col-md-10 col-md-offset-2 ">
                             <div class="row">
                                 
-                        <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-contact">
+                        <div class="col-12 col-md-6 col-lg-6  footer-widget ftr-contact">
                             <h3 class=" navigationFooter__link">ABOUT US</h3>
-                            <ul class="list-unstyled">
-                               
-                                
-                            </ul>
+                             <p style="text-align: justify;">{{(isset($general->f_content))? $general->f_content:''}}</p>
                         </div><!-- end columns -->
                         
-                        <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-links">
+                        <div class="col-12 col-md-3 col-lg-3  footer-widget ftr-links">
                             <h3 class="navigationFooter__link">INVESTORS' AREA</h3>
 
                              @php
@@ -75,7 +72,7 @@
                             </ul>
                         </div><!-- end columns -->
                         
-                        <div class="col-12 col-md-6 col-lg-4  footer-widget ftr-links ftr-pad-left">
+                        <div class="col-12 col-md-3 col-lg-3  footer-widget ftr-links ftr-pad-left">
                             <h3 class="navigationFooter__link">Address</h3>
                             <ul class="list-unstyled">
                                <!--  <li><a href="#">Bonn</a></li> -->

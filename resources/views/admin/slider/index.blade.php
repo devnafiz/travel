@@ -71,6 +71,11 @@
                                        @endforeach
                                     </tbody>
                                 </table>
+                                <div class="pagination">
+                                    {{$all_slider->links()}}
+                                    
+                                </div>
+                                    
                             </div>
                         </div>
                     </div>

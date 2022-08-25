@@ -2276,27 +2276,7 @@ nav.navbar .container.padding {
 	margin-left:2px;
 }
 
-/************* CRUISE HOMEPAGE *************/
 
-#cruise-homepage #quote-carousel .carousel-item blockquote{
-	padding:0px 150px;
-	text-align:center;
-	font-size:18px;
-	line-height:1.4em;
-	margin-bottom:50px;
-}
-
-#cruise-homepage #quote-carousel .carousel-item .rating{
-	margin:20px 0px 30px;
-}
-
-#cruise-homepage #quote-carousel .carousel-item .rating .fa{
-	font-size:22px;
-}
-
-#cruise-homepage #quote-carousel .carousel-item .position{
-	font-size:16px;
-}
 
 /************* OWL-TESTIMONIALS *************/
 
@@ -5513,96 +5493,6 @@ nav.navbar .container.padding {
 	font-size:52px;
 }
 
-/**************** FAQ PAGES **************/
-
-#faq-page .content-side .faq-block{
-	margin-bottom:60px;
-}
-
-#faq-page .content-side .faq-block:last-child{
-	margin-bottom:0px;
-}
-
-#faq-page .content-side .faq-heading{
-	margin-bottom:30px;
-	position:relative;
-	padding-left:30px;
-}
-
-#faq-page .content-side .faq-heading::before{
-	content:'';
-	position:absolute;
-	top:12px;
-	left:0;
-	width:20px;
-	height:5px;
-	display:block;
-}
-
-#faq-page .content-side{
-	margin-bottom:17px;
-}
-
-#faq-page .content-side:last-child{
-	margin-bottom:0px;
-}
-
-#faq-page .content-side .card {
-	margin: 12px 0;
-}
-
-
-#faq-page .content-side .card-header{
-	padding:0px;
-	position:relative;
-	overflow:hidden;
-}
-
-#faq-page .content-side .card-title {
-	font-size: 16px;
-}
-
-#faq-page .content-side .card-title::after{
-	content:'';
-	position:absolute;
-	top:0;
-	right:-12px;
-	width:55px;
-	height:100%;
-	display:block;
-	transform:skewX(-25deg);
-}
-
-#faq-page .content-side .card-header a{
-	padding:10px 15px;
-	display:block;
-	text-decoration:none;
-}
-
-#faq-page .content-side .card-title{
-	padding-right:33px;
-	margin: 0;
-}
-
-#faq-page .content-side .card-title::before{
-	content:'\f107';
-	font-family:'FontAwesome';
-	font-size:23px;
-	position:absolute;
-	top:50%;
-	line-height:0px;
-	right:0;
-	width:40px;
-	display:block;
-	text-align:center;
-	z-index:1;
-}
-
-#faq-page .side-bar .booking-form-block{
-	padding:18px 8px;
-	margin-bottom:0px;
-}
-
 /*************** TRAVEL-GUIDE *************/
 
 #travel-guide .detail-tabs{
@@ -5807,28 +5697,6 @@ nav.navbar .container.padding {
 	  border-color:red;
 }
 
-
-/* -----------------------------------------------------
-		Car Detail Booking Form Error 
-   ----------------------------------------------------- */
-#frm_car_booking input.error::-ms-input-placeholder,
-#frm_car_booking select.error::-ms-input-placeholder,
-#frm_car_booking textarea.error::-ms-input-placeholder{ 
-  color: #e6e6e6;
-}
-
-#frm_car_booking input.error::placeholder,
-#frm_car_booking select.error::placeholder,
-#frm_car_booking textarea.error::placeholder{
-	  color:#e6e6e6 !important;
-}
-
-#frm_car_booking input.error,
-#frm_car_booking select.error,
-#frm_car_booking textarea.error{
-	  background:#ff4d4d;
-	  border-color:red;
-}
 
 
 /* -----------------------------------------------------

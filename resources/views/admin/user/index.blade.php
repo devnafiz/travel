@@ -76,7 +76,7 @@
                                     {{$all_user->links()}}
                                     
                                 </div>
-                                    }
+                                    
                             </div>
                         </div>
                     </div>

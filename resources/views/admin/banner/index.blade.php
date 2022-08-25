@@ -66,6 +66,11 @@
                                        @endforeach
                                     </tbody>
                                 </table>
+                                <div class="pagination">
+                                    {{$all_banner->link()}}
+                                    
+                                </div>
+                                    
                             </div>
                         </div>
                     </div>
