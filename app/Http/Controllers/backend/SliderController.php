@@ -126,7 +126,7 @@ class SliderController extends Controller
 
          }
 
-         $input['status']=$request->status;
+        $input['status']=$request->status;
         $news->update($input);
 
         return redirect()->route('slider.all')->with('updated', __('Silder  has been updated !'));

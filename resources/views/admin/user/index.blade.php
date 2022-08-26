@@ -61,11 +61,11 @@
                                                <td>{{$val->id}}</td>
                                             <td>{{$val->name}}</td>
                                             <td>{{$val->email}}</td>
-                                            <td>{{$val->    phone}}</td>
+                                            <td>{{$val->phone}}</td>
                                              
                                             
                                             <td>
-                                               <a href="{{route('user.delete',$val->id)}}"><i class="fas fa-trash"></i></a>
+                                               <a href="{{route('user.delete',$val->id)}}"><i class="fas fa-trash" id="delete"></i></a>
                                             </td>
                                             
                                         </tr>

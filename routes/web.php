@@ -41,11 +41,16 @@ use App\Http\Controllers\TourController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
+  Route::get('/clear-cache',function(){
+        \Artisan::call('cache:clear');
+        \Artisan::call('view:cache');
+        \Artisan::call('view:clear');
+
+       
+        return back();
+    });
 
 Route::middleware([
     'auth:sanctum',
@@ -277,7 +282,7 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
 
 
 
-    Route::get('/',[FrontendController::class,'index']);
+       Route::get('/',[FrontendController::class,'index']);
 
        Route::get('/changelang', [GuestController::class,'changelang'])->name('changelang');
 
@@ -286,7 +291,7 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
     Route::get('/reload-captcha', [ContactController::class, 'reloadCaptcha']);
      Route::post('/contact', [ContactController::class,'ContactSave'])->name('contact.store');
 
-     Route::get('/place/details/{id}', [TourController::class, 'single_place'])->name('place.tour');
+     Route::get('/place/details/{id}/{slug}', [TourController::class, 'single_place'])->name('place.tour');
 
      Route::get('/latest/news', [FrontendController::class, 'latestNews'])->name('news');
      Route::get('/latest/news/{slug}', [FrontendController::class, 'newsDetails'])->name('news.details');
@@ -295,7 +300,7 @@ Route::middleware(['auth:admin', 'verified'])->get('/admin/dashboard', function 
      Route::get('/hotel/booking',[FrontendController::class,'HotelBooking'])->name('hotel.booking');
       Route::get('/tour/booking',[FrontendController::class,'TourBooking'])->name('tour.booking');
 
-       Route::get('/destination/{slug}', [FrontendController::class, 'singleDestination'])->name('single.destination'); 
+       Route::get('/destination/{id}/{slug}', [FrontendController::class, 'singleDestination'])->name('single.destination'); 
 
       //order 
 

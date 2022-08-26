@@ -13,7 +13,7 @@ class News extends Model
     	public $translatable = ['heading','user','about','post','des'];
 
     protected $fillable = [
-        'heading', 'image', 'des','user','status','about','post','slug'
+        'heading', 'image', 'des','user','status','about','cat_id','post','slug'
     ];
 
 }

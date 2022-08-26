@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('mainimage',256)->nullable();
             $table->string('type')->nullable();
             $table->string('p_name')->nullable();
+            $table->text('slug')->nullable();
             $table->float('sale_price',10,0)->nullable();
             $table->float('discount_price',10,0)->nullable();
             $table->string('location',256)->nullable();

@@ -40,9 +40,9 @@ class AdminProfileController extends Controller
 
 		if ($request->file('profile_photo_path')) {
 			$file = $request->file('profile_photo_path');
-			@unlink(public_path('upload/admin_images/'.$data->profile_photo_path));
+			@unlink(public_path('backend/admin_image/'.$data->profile_photo_path));
 			$filename = date('YmdHi').$file->getClientOriginalName();
-			$file->move(public_path('upload/admin_images'),$filename);
+			$file->move(public_path('backend/admin_image'),$filename);
 			$data['profile_photo_path'] = $filename;
 		}
 		$data->save();
@@ -60,7 +60,7 @@ class AdminProfileController extends Controller
 
 	public function AdminChangePassword(){
 
-		return view('admin.admin_change_password');
+		return view('admin.user.admin_change_password');
 
 	}
 

@@ -21,6 +21,7 @@
 <script src="https://cdn.tiny.cloud/1/j0fo0z3pp2mbw21gjxqteavuxcsd7os6f1ufixbeunib4gis/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
     <!-- Custom styles for this template-->
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 
     <link href="{{asset('backend/css/bootstrap.min.css')}}" rel="stylesheet">
 

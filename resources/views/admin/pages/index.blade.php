@@ -62,7 +62,7 @@
                                             <td>{{$val->slug}}</td>
                                             <td>{{($val->status==1)? 'active' :'Deactive'}}</td>
                                             <td><a href="{{route('page.edit',$val->id)}}"><i class="fas fa-edit"></i></a>
-                                               <a href="{{route('page.delete',$val->id)}}"><i class="fas fa-trash"></i></a>
+                                               <a href="{{route('page.delete',$val->id)}}" id="delete"><i class="fas fa-trash"></i></a>
                                             </td>
                                             
                                         </tr>

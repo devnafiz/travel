@@ -4,7 +4,7 @@
  
         
          <!--========================= NEWSLETTER-1 ==========================-->
-       <section id="top-footer"  style="background: #ccc;padding: 30px;"> 
+       <section id="footer-up"  style="background: #ccc;padding: 30px;"> 
             <div class="container">
                 <div class="row justify-content-md-center">
                     <div class="col-md-10 col-md-offset-2">  
@@ -39,7 +39,7 @@
  <!--======================= FOOTER =======================-->
         <section id="footer" class="ftr-heading-o ftr-heading-mgn-1">
         
-            <div id="footer-top" class="banner-padding ftr-top-grey ftr-text-white">
+            <div id="footer-up" class="banner-padding ftr-top-grey ftr-text-white">
                 <div class="container">
                     <div class="row justify-content-md-center">
                         <div class="col-md-10 col-md-offset-2 ">

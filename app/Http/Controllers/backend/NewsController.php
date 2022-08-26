@@ -68,7 +68,7 @@ class NewsController extends Controller
         $input['cat_id'] = $request->cat_id;
         //$input['user'] = Auth::admin();
 
-      // dd($input['user']);
+   
 
          $image = $request->file('image');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
@@ -81,7 +81,12 @@ class NewsController extends Controller
         $input['image'] = $save_url;
         $blog->create($input);
 
-        return redirect()->route('news.all')->with("added", __("Blog has been created !"));
+        $notification = array(
+            'message' => 'News  Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('news.all')->with($notification);
 
 
 
@@ -97,25 +102,69 @@ class NewsController extends Controller
      }
 
      public function update(Request $request,$id){
+           //dd($request->all());
 
-         $news = News::findOrFail($id);
-        $input = array_filter($request->all());
+        $old_img = $request->old_image;
 
-      
-          $input['image'] = $request->image;
-
-        $input['des'] = $request->des;
-        $input['slug'] = Str::slug($request->heading, '-');
-
+        if ($request->file('image')) {
+        if($old_img){
+              unlink($old_img);
+        }
+       
 
          $image = $request->file('image');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
         Image::make($image)->resize(300,300)->save('backend/news/'.$name_gen);
         $save_url = 'backend/news/'.$name_gen;
+       
+     
+
+
+        $news = News::findOrFail($id);
+        $input = array_filter($request->all());
+
+      
+        $input['image'] = $request->image;
+
+        $input['des'] = $request->des;
+        $input['slug'] = Str::slug($request->heading, '-');
          $input['image'] = $save_url;
+       
+        $news->update($input);
+        $notification = array(
+            'message' => 'News  Update Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('news.all')->with($notification);
+
+          }else{
+
+
+
+        $news = News::findOrFail($id);
+        $input = array_filter($request->all());
+
+      
+        $input['image'] = $request->image;
+
+        $input['des'] = $request->des;
+        $input['slug'] = Str::slug($request->heading, '-');
+    
+       
         $news->update($input);
 
-        return redirect()->route('news.all')->with('updated', __('Blog post has been updated !'));
+        $news->update($input);
+        $notification = array(
+            'message' => 'News  Update Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('news.all')->with($notification);
+
+
+
+          }
 
 
      }

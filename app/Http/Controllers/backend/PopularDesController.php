@@ -104,7 +104,8 @@ class PopularDesController extends Controller
         $input['title'] = $request->title;
         $input['Pname'] = $request->Pname;
         $input['des'] = $request->des;
-        $input['slug'] =$request->slug;
+        $input['slug'] = Str::slug($request->slug,'-');
+       
        // dd($input['des']);
 
        

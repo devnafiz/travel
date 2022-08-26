@@ -231,7 +231,7 @@
                                                     {{Str::limit($des->des,200)}}
                                                     </p>
                                                     @if($des->slug)
-                                                    <a href="{{route('single.destination',$des->slug)}}">Discover More</a>
+                                                    <a href="{{url('/destination/'.$des->id.'/'.$des->slug)}}">Discover More</a>
                                                     @else
                                                           <a href="#">Discover More</a>
                                                     @endif
@@ -279,7 +279,7 @@
                                                     <h3></h3>
                                                     <p class="detail-in" >{{__(\Illuminate\Support\Str::limit($p_val->des,150))}}</p>
                                                    
-                                                    <a href="{{route('place.tour',$p_val->id)}}" class="pull-right btn btn-outline-light">{{ __('Book now')  }}</a>
+                                                    <a href="{{URL::to('/place/details/'.$p_val->id.'/'.$p_val->slug)}}" class="pull-right btn btn-outline-light">{{ __('Book now')  }}</a>
                                                 </div>
                                                 
                                             </div>

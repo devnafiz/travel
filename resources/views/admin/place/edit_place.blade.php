@@ -41,6 +41,14 @@
                                     </div>
                                     
                                 </div>
+                                @if(empty($edit_data->slug))
+                                <div class="form-group ">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control " placeholder="{{ __('Please enter Place slug') }}"  id="slug" name="slug" >
+                                    </div>
+                                    
+                                </div>
+                                @endif
                                 <div class="form-group ">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
                                         <input type="text" class="form-control " placeholder="{{ __('Please enter Place Location') }}"  id="location" name="location" value="{{$edit_data->location}}">
@@ -112,8 +120,8 @@
                                     <div class="col-sm-12 mb-3 mb-sm-0">
                                         <select class="form-control" name="type">
                                           <option value="">---select option--</option>
-                                          <option value="Hotel">Hotel</option>
-                                          <option value="Tour">Tour</option>
+                                          <option value="Hotel" {{($edit_data->type=='Hotel') ? 'selected' :''}} >Hotel</option>
+                                          <option value="Tour" {{($edit_data->type=='Tour') ? 'selected' :''}}>Tour</option>
                                         </select>
                                     </div>
                                     
@@ -184,6 +192,23 @@
         </div>
 
     </div>
+      <script>
+      
+
+
+      tinymce.init({
+        selector: '#mytextarea',
+         plugins: [
+          'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+          'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+          'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','wordcount'
+        ],
+        toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | ' +
+          'alignleft aligncenter alignright alignjustify | ' +
+          'bullist numlist checklist outdent indent | removeformat | a11ycheck code table '
+      });
+    </script>
+
 
 
    @endsection

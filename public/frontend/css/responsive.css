@@ -6,13 +6,6 @@
 */
 
 
-
-
-
-/* -----------------------------------------------------
-		Settings
-   ----------------------------------------------------- */
-
 @media(min-width:991px) and (max-width:1200px){
 	
 	.page-heading p{
@@ -2460,7 +2453,7 @@
 
 @media(min-width:992px){
 	
-	#cruise-homepage #footer-top{
+	#cruise-homepage #footer-up{
 		padding-bottom:150px;
 	}
 }

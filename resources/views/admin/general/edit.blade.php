@@ -402,61 +402,7 @@
 
           
 
-            <div class="bg-primary-rgba p-3 mt-2 rounded shadow-sm">
-              <a target="__blank" title="{{ __("Get your keys from here") }}" class=" pull-right text-info"
-                href="https://pusher.com"><i class="fa fa-key"></i> {{ __('Get your pusher keys from here') }}</a>
-              <h4><i class="fa fa-comments-o"></i> {{__("Pusher Settings") }}</h4>
-              <hr>
-              <div class="row">
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>
-                      {{__("PUSHER APP ID")}}
-                    </label>
-                    <input value="{{ env('PUSHER_APP_ID') }}" id="PUSHER APP ID"
-                      name="PUSHER_APP_ID" type="text" class="form-control"
-                      placeholder="{{ __('Enter PUSHER APP ID') }}">
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group eyeCy">
-                    <label>
-                      {{__("PUSHER APP KEY")}}
-                    </label>
-                    <input value="{{ env('PUSHER_APP_KEY') }}" id="PUSHER APP KEY"
-                      name="PUSHER_APP_KEY" type="password" class="form-control"
-                      placeholder="{{ __('Enter PUSHER APP KEY') }}">
-                      <span toggle="#APP" class="fa fa-fw fa-eye field_icon toggle-password"></span>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group eyeCy">
-                    <label>
-                      {{__("PUSHER APP SECRET")}}
-                    </label>
-                    <input value="{{ env('PUSHER_APP_SECRET') }}" id="PUSHER_APP_SECRET"
-                      name="PUSHER_APP_SECRET" type="password" class="form-control"
-                      placeholder="{{ __('Enter PUSHER APP SECRET') }}">
-                      <span toggle="#PUSHER_APP_SECRET" class="fa fa-fw fa-eye field_icon toggle-password"></span>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>
-                      {{__("PUSHER_APP_CLUSTER")}}
-                    </label>
-                    <input value="{{ env('PUSHER_APP_CLUSTER') }}" id="PUSHER_APP_CLUSTER"
-                      name="PUSHER_APP_CLUSTER" type="text" class="form-control"
-                      placeholder="Enter PUSHER APP CLUSTER">
-                  </div>
-                </div>
-
-              </div>
-            </div>
+          
 
 
             <div class="form-group mt-2">

@@ -48,12 +48,12 @@
                                         <tr>
                                              <td><img src="{{url('/'.($about_us->image) ? $about_us->image :'' )}}" width="50" height="50"></td>
                                             <td>{{$about_us->title}}</td>
-                                            <td>{{$about_us->des}}</td>
+                                            <td>{!!$about_us->des!!}</td>
                                            
                                              
                                             <td>{{($about_us->status==1)? 'active' :'Deactive'}}</td>
                                             <td><a href="{{route('about.edit',$about_us->id)}}"><i class="fas fa-edit"></i></a>
-                                               <a href="{{route('about.delete',$about_us->id)}}"><i class="fas fa-trash"></i></a>
+                                               <a href="{{route('about.delete',$about_us->id)}}" id="delete"><i class="fas fa-trash"></i></a>
                                             </td>
                                             
                                         </tr>

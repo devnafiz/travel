@@ -29,6 +29,8 @@
                             </div>
                             <form class="user" method="POST"  action="{{route('news.update',$edit_data->id)}}" enctype="multipart/form-data">
                                 @csrf
+
+                                 <input type="hidden" name="old_image" value="{{ $edit_data->image }}">  
                                 <div class="form-group ">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
                                         <input type="text" class="form-control " placeholder="{{ __('Please enter Heading') }}" type="text" id="heading" name="heading" value="{{$edit_data->heading}}">
@@ -46,12 +48,7 @@
                                      </div>    
                                 </div>
                               <div class="form-group row">
-                                     <!-- <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control iconvalue" name="icon" value="{{ __('Choose icon') }}">
-                                    <span class="input-group-append">
-                                  <button type="button" class="btnicon btn btn-outline-secondary" role="iconpicker"></button>
-                                     </span>
-                                    </div>-->
+                                  
                                     <div class="col-sm-6">
                                         <label class="control-label" for="first-name">
                                             {{__('Status')}}: <span class="required">*</span>
@@ -70,15 +67,12 @@
                                           </label>
                                               <div class="input-group">
 
-                                                <input required  id="image" name="image" type="file"
+                                                <input   id="image" name="image" type="file"
                                                     class="form-control">
-                                                <!-- <div class="input-group-append">
-                                                    <span data-input="image"
-                                                        class="bg-primary text-light midia-toggle input-group-text">{{ __("Browse") }}</span>
-                                                </div> -->
+                                               
                                               </div>
                                               <img src=" {{url('/'.$edit_data->image)}}"
-                  class="pro-img" />
+                  class="pro-img"  width="50" height="50" />
                                               <small class="text-info"> <i class="text-dark feather icon-help-circle"></i>({{__("Choose Image for blog post")}})</small>
 
                                         </div>

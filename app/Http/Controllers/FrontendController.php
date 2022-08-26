@@ -28,7 +28,7 @@ class FrontendController extends Controller
           //dd($data['news']);
           $data['overview']= About::where('status','1')->first();  
         $data['place']= Place::where('status','1')->orderBy('id','desc')->limit(4)->get();
-       //dd($data['place']);
+      // dd($data);
 
      return view('frontend.home',$data);
 
@@ -84,13 +84,14 @@ class FrontendController extends Controller
 
     }
 
-    public function singleDestination(Request $request,$slug){
+    public function singleDestination(Request $request,$id){
          $data['hotels']=Place::where('status','1')->where('type','hotel')->orderBy('id','desc')->limit(5)->get();
         
           $data['p_des']= PopularDes::where('status','1')->orderBy('id','desc')->limit(3)->get();
-         //dd( $data['hotels']);
+         //dd($id);
 
-         $data['destination']=PopularDes::where('slug',$slug)->first();
+         $data['destination']=PopularDes::where('id',$id)->first();
+         //dd( $data['destination']);
         return view('frontend.single_destination',$data);
     }
 

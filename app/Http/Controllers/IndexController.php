@@ -9,6 +9,8 @@ use DB;
 use App\Models\User;
 use App\Models\Place;
 use App\Models\Order;
+use App\Notifications\MailNotification;
+use Notification;
 
 class IndexController extends Controller
 {
@@ -154,6 +156,22 @@ class IndexController extends Controller
        
          $order->save();
 
+
+
+
+      $user = Auth::user();
+  
+        $project = [
+            'greeting' => 'Hi '.$user->name.',',
+            'body' => 'This is the  Booking to you.',
+            'thanks' => 'Thank you this is from example.com',
+            'actionText' => 'View Order',
+            'actionURL' => url('/')
+            
+        ];
+  
+        Notification::send($user, new MailNotification($project));
+       
          
             $notification = array(
             'message' => 'Order  sent',

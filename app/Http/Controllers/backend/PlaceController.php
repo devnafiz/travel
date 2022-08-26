@@ -66,7 +66,7 @@ class PlaceController extends Controller
          $input['heading']  =$request->heading;
 
          //dd($input['heading']);
-        
+         $input['slug'] = Str::slug($request->heading, '-');
          $input['des'] = $request->des;
          $input['type'] = $request->type;
          $input['p_name'] = $request->p_name;
@@ -116,7 +116,7 @@ class PlaceController extends Controller
          $input['heading']  =$request->heading;
 
          //dd($input['heading']);
-        
+         $input['slug'] = Str::slug($request->slug,'-');
          $input['des'] = $request->des;
          $input['type'] = $request->type;
          $input['p_name'] = $request->p_name;

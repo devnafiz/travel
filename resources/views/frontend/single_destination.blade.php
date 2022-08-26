@@ -85,7 +85,7 @@
                             
                         </div>
                         <div class="col-lg-8">
-                            <h4><a href="{{route('')}}">{{__($val->heading)}}</a></h4>
+                            <h4><a href="{{url('/place/details/'.$val->id.'/'.$val->slug)}}">{{__($val->heading)}}</a></h4>
                             
                         </div>
                     </div>
@@ -123,7 +123,7 @@
 <!-- Trending Tour Area Start -->
  
 
-         <!--============= End Room ==============-->  
+         
 
 
 

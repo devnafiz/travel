@@ -12,7 +12,7 @@ class Place extends Model
 
    
    
-    protected $fillable =['heading','des','mainimage','type','p_name','sale_price','discount_price','location','long_des','feature','start_date','end_date'];
+    protected $fillable =['heading','des','mainimage','type','p_name','slug','sale_price','discount_price','location','long_des','feature','start_date','end_date'];
 
 
     public function images(){

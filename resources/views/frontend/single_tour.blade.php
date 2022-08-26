@@ -61,7 +61,7 @@
                     <div id="thumb" class="owl-carousel product-thumb">
                          @foreach($place->images as $image)
                         <div class="item">
-                            <img src="{{asset($img->image)}}" />
+                            <img src="{{asset($image->image)}}" />
                         </div>
                          @endforeach
                         
@@ -218,7 +218,7 @@
                                                     
                                                     <span class="aminitis">Feature <span><i class="fa fa-angle-down"></i></span></span>
                                                     <ul>
-                                                        {{$place->feature}}
+                                                        {!!$place->feature!!}
 
                                                     </ul>
                                                 </div><!-- end columns -->

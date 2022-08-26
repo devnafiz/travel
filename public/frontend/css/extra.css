@@ -2247,15 +2247,15 @@ nav.navbar#mynavbar-3 .navbar-brand .fa
 	color:white;
 }
 
-#footer-top.ftr-text-white,
-#footer-top.ftr-text-white p,
-#footer-top.ftr-text-white a{
+#footer-up.ftr-text-white,
+#footer-up.ftr-text-white p,
+#footer-up.ftr-text-white a{
 	color:white;
 }
 
-#footer-top.ftr-text-grey,
-#footer-top.ftr-text-grey p,
-#footer-top.ftr-text-grey ul li{
+#footer-up.ftr-text-grey,
+#footer-up.ftr-text-grey p,
+#footer-up.ftr-text-grey ul li{
 	color:#828282;
 }
 
@@ -2508,32 +2508,6 @@ nav.navbar#mynavbar-3 .navbar-brand .fa
 	background-size:cover;
 }
 
-/******* COVER BOOKING PAGES ******/
-
-#cover-flight-booking{
-	background:url('../images/cover-flight-booking.jpg') 50% 50%;
-	background-size:cover;
-}
-
-#cover-hotel-booking{
-	background:url('../images/cover-hotel-booking.jpg') 50% 55%;
-	background-size:cover;
-}
-
-#cover-tour-booking{
-	background:url('../images/cover-tour-booking.jpg') 50% 30%;
-	background-size:cover;
-}
-
-#cover-cruise-booking{
-	background:url('../images/cover-cruise-booking.jpg') 50% 50%;
-	background-size:cover;
-}
-
-#cover-car-booking{
-	background:url('../images/cover-car-booking.jpg') 50% 65%;
-	background-size:cover;
-}
 
 /******* COVER SEARCH RESULT PAGES ******/
 
@@ -2614,32 +2588,8 @@ nav.navbar#mynavbar-3 .navbar-brand .fa
 	background:#b99fc9;	
 }
 
-/********** COVER OFFER PAGES ************/
 
-#cover-flight-offers{
-	background:url('../images/cover-flight-offers.jpg') 50% 40%;
-	background-size:cover;
-}
 
-#cover-hotel-offers{
-	background:url('../images/cover-hotel-offers.jpg') 50% 40%;
-	background-size:cover;
-}
-
-#cover-tour-offers{
-	background:url('../images/cover-tour-offers.jpg') 50% 85%;
-	background-size:cover;
-}
-
-#cover-cruise-offers{
-	background:url('../images/cover-cruise-offers.jpg') 50% 75%;
-	background-size:cover;
-}
-
-#cover-car-offers{
-	background:url('../images/cover-car-offers.jpg') 50% 60%;
-	background-size:cover;
-}
 
 /********** COVER PRICING TABLE **********/
 
@@ -3406,63 +3356,6 @@ nav.navbar#mynavbar-3 .navbar-brand .fa
 		Extra Pages
    ----------------------------------------------------- */
 
-/************ ABOUT US PAGE *************/
-
-#about-content{
-	background:#b99fc9;
-}
-
-.about-text{
-	background:white;
-}
-
-#about-content .about-img img{
-	border:6px solid white;
-}
-
-#about-content .about-detail p:nth-of-type(1){
-	color:#4f5051;
-}
-
-.member-block:hover{
-	box-shadow:0px 4px 10px rgba(0,0,0,0.15);
-	transform:translateY(-10px);
-}
-
-.member-img{
-	background:#f1f2f2;
-	border:1px solid #e6e7e8;
-}
-
-.member-img img{
-	border:4px solid white;
-	box-shadow:0px 4px 8px rgba(0,0,0,0.4);
-}
-
-.contact-links li .fa-facebook-square{
-	color:#00508f;
-}
-
-.contact-links li .fa-twitter-square{
-	color:#00aeef;
-}
-
-.contact-links li .fa-linkedin-square{
-	color:#004378;
-}
-
-.member-name{
-	border:1px solid #e6e7e8;
-}
-
-.member-name h3{
-	color:#b99fc9;
-}
-
-#owl-team .owl-pagination span{
-	background:#000;
-}
-
 /*********** ABOUT US 2 PAGE ************/
 
 #about-content-2 #abt-cnt-2-text h2{
@@ -3651,39 +3544,8 @@ nav.navbar#mynavbar-3 .navbar-brand .fa
 	color:#000;
 }
 
-/********** BLOG DETAILS PAGE ***********/
 
-.comment-block .user-text ul .user-name:after{
-	background:#333;
-}
 
-.comment-block .user-text ul .date{
-	color:#9d9fa2;
-}
-
-.comment-block .user-text p{
-	color:#828486;
-}
-
-.comment-block .user-text a{
-	color:#c0c0c0;
-}
-
-#comment-form .innerpage-heading h1{
-	color:#464646;
-}
-
-#comment-form input,
-#comment-form textarea{
-	border-radius:0px;
-	border:1px solid #dcddde;
-	box-shadow:none;
-}
-
-#comment-form input:focus,
-#comment-form textarea:focus{
-	border-color:#555;
-}
 
 /************** DASHOBARD ***************/
 
@@ -3865,68 +3727,7 @@ nav.navbar#mynavbar-3 .navbar-brand .fa
 	background:#303030;
 }
 
-/************** BOOKING PAGE ************/
 
-.booking-listing td.booking-list-date .b-date{
-	background:#efefef;
-}
-
-.booking-listing tr:hover .booking-list-date .b-date{
-	background:white;
-}
-
-.booking-listing td.booking-list-date h3{
-	color:#b99fc9;
-}
-
-.booking-listing td.booking-list-date p{
-	color:#8e8e8e;
-}
-
-.booking-listing td.booking-list-detail h3{
-	color:#494949;
-}
-
-.booking-listing td.booking-list-detail li{
-	color:#737373;
-}
-
-.booking-listing td.dash-list-btn .btn:nth-child(2){
-	background:#d1d1d1;
-}
-
-.booking-listing td.dash-list-btn .btn:nth-child(2):hover{
-	background:#303030;
-}
-
-.booking-trips .dash-listing-heading{
-	background:#efefef;
-}
-
-.booking-trips .dash-listing-heading input[type="radio"] + label {
-  	color:#7e7e7e;
-}
-
-.booking-trips .dash-listing-heading input[type="radio"]:checked + label{
-	color:#303030;
-}
-
-.booking-trips .dash-listing-heading input[type="radio"] + label span {
-	color:#646464;
-}
-
-.booking-trips .dash-listing-heading input[type="radio"] + label span {
-     background-color:#7e7e7e;
-}
-
-.booking-trips .dash-listing-heading input[type="radio"]:checked + label span{
-     background-color:#b99fc9;
-}
-
-.booking-trips .dash-listing-heading input[type="radio"] + label span,
-.booking-trips .dash-listing-heading input[type="radio"]:checked + label span {
-  	transition:background-color .2s linear;
-}
 
 /************* WISHLIST PAGE ************/
 
@@ -4133,55 +3934,6 @@ nav.navbar#mynavbar-3 .navbar-brand .fa
 	100% { text-shadow:-8px 0px 10px rgba(0,0,0,0.5);}
 }
 
-/************ THNAK YOU PAGE *************/
-
-.thank-you-note{
-	border-bottom:1px solid #e6e6e6;
-}
-
-.thank-you-note:before{
-	color:lightgrey;	
-	animation: thumbs-up 3s infinite;
-	animation-timing-function: ease-in-out;
-}
-
-.thank-you-note .btn{
-	border-radius:30px;
-}
-
-.t-info-heading{
-	color:#1a1a1a;
-}
-
-.t-info-heading span{
-	color:#b99fc9;
-	border-bottom:4px solid #b99fc9;
-}
-
-.traveler-info table tr td{
-	border-top:0px;
-	border-bottom:1px solid #f2f2f2;
-}
-
-.traveler-info table tr td:first-child{
-	color:grey;
-}
-
-.payment-method ul li{
-	opacity:0.2;
-}
-
-.payment-method ul li.active{
-	opacity:1;
-}
-
-@keyframes thumbs-up {
-	0%{color:lightgrey;}
-	50%{color:#b99fc9;}
-	100%{color:lightgrey;}
-}
-
-/********** PAYMENT-SUCCESS PAGE *********/
 
 #payment-success{
 	background:linear-gradient(rgba(255, 255, 255,0.9),rgba(255, 255, 255,0.9)),url('../images/coming-soon-page.jpg') center center;
@@ -4262,185 +4014,3 @@ nav.navbar#mynavbar-3 .navbar-brand .fa
 	}
 }
 
-/************** TEAM-2 PAGE **************/
-
-.member-block-2:hover{
-	box-shadow:0px 4px 10px rgba(0,0,0,0.15);
-	transform:translateY(-10px);
-}
-
-.member-img-2 img{
-	border-bottom:2px solid #b99fc9;
-}
-
-.member-name-2 h3{
-	background:#b99fc9;
-	color:white;
-}
-
-.member-info-2{
-	border:1px solid #e6e7e8;	
-}
-
-.member-info-2 h4{
-	color:#595959;
-}
-
-/************* PRICING PAGES *************/
-
-#pricing-table-page{
-	background:#eeeeee;
-}
-
-/**************** FAQ PAGES **************/
-
-#faq-page .content-side .faq-heading::before,
-#faq-page .content-side .card-title::after{
-	background:#b99fc9;	
-}
-
-#faq-page .content-side .card{
-	box-shadow:none;
-}
-
-#faq-page .content-side .card-header{
-	border-bottom:0px;
-}
-
-#faq-page .content-side .card-title{
-	color:#4d4d4d;
-}
-
-#faq-page .content-side .card-title::before{
-	color:white;
-}
-
-#faq-page .side-bar .booking-form-block{
-	background:#333;
-}
-
-#faq-page .side-bar .booking-form-block h3{
-	color:white;
-}
-
-#faq-page .side-bar .booking-form-block p{
-	color:lightgrey;
-}
-
-#faq-page .side-bar .booking-form-block input,
-#faq-page .side-bar .booking-form-block textarea{
-	background:white;
-	color:#333;
-}
-
-/*************** TRAVEL-GUIDE *************/
-
-#travel-guide .detail-tabs .nav-tabs li a{
-	background:#4d4d4d;
-	bottom: 0;
-	color: white;
-}
-
-
-
-#travel-guide .detail-tabs .tab-pane{
-	background:white;
-}
-
-#travel-guide .detail-tabs .nav-tabs li.active a{
-	border-top:4px solid #000;
-	background-color:#b99fc9;
-	color:#000;
-	margin: -4px 0 0 0;
-}
-
-#travel-guide .detail-tabs .nav-tabs .nav-link.active{
-	border-top:4px solid #000;
-	background-color:#b99fc9;
-	color:#000;
-	margin: -4px 0 0 0;
-}
-
-#travel-guide .tab-content .tab-pane{
-	border:0px;	
-	border-bottom:3px solid #4d4d4d;
-}
-
-#travel-guide .detail-tabs img{
-	border:0px;
-}
-
-#travel-guide .tab-text table td{
-	border-top-color:#ebebeb;
-}
-
-#travel-guide .tab-text table tr:last-child{
-	border-bottom:1px solid #eeeeee;
-}
-
-#travel-guide .tab-text table tbody td{
-	color:#737373;
-}
-
-#travel-guide .tab-text table tbody td:first-child{
-	color:#333;
-}
-
-#travel-guide #tv-guide-attractions .item{
-	border:1px solid #e6e7e8;
-}
-
-#travel-guide #tv-guide-attractions a,
-#travel-guide .tv-guide-block .tab-text h3 a{
-	color:#333;
-}
-
-#travel-guide .attract-loc span{
-	color:#b99fc9;
-}
-
-#travel-guide #tv-guide-attractions .owl-buttons div{
-	background:none;
-	opacity:1;
-	color:#333;
-}
-
-#travel-guide .tv-guide-block{
-	border-bottom:1px dashed #ddd;
-}
-
-#travel-guide .tv-guide-block:last-child{
-	border-bottom:0px;
-}
-
-/* -----------------------------------------------------
-		Contact Us
-   ----------------------------------------------------- */
-
-.contact-block-2{
-	box-shadow:0px 0px 20px rgba(0,0,0,0.2);	
-}
-
-.contact-block-2 .fa{
-	color:#b99fc9;
-}
-
-.contact-block-2 h4{
-	color:#111;
-}
-
-#contact-form-2 .social-links li a{
-	color:#b3b3b3;	
-}
-
-#contact-form-2 .social-links li a:hover{
-	color:#b99fc9;	
-}
-
-#contact-form-2 form input,
-#contact-form-2 textarea{
-	border-radius:0px;
-	box-shadow:none;
-	background:#f2f2f2;
-	border:0px;
-}

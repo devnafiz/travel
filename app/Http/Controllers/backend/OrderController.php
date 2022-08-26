@@ -18,7 +18,7 @@ class OrderController extends Controller
                           ->leftjoin('places','orders.tour_id','places.id')
                           ->leftjoin('users','orders.user_id','users.id')
                           ->select('orders.*','places.heading','users.name','users.phone','users.email')
-
+                          ->orderBy('orders.id','desc')
                           ->where('orders.status','0')
                           ->paginate(10);
                      //dd( $data['all_data']);     

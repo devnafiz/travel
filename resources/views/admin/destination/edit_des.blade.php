@@ -41,12 +41,15 @@
                                     </div>
                                     
                                 </div>
+                                @if(empty($edit_data->slug))
                                 <div class="form-group ">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control "  type="text" id="slug" name="slug" value="{{$edit_data->slug}}">
+                                        <input type="text" class="form-control "  type="text" id="slug" name="slug"  placeholder="Enter slug">
                                     </div>
+                                    <small class="text-info"> <i class="text-dark feather icon-help-circle"></i>({{__("Slug create '")}})</small>
                                     
                                 </div>
+                                @endif
 
                                  <div class="form-group ">
                                     <div class="col-sm-12 mb-3 mb-sm-0">

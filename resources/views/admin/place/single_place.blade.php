@@ -61,11 +61,12 @@
                                             <td>{{$p_details[0]->sale_price}}</td>
                                             <td>{{$p_details[0]->discount_price}}</td>
                                              <td>{{$p_details[0]->long_des}}</td>
-                                            <td>{{$p_details[0]->feature}}</td>
+                                            <td>{!!$p_details[0]->feature!!}</td>
                                             <td>{{$p_details[0]->type}}</td>
                                             <td>{{($p_details[0]->status==1)? 'active' :'Deactive'}}</td>
                                             <td>
-                                                <a href="{{route('place.details',$p_details[0]->id)}}"><i class="fa fa-eye"></i></a>
+                                              
+
                                                 <a href="{{route('place.multi_image',$p_details[0]->id)}}"><i class="fas fa-plus" title="multi Image add"></i></a>
                                                 <a href="{{route('place.edit',$p_details[0]->id)}}"><i class="fas fa-edit"></i></a>
                                                
@@ -91,6 +92,12 @@
                                     
                                     <tbody>
 
+                                        @php
+                                          //dd();
+                                        @endphp
+
+                                        @if($p_details[0]->image!=null)
+
                                         @foreach($p_details as $val)
                                         <tr>
                                              <td><img src="{{url('/'.$val->image)}}" width="50" height="50"></td>
@@ -98,14 +105,17 @@
                                            
                                             
                                             <td>
-                                               
+                                           
                                                 <a href="{{route('place.multi_image',$val->id)}}"><i class="fas fa-plus" title="multi Image add"></i></a>
                                                 <a href="{{route('admin.edit.multi.image',$val->m_id)}}"><i class="fas fa-edit"></i></a>
                                                <a href="{{route('admin.delete.multi.image',$val->m_id)}}"><i class="fas fa-trash"></i></a>
+                                              
                                             </td>
                                             
                                         </tr>
                                        @endforeach
+
+                                       @endif
                                     </tbody>
                                 </table>
                             </div>

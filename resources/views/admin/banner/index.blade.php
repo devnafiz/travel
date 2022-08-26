@@ -59,7 +59,7 @@
                                              
                                             <td>{{($val->status==1)? 'active' :'Deactive'}}</td>
                                             <td><a href="{{route('banner.edit',$val->id)}}"><i class="fas fa-edit"></i></a>
-                                               <a href="{{route('banner.delete',$val->id)}}"><i class="fas fa-trash"></i></a>
+                                               <a href="{{route('banner.delete',$val->id)}}" id="delete"><i class="fas fa-trash"></i></a>
                                             </td>
                                             
                                         </tr>
@@ -67,7 +67,7 @@
                                     </tbody>
                                 </table>
                                 <div class="pagination">
-                                    {{$all_banner->link()}}
+                                    {{$all_banner->links()}}
                                     
                                 </div>
                                     

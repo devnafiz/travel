@@ -64,8 +64,9 @@
                                              <td>{{$k+1}}</td>
                                             <td>{{__($val->heading)}}</td>
                                             <td>{{$val->user_id}}</td>
+                                             <td>{{$val->amount}}</td>
                                             <td>{{$val->start_date}}</td>
-                                            <td>{{$val->amount}}</td>
+                                           
                                             <td>
 
 
@@ -82,7 +83,7 @@
                                             <td>
                                                 <a href="{{route('order.details',$val->id)}}"><i class="fa fa-eye"></i></a>
                                                 <a href="{{route('news.edit',$val->id)}}"><i class="fas fa-edit"></i></a>
-                                               <a href="{{route('news.delete',$val->id)}}"><i class="fas fa-trash"></i></a>
+                                               <a href="{{route('news.delete',$val->id)}}" id="delete"><i class="fas fa-trash"></i></a>
                                             </td>
                                             
                                         </tr>

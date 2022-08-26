@@ -64,7 +64,7 @@
                                                 <a href="{{route('place.details',$val->id)}}"><i class="fa fa-eye"></i></a>
                                                 <a href="{{route('place.multi_image',$val->id)}}"><i class="fas fa-plus" title="multi Image add"></i></a>
                                                 <a href="{{route('place.edit',$val->id)}}"><i class="fas fa-edit"></i></a>
-                                               <a href="{{route('place.delete',$val->id)}}"><i class="fas fa-trash"></i></a>
+                                               <a href="{{route('place.delete',$val->id)}}" id="delete"><i class="fas fa-trash"></i></a>
                                             </td>
                                             
                                         </tr>

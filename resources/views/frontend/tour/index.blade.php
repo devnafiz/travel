@@ -39,7 +39,7 @@
                             <p>
                                {{Str::limit(__($val->des),200)}}
                             </p>
-                              <a href="{{route('place.tour',$val->id)}}" target="_blank">Booking now</a>
+                              <a href="{{URL::to('/place/details/'.$val->id.'/'.$val->slug)}}" target="_blank">Booking now</a>
                           </div>
                                                 
              </div>

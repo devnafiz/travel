@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
                 $table->string('heading', 191);
                 $table->text('slug', 65535);
-                $table->string('image', 191);
+                $table->string('image', 191)->nullable();
                 $table->text('des', 65535);
                 $table->string('user', 191);
                 $table->integer('cat_id')->nullable();
