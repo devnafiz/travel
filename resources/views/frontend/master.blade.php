@@ -39,10 +39,9 @@
     <link rel="stylesheet" href="{{asset('frontend/css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/owl.theme.css')}}">
     
-    <!-- Flex Slider Stylesheet -->
     <link rel="stylesheet" href="{{asset('frontend/css/flexslider.css')}}" type="text/css" />
     
-    <!--Date-Picker Stylesheet-->
+
      <link href="{{ url('backend/plugins/datepicker/datepicker.min.css') }}" rel="stylesheet" type="text/css">
     
     
@@ -75,7 +74,7 @@
     <div class="wrapper">
         <!--====== LOADER =====-->
        @if(env("ENABLE_PRELOADER") == 1)
-      <div class="loader"></div> 
+      <div class="loading"></div> 
             
           @endif   
         <!--======== SEARCH-OVERLAY =========-->       
@@ -227,6 +226,7 @@ margin-left: 82px;
     background: #cccccc91;;
     padding: 11px;
     color: #000;
+    margin-bottom: 30px;
 
 }
 .detail-box a{

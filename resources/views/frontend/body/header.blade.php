@@ -1,4 +1,4 @@
-  <div id="myOverlay" class="overlay">
+  <!-- <div id="myOverlay-d" class="overlay-d">
             <span class="closebtn" onClick="closeSearch()" title="Close Overlay">×</span>
             <div class="overlay-content">
                 
@@ -7,13 +7,13 @@
                             <div class="input-group">
                                 <input class="float-left" type="text" placeholder="Search.." name="search">
                                 <button class="float-left" type="submit"><i class="fa fa-search"></i></button>
-                            </div><!-- end input-group -->
-                        </div><!-- end form-group -->
+                            </div>
+                        </div>
                     </form>
                 
-            </div><!-- end overlay-content -->
-        </div><!-- end overlay -->
-        
+            </div>
+        </div>
+         -->
         
         <!--============= TOP-BAR ===========-->
         @include('frontend.body.top_menu')

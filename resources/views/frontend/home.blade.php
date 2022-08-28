@@ -34,17 +34,16 @@
     <link rel="stylesheet" id="cpswitch" href="{{asset('frontend/css/extra.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
 
-    <!-- Owl Carousel Stylesheet -->
+   
     <link rel="stylesheet" href="{{asset('frontend/css/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/owl.theme.css')}}">
     
-    <!-- Flex Slider Stylesheet -->
+   
     <link rel="stylesheet" href="{{asset('frontend/css/flexslider.css')}}" type="text/css" />
     
-    <!--Date-Picker Stylesheet-->
+   
     <link rel="stylesheet" href="{{asset('frontend/css/datepicker.css')}}">
-    
-    <!-- Magnific Gallery -->
+   
    
     <link rel="stylesheet" href="{{asset('frontend/css/custom.css')}}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
@@ -68,26 +67,10 @@
     <div class="wrapper">
         <!--====== LOADER =====-->
           @if(env("ENABLE_PRELOADER") == 1)
-       <div class="loader"></div> 
+       <div class="loading"></div> 
             
             @endif
-        <!--======== SEARCH-OVERLAY =========-->       
-        <div id="myOverlay" class="overlay">
-            <span class="closebtn" onClick="closeSearch()" title="Close Overlay">×</span>
-            <div class="overlay-content">
-                
-                    <form>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input class="float-left" type="text" placeholder="Search.." name="search">
-                                <button class="float-left" type="submit"><i class="fa fa-search"></i></button>
-                            </div><!-- end input-group -->
-                        </div><!-- end form-group -->
-                    </form>
-                
-            </div><!-- end overlay-content -->
-        </div><!-- end overlay -->
-        
+       
         
         <!--============= TOP-BAR ===========-->
         
@@ -312,7 +295,7 @@
 
 
 
-        <!--======= hotel--=========-->
+        <!--======= Latest News<--=========-->
             
               <section id="hotel" class="section-padding">
                    <div class="container-fluid">
@@ -353,7 +336,7 @@
                    </div>
               </section>
 
-          <!--=======end hotel--=========-->
+          <!--=======end Latest News<--=========-->
 
 
 

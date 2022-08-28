@@ -114,7 +114,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Booking Overview</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -123,17 +123,69 @@
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
+                                            <a class="dropdown-item" href="#">View All</a>
+                                           
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Card Body -->
+                                @php
+                                      $all_orders=DB::table('orders')
+                                                    ->leftjoin('places','orders.tour_id','places.id')
+                                                    ->where('orders.status',0)
+                                                    ->orderBy('orders.id','desc')
+                                                   ->take(5)->get();
+                                              //dd($all_orders);     
+                                     
+
+                                @endphp
                                 <div class="card-body">
                                     <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>SL</th>
+                                                     <th>Heading</th>
+                                                     <th>Date</th>
+                                                    <th>Amount</th>
+                                                       
+                                                     <th>status</th>
+
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                        @foreach($all_orders as $k=>$val)
+                                        <tr>
+                                             <td>{{$k+1}}</td>
+                                            <td>{{__($val->heading)}}</td>
+                                            <td>{{ \Carbon\Carbon::parse($val->created_at)->diffForHumans() }}</td>
+                                             <td>{{$val->amount}}</td>
+                                          
+                                           
+                                            <td>
+
+
+                                         @if($val->status==0)
+                                          <span class="badge badge-danger">pending</span>
+                                          @elseif($val->status==1)
+
+                                        <span class="badge badge-success">accept</span>
+
+                                        @else
+                                          <span class="badge badge-danger">Cancel</span>
+                                       @endif
+                                            </td>
+                                           
+                                            
+                                        </tr>
+                                       @endforeach
+                                                
+                                            </tbody>
+                                            
+                                        </table>
+                                      
                                     </div>
                                 </div>
                             </div>

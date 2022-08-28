@@ -1352,21 +1352,6 @@
 	}
 }
 
-/************** OFFER-PRICE-2 *************/
-
-/*@media(min-width:992px) and (max-width:1199px){
-	
-	.offer-price-2 li.price{
-		font-size:20px;
-	}
-}*/
-
-@media(max-width:767px){
-	
-	.offer-price-2 li.price{
-		font-size:20px;
-	}
-}
 
 /* -----------------------------------------------------
 		Hotel Block
@@ -1445,89 +1430,7 @@
 	}
 }
 
-/* -----------------------------------------------------
-		Flight Block
-   ----------------------------------------------------- */
-
-@media(min-width:1200px){  
-
-	.flight-timing li{
-		width:50%;
-		float:left;
-	}
-}
-
-@media(max-width:1199px){
-	
-	.flight-info .offer-price-1 li{
-		display:inline-block;
-	}
-	
-	.flight-info .offer-price-1 li.rating{	
-		float:right;
-		margin-top:0px;
-	}
-}
-
-@media(min-width:992px) and (max-width:1199px){  
-
-	.flight-timing li{
-		float:none;
-		width:100%;
-	}
-	
-	.flight-timing li:first-child{
-		padding-bottom:0px;
-	}
-	
-	.flight-timing li:nth-child(2){
-		padding-top:4px;
-	}
-}
-
-@media(max-width:991px){  
-
-	.flight-timing li{
-		width:50%;
-		float:left;
-	}
-}
-
-@media(max-width:767px){
-	
-	.flight-block{
-		margin-bottom:30px;
-	}
-	
-	.flight-info .offer-price-1 li.price .pkg{
-		top:-2px;
-	}
-}
-
-@media(max-width:420px){
-	
-	.flight-info h3 .flight-destination{
-		font-size:21px;
-	}
-	
-	.flight-info h3 .flight-type{
-		font-size:13px;
-	}
-	
-	.flight-timing li{
-		float:none;
-		width:100%;
-	}
-	
-	.flight-timing li:first-child{
-		padding-bottom:0px;
-	}
-	
-	.flight-timing li:nth-child(2){
-		padding-top:4px;
-	}
-}
-
+/
 /* -----------------------------------------------------
 		Destination Block
    ----------------------------------------------------- */
@@ -1543,25 +1446,6 @@
 	
 	.destination-block{
 		margin-bottom:30px;
-	}
-}
-
-/* -----------------------------------------------------
-		Vehicle Block
-   ----------------------------------------------------- */
-
-@media(max-width:767px){
-	
-	.vehicle-block{
-		margin-bottom:30px;
-	}
-	
-	.vehicle-info .vehicle-title a{
-		font-size:19px;
-	}
-	
-	.vehicle-info .vehicle-title p{
-		font-size:15px;
 	}
 }
 
@@ -1663,26 +1547,6 @@
 	}
 }
 
-/* -----------------------------------------------------
-		Luxury Offers
-   ----------------------------------------------------- */
-
-@media(max-width:768px){
-	
-	.luxury-text .btn{
-		height:42px;
-	}
-	
-	.luxury-text .btn-black{
-		font-size:18px;
-		padding:7px 25px;
-	}
-	
-	.luxury-text .btn-o-border{
-		font-size:16px;
-		padding:8px 37px;
-	}
-}
 
 /*************** ROOMS-OFFER ***************/
 
@@ -1831,85 +1695,8 @@
 	}
 }
 
-/**************** CAR-OFFER ****************/
 
-@media(min-width:1200px){
-	
-	.luxury-car-text{
-		margin-top:35px;
-	}
-}
 
-@media(min-width:992px) and (max-width:1199px){
-	
-	.luxury-car-text{
-		padding:40px 50px 51px;
-	}
-	
-	.luxury-car-text .btn-black{
-		font-size:20px;
-		padding:7px 20px;
-	}
-	
-	.luxury-car-text .btn-o-border{
-		font-size:14px;
-		padding:11px 45px;
-		margin-left:2px;
-		margin-right:0px;
-	}
-}
-
-@media(max-width:991px){
-	
-	.luxury-car-text{
-		text-align:center;
-	}	
-	
-	.luxury-car-text p{
-		width:100%;
-	}
-}
-
-@media(max-width:576px){
-	
-	.luxury-car-text{
-		padding:60px 30px;
-	}
-}
-
-/* -----------------------------------------------------
-		Banners
-   ----------------------------------------------------- */
- 
-/************** VIDEO-BANNER **************/
-
-@media(max-width:991px){  
-
-	#video-banner p{
-		font-size:19px;
-		width:90%;
-		margin:0 auto;
-	}
-}
-
-@media(max-width:768px){  
-	
-	#video-banner h2{
-		font-size:30px;
-	}
-	
-	#video-banner p{
-		font-size:15px;
-	}
-	
-	#video-banner #play-button .fa{
-		font-size:27px;
-		width:90px;
-		height:90px;
-		padding-top:27px;
-		margin-top:40px;
-	}
-}
 
 /************* MESSAGE-BANNER *************/
 
@@ -2009,77 +1796,7 @@
 	}
 }
 
-/* -----------------------------------------------------
-		Highlights
-   ----------------------------------------------------- */
 
-@media(max-width:991px){
-	
-	.highlight-box .h-icon{
-		width:87px;
-		font-size:60px;
-	}
-	
-	.highlight-box .h-icon .fa-ship,
-	.highlight-box .h-icon .fa-taxi{
-		font-size:55px;
-	}
-	
-	.highlight-box .h-text .numbers{
-		font-size:45px;
-	}
-	
-	.highlight-box .h-text p{
-		font-size:15px;
-	}
-}
-
-@media(max-width:767px){
-	
-	#highlights #boxes{
-		width:290px;
-		margin:0 auto;
-	}
-	
-	.highlight-box{
-		margin:15px 0px;
-	}
-	
-	.highlight-box .h-text.cruise,
-	.highlight-box .h-text.taxi{
-		padding-left:0px;
-	}
-	
-	.highlight-box .h-icon .fa-plane{
-		margin-top:14px;
-	}
-}
-
-@media(max-width:576px){
-	
-	#highlights #boxes{
-		width:255px;
-		margin:0 auto;
-	}
-	
-	.highlight-box .h-icon{
-		width:77px;
-		font-size:50px;
-	}
-	
-	.highlight-box .h-icon .fa-ship,
-	.highlight-box .h-icon .fa-taxi{
-		font-size:45px;
-	}
-	
-	.highlight-box .h-text .numbers{
-		font-size:40px;
-	}
-	
-	.highlight-box .h-text p{
-		font-size:13px;
-	}
-}
 
 /* -----------------------------------------------------
 		Testimonials
@@ -2152,61 +1869,7 @@
 	}
 }
 
-/************* CRUISE HOMEPAGE *************/
 
-@media(max-width:1199px){
-
-	#cruise-homepage #quote-carousel .carousel-item blockquote{
-		padding:0px 50px;
-	}
-}
-
-@media(max-width:991px){
-	
-	#cruise-homepage #quote-carousel .carousel-item blockquote{
-		padding:0px 10px;
-	}
-}
-
-@media(max-width:768px){
-	
-	#cruise-homepage #quote-carousel .carousel-item blockquote{
-		font-size:15px;
-	}
-	
-	#cruise-homepage #quote-carousel .carousel-item .rating .fa{
-		font-size:18px;
-	}
-	
-	#cruise-homepage #quote-carousel .carousel-item .position{
-		font-size:14px;
-	}
-}
-
-/************* OWL-TESTIMONIALS *************/
-
-@media(max-width:991px){
-	
-	#owl-testimonials .review-block p{
-		width:100%;
-		margin:0px auto 27px;
-	}
-}
-
-@media(max-width:768px){
-	
-	#owl-testimonials .review-block p{
-		font-size:15px;
-	}
-	
-	#owl-testimonials .review-block small{
-		font-size:20px;
-	}
-	
-	#owl-testimonials .review-block .position{
-		font-size:15px;
-	}
-}
 
 /* -----------------------------------------------------
 		Latest Blog
@@ -2321,38 +1984,6 @@
 	}
 }
 
-/************* NEWSLETTER-2 *************/
-
-@media(min-width:992px) and (max-width:1199px){
-	
-	#newsletter-2 form .form-group{
-		margin-top:20px;
-	}
-}
-
-@media(max-width:991px){
-	
-	#newsletter-2{
-		text-align:center;
-	}
-	
-	#newsletter-2 h2{
-		margin-top:0px;
-		margin-bottom:20px;
-	}
-	
-	#newsletter-2 form .form-group{
-		width:85%;
-		margin:0 auto;
-	}
-}
-
-@media(max-width:768px){
-	
-	#newsletter-2 h2{
-		font-size:2.0em;
-	}
-}
 
 /* -----------------------------------------------------
 		Contact Form

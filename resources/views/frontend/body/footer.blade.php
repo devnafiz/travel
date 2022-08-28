@@ -18,12 +18,12 @@
                                 
                             </div>
                             <div class="col-md-4 col-lg-4 footer-widget ftr-contact">
-                                <h4>Parklee 3</h4>
-                                <h5>45891 Gelsenkirchen</h5>
+                                <h4>Phone </h4>
+                                <h5>Phone:{{(isset($general->mobile))? $general->mobile :''}}</h5>
                                 
                             </div>
                             <div class="col-md-4 col-lg-4  footer-widget ftr-contact">
-                                  <h4>Phone: {{(isset($general->mobile))? $general->mobile :''}}</h4>
+                                  <h4>Email </h4>
                                 <h5>E-mail:{{(isset($general->email))? $general->email :''}}</h5>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
 
 
  <!--======================= FOOTER =======================-->
-        <section id="footer" class="ftr-heading-o ftr-heading-mgn-1">
+        <section id="footer" class="ftr-heading-o ftr-headingon">
         
             <div id="footer-up" class="banner-padding ftr-top-grey ftr-text-white">
                 <div class="container">
@@ -131,7 +131,7 @@
     <script src="{{asset('frontend/js/custom-flex.js')}}"></script>
     <script src="{{asset('frontend/js/custom-owl.js')}}"></script>
   
-    <script src="{{asset('frontend/js/popup-ad.js')}}"></script>
+   
   
     <script src="{{ url('backend/plugins/datepicker/i18n/datepicker.en.js') }}"></script>
    <script src="{{ url('backend/js/custom-form-datepicker.js') }}"></script> 
